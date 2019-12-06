@@ -21,3 +21,15 @@ C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\View
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.RazorTargetAssemblyInfo.cache
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.RazorTargetAssemblyInfo.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\bin\Debug\netcoreapp2.2\QLCBCore.pdb
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\bin\Debug\netcoreapp2.2\QLCBCore.Views.dll
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\bin\Debug\netcoreapp2.2\QLCBCore.Views.pdb
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.Views.pdb
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.dll
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.pdb
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.csproj.CopyComplete
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBoes\Create.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBoes\Delete.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBoes\Details.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBoes\Edit.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBoes\Index.g.cshtml.cs

@@ -7,6 +7,8 @@ namespace QLCBCore.Models
 {
     public class CanBo
     {
-        public string HoTen;
+        public int ID { get; set; }
+        public string HoTen { get; set; }
+        public int DonViID { get; set; }
     }
 }
