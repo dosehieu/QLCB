@@ -65,7 +65,7 @@ namespace QLCBCore
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=CanBoes}/{action=Index}/{id?}");
+                    template: "{controller=dmDonVis}/{action=Index}/{id?}");
             });
         }
     }

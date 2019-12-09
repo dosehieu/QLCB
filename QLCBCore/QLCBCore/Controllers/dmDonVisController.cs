@@ -9,22 +9,22 @@ using QLCBCore.Models;
 
 namespace QLCBCore.Controllers
 {
-    public class CanBoesController : Controller
+    public class dmDonVisController : Controller
     {
         private readonly QLCBDbContext _context;
 
-        public CanBoesController(QLCBDbContext context)
+        public dmDonVisController(QLCBDbContext context)
         {
             _context = context;
         }
 
-        // GET: CanBoes
+        // GET: dmDonVis
         public async Task<IActionResult> Index()
         {
-            return View(await _context.CanBos.ToListAsync());
+            return View(await _context.dmDonVis.ToListAsync());
         }
 
-        // GET: CanBoes/Details/5
+        // GET: dmDonVis/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -32,39 +32,39 @@ namespace QLCBCore.Controllers
                 return NotFound();
             }
 
-            var canBo = await _context.CanBos
+            var dmDonVi = await _context.dmDonVis
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (canBo == null)
+            if (dmDonVi == null)
             {
                 return NotFound();
             }
 
-            return View(canBo);
+            return View(dmDonVi);
         }
 
-        // GET: CanBoes/Create
+        // GET: dmDonVis/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: CanBoes/Create
+        // POST: dmDonVis/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,HoTen,DonViID")] CanBo canBo)
+        public async Task<IActionResult> Create([Bind("ID,MaDonVi,TenDonVi,RegionID,MaCha,Leve,STT,TenVietTat,KieuDonvi,DonViAllID,IsDeleted")] dmDonVi dmDonVi)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(canBo);
+                _context.Add(dmDonVi);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(canBo);
+            return View(dmDonVi);
         }
 
-        // GET: CanBoes/Edit/5
+        // GET: dmDonVis/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,22 +72,22 @@ namespace QLCBCore.Controllers
                 return NotFound();
             }
 
-            var canBo = await _context.CanBos.FindAsync(id);
-            if (canBo == null)
+            var dmDonVi = await _context.dmDonVis.FindAsync(id);
+            if (dmDonVi == null)
             {
                 return NotFound();
             }
-            return View(canBo);
+            return View(dmDonVi);
         }
 
-        // POST: CanBoes/Edit/5
+        // POST: dmDonVis/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,HoTen,DonViID")] CanBo canBo)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,MaDonVi,TenDonVi,RegionID,MaCha,Leve,STT,TenVietTat,KieuDonvi,DonViAllID,IsDeleted")] dmDonVi dmDonVi)
         {
-            if (id != canBo.ID)
+            if (id != dmDonVi.ID)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace QLCBCore.Controllers
             {
                 try
                 {
-                    _context.Update(canBo);
+                    _context.Update(dmDonVi);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CanBoExists(canBo.ID))
+                    if (!dmDonViExists(dmDonVi.ID))
                     {
                         return NotFound();
                     }
@@ -112,10 +112,10 @@ namespace QLCBCore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(canBo);
+            return View(dmDonVi);
         }
 
-        // GET: CanBoes/Delete/5
+        // GET: dmDonVis/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,30 +123,30 @@ namespace QLCBCore.Controllers
                 return NotFound();
             }
 
-            var canBo = await _context.CanBos
+            var dmDonVi = await _context.dmDonVis
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (canBo == null)
+            if (dmDonVi == null)
             {
                 return NotFound();
             }
 
-            return View(canBo);
+            return View(dmDonVi);
         }
 
-        // POST: CanBoes/Delete/5
+        // POST: dmDonVis/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var canBo = await _context.CanBos.FindAsync(id);
-            _context.CanBos.Remove(canBo);
+            var dmDonVi = await _context.dmDonVis.FindAsync(id);
+            _context.dmDonVis.Remove(dmDonVi);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CanBoExists(int id)
+        private bool dmDonViExists(int id)
         {
-            return _context.CanBos.Any(e => e.ID == id);
+            return _context.dmDonVis.Any(e => e.ID == id);
         }
     }
 }

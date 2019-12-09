@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QLCBCore.Models;
 
 namespace QLCBCore.Migrations
 {
     [DbContext(typeof(QLCBDbContext))]
-    partial class QLCBDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191208172951_add-migration f1")]
+    partial class addmigrationf1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
