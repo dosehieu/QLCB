@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<ul class="nav navbar-nav pull-right">
+    <li class="dropdown dropdown-user dropdown-dark">
+        <span class="donvi">Đơn vị: <%=CurrentUser.DonVi%></span>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+            <span class="username">hieu</span>
+            <input id="DonViID_Current" style="display: none" value="DonViID" />
+            <i style="color: #221181" class="fa fa-angle-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-default">
+            
+            <li><a href="#" id="btnChangePassword">Đổi mật khẩu </a></li>
+            <li><a href="/Logout.aspx">Đăng xuất </a></li>
+        </ul>
+    </li>
+</ul>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnChangePassword').on('click', function (ev) {
+            var urlFormChangePass = "/HeThong/NguoiDung/AjaxFormChangePass.aspx?ItemID==CurrentUser.ID";
+            ev.preventDefault();
+            $('body').modalmanager('loading');
+            $('#dialog-form').load(urlFormChangePass, function () {
+                $('#dialog-form').modal({ width: 600 });
+            });
+        });
+    });
+</script>

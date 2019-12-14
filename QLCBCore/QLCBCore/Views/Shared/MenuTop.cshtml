@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+    <ul class="nav navbar-nav flex-grow-1">
+        
+        <li class="nav-item">
+            <a href="/Default.aspx">Trang chủ</a>
+        </li>
+        @*<%if (CheckQuyen(CurrentUser.QuyenHan, (int)QLCB.Utils.Enum.QuyenHan.Quanlyhosocanbo))
+        { %>*@
+        <li class="menu-dropdown classic-menu-dropdown">
+            <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;" aria-expanded="false">
+                Hồ sơ cán bộ <i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu pull-left">
+                @*<%if (CheckQuyen(CurrentUser.QuyenHan, (int)QLCB.Utils.Enum.QuyenHan.Hosocanbo))
+            { %>*@
+                <li class="">
+                    <a href="/HoSoCanBo/Default.aspx">Hồ sơ CB</a>
+                </li>
+                @*<%} %>*@
+                @*<%if (CheckQuyen(CurrentUser.QuyenHan, (int)QLCB.Utils.Enum.QuyenHan.Quanlytuyendung))
+            { %>*@
+            </ul>
+        </li>
+    </ul>
+

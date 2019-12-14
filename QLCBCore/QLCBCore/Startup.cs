@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,7 +34,45 @@ namespace QLCBCore
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddAuthentication("DemoSecurityScheme")
+    .AddCookie("DemoSecurityScheme", options =>
+    {
+        options.AccessDeniedPath = new PathString("/Account/Access");
+        options.Cookie = new CookieBuilder
+        {
+            //Domain = "",
+            HttpOnly = true,
+            Name = ".aspNetCoreDemo.Security.Cookie",
+            Path = "/",
+            SameSite = SameSiteMode.Lax,
+            SecurePolicy = CookieSecurePolicy.SameAsRequest
+        };
+        options.Events = new CookieAuthenticationEvents
+        {
+            OnSignedIn = context =>
+            {
+                Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
+                    "OnSignedIn", context.Principal.Identity.Name);
+                return Task.CompletedTask;
+            },
+            OnSigningOut = context =>
+            {
+                Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
+                    "OnSigningOut", context.HttpContext.User.Identity.Name);
+                return Task.CompletedTask;
+            },
+            OnValidatePrincipal = context =>
+            {
+                Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
+                    "OnValidatePrincipal", context.Principal.Identity.Name);
+                return Task.CompletedTask;
+            }
+        };
+        //options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+        options.LoginPath = new PathString("/Account/Login");
+        options.ReturnUrlParameter = "RequestPath";
+        options.SlidingExpiration = true;
+    });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<QLCBDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
         }
@@ -56,7 +95,7 @@ namespace QLCBCore
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -65,7 +104,7 @@ namespace QLCBCore
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=dmDonVis}/{action=Index}/{id?}");
+                    template: "{controller=Account}/{action=Index}/{id?}");
             });
         }
     }

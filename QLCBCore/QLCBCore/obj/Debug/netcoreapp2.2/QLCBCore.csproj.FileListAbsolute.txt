@@ -33,3 +33,6 @@ C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\View
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\dmDonVis\Details.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\dmDonVis\Edit.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\dmDonVis\Index.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\TopNavigation.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\MenuTop.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Account\Index.g.cshtml.cs
