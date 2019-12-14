@@ -18,17 +18,6 @@
   <ItemGroup>
     <Folder Include="Business\" />
     <Folder Include="Base\" />
-    <Folder Include="Publishing_Resources\FullCalendar\" />
-    <Folder Include="Publishing_Resources\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
-    <Folder Include="Publishing_Resources\global\plugins\ckfinder\bin\Debug\" />
-    <Folder Include="Publishing_Resources\global\plugins\ckfinder\bin\Release\" />
-    <Folder Include="Publishing_Resources\global\plugins\ckfinder\plugins\fileeditor\bin\Debug\" />
-    <Folder Include="Publishing_Resources\global\plugins\ckfinder\plugins\fileeditor\bin\Release\" />
-    <Folder Include="Publishing_Resources\global\plugins\ckfinder\plugins\imageresize\bin\Release\" />
-    <Folder Include="Publishing_Resources\global\plugins\ckfinder\plugins\watermark\bin\Debug\" />
-    <Folder Include="Publishing_Resources\global\plugins\ckfinder\plugins\watermark\bin\Release\" />
-    <Folder Include="Publishing_Resources\img\SG31\logo-nhnn\" />
-    <Folder Include="Publishing_Resources\plugin\WebTwain\" />
   </ItemGroup>
 
 </Project>
