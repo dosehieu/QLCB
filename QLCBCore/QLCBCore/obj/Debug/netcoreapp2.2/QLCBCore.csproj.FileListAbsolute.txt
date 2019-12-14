@@ -36,3 +36,10 @@ C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\View
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\TopNavigation.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\MenuTop.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Account\Index.g.cshtml.cs
+E:\chuyende1_qlcb\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.csprojAssemblyReference.cache
+E:\chuyende1_qlcb\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.RazorAssemblyInfo.cache
+E:\chuyende1_qlcb\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.RazorAssemblyInfo.cs
+E:\chuyende1_qlcb\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.AssemblyInfoInputs.cache
+E:\chuyende1_qlcb\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.AssemblyInfo.cs
+E:\chuyende1_qlcb\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.dll
+E:\chuyende1_qlcb\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.pdb

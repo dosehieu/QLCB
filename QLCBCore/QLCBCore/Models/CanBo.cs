@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,8 +11,13 @@ namespace QLCBCore.Models
     {
         public int ID { get; set; } // ID (Primary key)
         public string Ma { get; set; } // Ma (length: 50)
-
+        
+        //[Required(AllowEmptyStrings = true, ErrorMessage = "Không để trống")]
+        //[Display(Name = "Số hiệu")]
+        //[MaxLength(50)]
+        //[Column("SOHIEU", TypeName = "nvarchar")]
         public string SoHieu { get; set; } // SoHieu (length: 50)
+
         public string HoTen { get; set; } // HoTen (length: 100)
         public string TenGoiKhac { get; set; } // TenGoiKhac (length: 100)
         public System.DateTime? NgaySinh { get; set; } // NgaySinh
