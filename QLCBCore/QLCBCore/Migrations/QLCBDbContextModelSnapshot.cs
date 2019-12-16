@@ -25,21 +25,11 @@ namespace QLCBCore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool?>("AnNinhQP");
-
                     b.Property<int?>("BacLuong");
 
                     b.Property<string>("CMTND");
 
-                    b.Property<int?>("CanNang");
-
-                    b.Property<int?>("ChieuCao");
-
-                    b.Property<int?>("ChucDanhKhoaHocID");
-
                     b.Property<int?>("ChucVuID");
-
-                    b.Property<int?>("ChuyenNganhID");
 
                     b.Property<string>("CongViecChinh");
 
@@ -53,8 +43,6 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("DonviOldID");
 
-                    b.Property<int?>("DotTuyenDungID");
-
                     b.Property<string>("Email");
 
                     b.Property<string>("GhiChu");
@@ -65,21 +53,15 @@ namespace QLCBCore.Migrations
 
                     b.Property<string>("HKTT");
 
-                    b.Property<double?>("HSCLBL");
-
                     b.Property<int?>("HangThuongBinhID");
 
                     b.Property<double?>("HeSo");
 
                     b.Property<string>("HinhAnh");
 
-                    b.Property<int?>("HinhThucTDID");
-
                     b.Property<string>("HoTen");
 
                     b.Property<bool?>("IsDeleted");
-
-                    b.Property<bool?>("IsShow");
 
                     b.Property<string>("KhenThuong");
 
@@ -88,8 +70,6 @@ namespace QLCBCore.Migrations
                     b.Property<string>("KyLuat");
 
                     b.Property<string>("LichSuBanThan");
-
-                    b.Property<int?>("LyLuanChinhTriID");
 
                     b.Property<string>("Ma");
 
@@ -111,15 +91,9 @@ namespace QLCBCore.Migrations
 
                     b.Property<DateTime?>("NgayNghiHuu");
 
-                    b.Property<DateTime?>("NgayNhapNgu");
-
-                    b.Property<DateTime?>("NgayPhongHocHam");
-
                     b.Property<DateTime?>("NgaySinh");
 
                     b.Property<DateTime?>("NgayTD");
-
-                    b.Property<DateTime?>("NgayThamGiaBHXH");
 
                     b.Property<DateTime?>("NgayThoiViec");
 
@@ -131,23 +105,11 @@ namespace QLCBCore.Migrations
 
                     b.Property<DateTime?>("NgayVe");
 
-                    b.Property<DateTime?>("NgayXuatNgu");
-
                     b.Property<int?>("NgheNghiepID");
-
-                    b.Property<int?>("NgoaiNguID");
-
-                    b.Property<int?>("NgoaiNguKhacID");
 
                     b.Property<string>("NhanXetDanhGia");
 
-                    b.Property<int?>("NhomMauID");
-
                     b.Property<string>("NoiCapCMT");
-
-                    b.Property<string>("NoiCapSoBHXH");
-
-                    b.Property<string>("NoiDKBHYT");
 
                     b.Property<string>("NoiO");
 
@@ -155,37 +117,19 @@ namespace QLCBCore.Migrations
 
                     b.Property<double?>("PhuCapChucVu");
 
-                    b.Property<double?>("PhuCapKhac");
-
-                    b.Property<int?>("QuanHamCaoNhatID");
-
-                    b.Property<int?>("QuanLyNNID");
-
                     b.Property<string>("QueQuanID");
 
                     b.Property<string>("RegionID");
 
-                    b.Property<string>("SoBHXH");
-
-                    b.Property<string>("SoBHYT");
-
                     b.Property<string>("SoHieu");
-
-                    b.Property<string>("SoTruongCongTac");
-
-                    b.Property<int?>("SucKhoeID");
 
                     b.Property<int?>("TDPhoThongID");
 
                     b.Property<string>("TenGoiKhac");
 
-                    b.Property<int?>("TinHocID");
-
                     b.Property<int?>("TonGiaoID");
 
                     b.Property<int?>("TrangThai");
-
-                    b.Property<bool?>("TrangThaiTBNH");
 
                     b.Property<int?>("TrinhDoID");
 
@@ -227,24 +171,21 @@ namespace QLCBCore.Migrations
                             ID = 1,
                             HoTen = "John",
                             IsDeleted = false,
-                            IsShow = true,
-                            NgayCapNhat = new DateTime(2019, 12, 9, 0, 29, 50, 261, DateTimeKind.Local).AddTicks(9112)
+                            NgayCapNhat = new DateTime(2019, 12, 17, 0, 9, 23, 840, DateTimeKind.Local).AddTicks(967)
                         },
                         new
                         {
                             ID = 2,
                             HoTen = "Chris",
                             IsDeleted = false,
-                            IsShow = true,
-                            NgayCapNhat = new DateTime(2019, 12, 9, 0, 29, 50, 262, DateTimeKind.Local).AddTicks(9681)
+                            NgayCapNhat = new DateTime(2019, 12, 17, 0, 9, 23, 841, DateTimeKind.Local).AddTicks(3157)
                         },
                         new
                         {
                             ID = 3,
                             HoTen = "Mukesh",
                             IsDeleted = false,
-                            IsShow = true,
-                            NgayCapNhat = new DateTime(2019, 12, 9, 0, 29, 50, 262, DateTimeKind.Local).AddTicks(9713)
+                            NgayCapNhat = new DateTime(2019, 12, 17, 0, 9, 23, 841, DateTimeKind.Local).AddTicks(3186)
                         });
                 });
 
@@ -382,6 +323,33 @@ namespace QLCBCore.Migrations
                     b.HasIndex("dmNgachID");
 
                     b.ToTable("DienBienNgachBacs");
+                });
+
+            modelBuilder.Entity("QLCBCore.Models.NguoiDung", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime?>("Birthday");
+
+                    b.Property<int?>("DonViID");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("FullName");
+
+                    b.Property<bool?>("Gender");
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("NguoiDungs");
                 });
 
             modelBuilder.Entity("QLCBCore.Models.QTCongTac", b =>

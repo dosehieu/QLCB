@@ -2,18 +2,40 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using QLCBCore.Models;
 using QLCBCore.ViewModels;
 
 namespace QLCBCore.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly QLCBDbContext _context;
+        public AccountController(QLCBDbContext context)
+        {
+            _context = context;
+        }
         private bool IsAuthenticated(string username, string password)
         {
-            return (username == "hieu" && password == "123");
+            //Tạo MD5 
+            MD5 mh = MD5.Create();
+            //Chuyển kiểu chuổi thành kiểu byte
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(password);
+            //mã hóa chuỗi đã chuyển
+            byte[] hash = mh.ComputeHash(inputBytes);
+            //tạo đối tượng StringBuilder (làm việc với kiểu dữ liệu lớn)
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i].ToString("X2"));
+            }
+            string PasswordHash = sb.ToString();
+            return _context.NguoiDungs.SingleOrDefault(n => n.UserName == username && n.Password == PasswordHash)!=null;
         }
         public IActionResult Index()
         {

@@ -31,6 +31,7 @@ namespace QLCBCore.Models
         public DbSet<QTKhenThuong> QTKhenThuongs { get; set; }
         public DbSet<QTKyLuat> QTKyLuats { get; set; }
         public DbSet<QuanHeGiaDinh> QuanHeGiaDinhs { get; set; }
+        public DbSet<NguoiDung> NguoiDungs { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CanBo>().HasData(
