@@ -1,0 +1,270 @@
+﻿@model QLCBCore.ViewModels.CreateCanBoVM
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#DanTocID').select2();
+
+    });
+</script>
+<h1>Thêm mới Cán bộ</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CanBo.Ma" class="control-label"></label>
+                <input asp-for="CanBo.Ma" class="form-control" />
+                <span asp-validation-for="CanBo.Ma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.SoHieu" class="control-label"></label>
+                <input asp-for="CanBo.SoHieu" class="form-control" />
+                <span asp-validation-for="CanBo.SoHieu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.HoTen" class="control-label"></label>
+                <input asp-for="CanBo.HoTen" class="form-control" />
+                <span asp-validation-for="CanBo.HoTen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.TenGoiKhac" class="control-label"></label>
+                <input asp-for="CanBo.TenGoiKhac" class="form-control" />
+                <span asp-validation-for="CanBo.TenGoiKhac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.GioiTinh" class="control-label"></label>
+                <input asp-for="CanBo.GioiTinh" class="form-control" />
+                <span asp-validation-for="CanBo.GioiTinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NgaySinh" class="control-label"></label>
+                <input asp-for="CanBo.NgaySinh" class="form-control" />
+                <span asp-validation-for="CanBo.NgaySinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.DanTocID" class="control-label"></label>
+                <select id="DanTocID" name="DanTocID" asp-items="Model.LstDanToc"></select>
+                @*<input asp-for="CanBo.DanTocID" class="form-control" />*@
+                @*<span asp-validation-for="CanBo.DanTocID" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.TonGiaoID" class="control-label"></label>
+                <input asp-for="CanBo.TonGiaoID" class="form-control" />
+                <span asp-validation-for="CanBo.TonGiaoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.DonViID" class="control-label"></label>
+                <input asp-for="CanBo.DonViID" class="form-control" />
+                <span asp-validation-for="CanBo.DonViID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.TrangThai" class="control-label"></label>
+                <input asp-for="CanBo.TrangThai" class="form-control" />
+                <span asp-validation-for="CanBo.TrangThai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.DienThoai" class="control-label"></label>
+                <input asp-for="CanBo.DienThoai" class="form-control" />
+                <span asp-validation-for="CanBo.DienThoai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.Email" class="control-label"></label>
+                <input asp-for="CanBo.Email" class="form-control" />
+                <span asp-validation-for="CanBo.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.CMTND" class="control-label"></label>
+                <input asp-for="CanBo.CMTND" class="form-control" />
+                <span asp-validation-for="CanBo.CMTND" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NgayCapCMT" class="control-label"></label>
+                <input asp-for="CanBo.NgayCapCMT" class="form-control" />
+                <span asp-validation-for="CanBo.NgayCapCMT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NoiCapCMT" class="control-label"></label>
+                <input asp-for="CanBo.NoiCapCMT" class="form-control" />
+                <span asp-validation-for="CanBo.NoiCapCMT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NoiSinhID" class="control-label"></label>
+                <input asp-for="CanBo.NoiSinhID" class="form-control" />
+                <span asp-validation-for="CanBo.NoiSinhID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.QueQuanID" class="control-label"></label>
+                <input asp-for="CanBo.QueQuanID" class="form-control" />
+                <span asp-validation-for="CanBo.QueQuanID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.HKTT" class="control-label"></label>
+                <input asp-for="CanBo.HKTT" class="form-control" />
+                <span asp-validation-for="CanBo.HKTT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NoiO" class="control-label"></label>
+                <input asp-for="CanBo.NoiO" class="form-control" />
+                <span asp-validation-for="CanBo.NoiO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.TDPhoThongID" class="control-label"></label>
+                <input asp-for="CanBo.TDPhoThongID" class="form-control" />
+                <span asp-validation-for="CanBo.TDPhoThongID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.ChucDanhKhoaHocID" class="control-label"></label>
+                <input asp-for="CanBo.ChucDanhKhoaHocID" class="form-control" />
+                <span asp-validation-for="CanBo.ChucDanhKhoaHocID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.HinhAnh" class="control-label"></label>
+                <input asp-for="CanBo.HinhAnh" class="form-control" />
+                <span asp-validation-for="CanBo.HinhAnh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NgheNghiepID" class="control-label"></label>
+                <input asp-for="CanBo.NgheNghiepID" class="form-control" />
+                <span asp-validation-for="CanBo.NgheNghiepID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.CoquanTuyenDung" class="control-label"></label>
+                <input asp-for="CanBo.CoquanTuyenDung" class="form-control" />
+                <span asp-validation-for="CanBo.CoquanTuyenDung" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NgayTuyen" class="control-label"></label>
+                <input asp-for="CanBo.NgayTuyen" class="form-control" />
+                <span asp-validation-for="CanBo.NgayTuyen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NgayVeCQ" class="control-label"></label>
+                <input asp-for="CanBo.NgayVeCQ" class="form-control" />
+                <span asp-validation-for="CanBo.NgayVeCQ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.HinhThucThiTuyenID" class="control-label"></label>
+                <input asp-for="CanBo.HinhThucThiTuyenID" class="form-control" />
+                <span asp-validation-for="CanBo.HinhThucThiTuyenID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.KieuCanBo" class="control-label"></label>
+                <input asp-for="CanBo.KieuCanBo" class="form-control" />
+                <span asp-validation-for="CanBo.KieuCanBo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NgayHetHanHD" class="control-label"></label>
+                <input asp-for="CanBo.NgayHetHanHD" class="form-control" />
+                <span asp-validation-for="CanBo.NgayHetHanHD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.CongViecDuocGiao" class="control-label"></label>
+                <input asp-for="CanBo.CongViecDuocGiao" class="form-control" />
+                <span asp-validation-for="CanBo.CongViecDuocGiao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.SoTruongCongTac" class="control-label"></label>
+                <input asp-for="CanBo.SoTruongCongTac" class="form-control" />
+                <span asp-validation-for="CanBo.SoTruongCongTac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NgayVaoDang" class="control-label"></label>
+                <input asp-for="CanBo.NgayVaoDang" class="form-control" />
+                <span asp-validation-for="CanBo.NgayVaoDang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NgayChinhThuc" class="control-label"></label>
+                <input asp-for="CanBo.NgayChinhThuc" class="form-control" />
+                <span asp-validation-for="CanBo.NgayChinhThuc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NgayNhapNgu" class="control-label"></label>
+                <input asp-for="CanBo.NgayNhapNgu" class="form-control" />
+                <span asp-validation-for="CanBo.NgayNhapNgu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NgayXuatNgu" class="control-label"></label>
+                <input asp-for="CanBo.NgayXuatNgu" class="form-control" />
+                <span asp-validation-for="CanBo.NgayXuatNgu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.QuanHamCaoNhatID" class="control-label"></label>
+                <input asp-for="CanBo.QuanHamCaoNhatID" class="form-control" />
+                <span asp-validation-for="CanBo.QuanHamCaoNhatID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.HangThuongBinhID" class="control-label"></label>
+                <input asp-for="CanBo.HangThuongBinhID" class="form-control" />
+                <span asp-validation-for="CanBo.HangThuongBinhID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.GiaDinhCSID" class="control-label"></label>
+                <input asp-for="CanBo.GiaDinhCSID" class="form-control" />
+                <span asp-validation-for="CanBo.GiaDinhCSID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.SucKhoeID" class="control-label"></label>
+                <input asp-for="CanBo.SucKhoeID" class="form-control" />
+                <span asp-validation-for="CanBo.SucKhoeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.ChieuCao" class="control-label"></label>
+                <input asp-for="CanBo.ChieuCao" class="form-control" />
+                <span asp-validation-for="CanBo.ChieuCao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.CanNang" class="control-label"></label>
+                <input asp-for="CanBo.CanNang" class="form-control" />
+                <span asp-validation-for="CanBo.CanNang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NhomMauID" class="control-label"></label>
+                <input asp-for="CanBo.NhomMauID" class="form-control" />
+                <span asp-validation-for="CanBo.NhomMauID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.SoBHXH" class="control-label"></label>
+                <input asp-for="CanBo.SoBHXH" class="form-control" />
+                <span asp-validation-for="CanBo.SoBHXH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NoiCapSoBHXH" class="control-label"></label>
+                <input asp-for="CanBo.NoiCapSoBHXH" class="form-control" />
+                <span asp-validation-for="CanBo.NoiCapSoBHXH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.SoBHYT" class="control-label"></label>
+                <input asp-for="CanBo.SoBHYT" class="form-control" />
+                <span asp-validation-for="CanBo.SoBHYT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.LichSuBanThan" class="control-label"></label>
+                <input asp-for="CanBo.LichSuBanThan" class="form-control" />
+                <span asp-validation-for="CanBo.LichSuBanThan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.GhiChu" class="control-label"></label>
+                <input asp-for="CanBo.GhiChu" class="form-control" />
+                <span asp-validation-for="CanBo.GhiChu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CanBo.NhanXetDanhGia" class="control-label"></label>
+                <input asp-for="CanBo.NhanXetDanhGia" class="form-control" />
+                <span asp-validation-for="CanBo.NhanXetDanhGia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <button asp-action="Index">Back to List</button>
+</div>
+

@@ -35,6 +35,7 @@ namespace QLCBCore.Controllers
                 sb.Append(hash[i].ToString("X2"));
             }
             string PasswordHash = sb.ToString();
+            //E10ADC3949BA59ABBE56E057F20F883E
             return _context.NguoiDungs.SingleOrDefault(n => n.UserName == username && n.Password == PasswordHash)!=null;
         }
         public IActionResult Index()

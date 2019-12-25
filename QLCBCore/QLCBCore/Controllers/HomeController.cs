@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using QLCBCore.Models;
+using QLCBCore.ViewModels;
 
 namespace QLCBCore.Controllers
 {

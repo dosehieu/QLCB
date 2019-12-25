@@ -27,37 +27,56 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("BacLuong");
 
-                    b.Property<string>("CMTND");
+                    b.Property<string>("CMTND")
+                        .HasMaxLength(15);
+
+                    b.Property<int?>("CanNang");
+
+                    b.Property<int?>("ChieuCao");
+
+                    b.Property<int?>("ChucDanhKhoaHocID");
 
                     b.Property<int?>("ChucVuID");
 
                     b.Property<string>("CongViecChinh");
 
+                    b.Property<string>("CongViecDuocGiao");
+
+                    b.Property<string>("CoquanTuyenDung")
+                        .HasMaxLength(100);
+
                     b.Property<int?>("DanTocID");
 
                     b.Property<int?>("DanhHieuCaoNhatID");
 
-                    b.Property<string>("DienThoai");
+                    b.Property<string>("DienThoai")
+                        .HasMaxLength(15);
 
                     b.Property<int?>("DonViID");
 
                     b.Property<int?>("DonviOldID");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .HasMaxLength(250);
 
-                    b.Property<string>("GhiChu");
+                    b.Property<string>("GhiChu")
+                        .HasMaxLength(250);
 
                     b.Property<int?>("GiaDinhCSID");
 
                     b.Property<bool?>("GioiTinh");
 
-                    b.Property<string>("HKTT");
+                    b.Property<string>("HKTT")
+                        .HasMaxLength(300);
 
                     b.Property<int?>("HangThuongBinhID");
 
                     b.Property<double?>("HeSo");
 
-                    b.Property<string>("HinhAnh");
+                    b.Property<string>("HinhAnh")
+                        .HasMaxLength(150);
+
+                    b.Property<int?>("HinhThucThiTuyenID");
 
                     b.Property<string>("HoTen");
 
@@ -69,7 +88,8 @@ namespace QLCBCore.Migrations
 
                     b.Property<string>("KyLuat");
 
-                    b.Property<string>("LichSuBanThan");
+                    b.Property<string>("LichSuBanThan")
+                        .HasMaxLength(2000);
 
                     b.Property<string>("Ma");
 
@@ -91,6 +111,8 @@ namespace QLCBCore.Migrations
 
                     b.Property<DateTime?>("NgayNghiHuu");
 
+                    b.Property<DateTime?>("NgayNhapNgu");
+
                     b.Property<DateTime?>("NgaySinh");
 
                     b.Property<DateTime?>("NgayTD");
@@ -101,27 +123,57 @@ namespace QLCBCore.Migrations
 
                     b.Property<DateTime?>("NgayTuTran");
 
+                    b.Property<DateTime?>("NgayTuyen");
+
                     b.Property<DateTime?>("NgayVaoDang");
 
                     b.Property<DateTime?>("NgayVe");
 
+                    b.Property<DateTime?>("NgayVeCQ");
+
+                    b.Property<DateTime?>("NgayXuatNgu");
+
                     b.Property<int?>("NgheNghiepID");
 
-                    b.Property<string>("NhanXetDanhGia");
+                    b.Property<string>("NhanXetDanhGia")
+                        .HasMaxLength(500);
 
-                    b.Property<string>("NoiCapCMT");
+                    b.Property<int?>("NhomMauID");
 
-                    b.Property<string>("NoiO");
+                    b.Property<string>("NoiCapCMT")
+                        .HasMaxLength(300);
 
-                    b.Property<string>("NoiSinhID");
+                    b.Property<string>("NoiCapSoBHXH")
+                        .HasMaxLength(250);
+
+                    b.Property<string>("NoiO")
+                        .HasMaxLength(300);
+
+                    b.Property<string>("NoiSinhID")
+                        .HasMaxLength(500);
 
                     b.Property<double?>("PhuCapChucVu");
 
-                    b.Property<string>("QueQuanID");
+                    b.Property<double?>("PhuCapKhac");
+
+                    b.Property<int?>("QuanHamCaoNhatID");
+
+                    b.Property<string>("QueQuanID")
+                        .HasMaxLength(500);
 
                     b.Property<string>("RegionID");
 
+                    b.Property<string>("SoBHXH")
+                        .HasMaxLength(30);
+
+                    b.Property<string>("SoBHYT")
+                        .HasMaxLength(30);
+
                     b.Property<string>("SoHieu");
+
+                    b.Property<string>("SoTruongCongTac");
+
+                    b.Property<int?>("SucKhoeID");
 
                     b.Property<int?>("TDPhoThongID");
 
@@ -133,6 +185,8 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("TrinhDoID");
 
+                    b.Property<int?>("dmChucDanhKhoaHocID");
+
                     b.Property<int?>("dmDanTocID");
 
                     b.Property<int?>("dmDonViID");
@@ -143,11 +197,17 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("dmNgheNghiepID");
 
+                    b.Property<int?>("dmNhomMauID");
+
+                    b.Property<int?>("dmQuanHamID");
+
                     b.Property<int?>("dmTonGiaoID");
 
                     b.Property<int?>("dmTrinhDoPTID");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("dmChucDanhKhoaHocID");
 
                     b.HasIndex("dmDanTocID");
 
@@ -159,6 +219,10 @@ namespace QLCBCore.Migrations
 
                     b.HasIndex("dmNgheNghiepID");
 
+                    b.HasIndex("dmNhomMauID");
+
+                    b.HasIndex("dmQuanHamID");
+
                     b.HasIndex("dmTonGiaoID");
 
                     b.HasIndex("dmTrinhDoPTID");
@@ -169,23 +233,23 @@ namespace QLCBCore.Migrations
                         new
                         {
                             ID = 1,
-                            HoTen = "John",
+                            HoTen = "Nguyễn Việt Hiếu",
                             IsDeleted = false,
-                            NgayCapNhat = new DateTime(2019, 12, 17, 0, 9, 23, 840, DateTimeKind.Local).AddTicks(967)
+                            NgayCapNhat = new DateTime(2019, 12, 22, 15, 51, 13, 812, DateTimeKind.Local).AddTicks(6740)
                         },
                         new
                         {
                             ID = 2,
-                            HoTen = "Chris",
+                            HoTen = "Nguyễn Quang Huy",
                             IsDeleted = false,
-                            NgayCapNhat = new DateTime(2019, 12, 17, 0, 9, 23, 841, DateTimeKind.Local).AddTicks(3157)
+                            NgayCapNhat = new DateTime(2019, 12, 22, 15, 51, 13, 814, DateTimeKind.Local).AddTicks(3983)
                         },
                         new
                         {
                             ID = 3,
-                            HoTen = "Mukesh",
+                            HoTen = "Ngoo Ngọc Anh",
                             IsDeleted = false,
-                            NgayCapNhat = new DateTime(2019, 12, 17, 0, 9, 23, 841, DateTimeKind.Local).AddTicks(3186)
+                            NgayCapNhat = new DateTime(2019, 12, 22, 15, 51, 13, 814, DateTimeKind.Local).AddTicks(4013)
                         });
                 });
 
@@ -206,8 +270,6 @@ namespace QLCBCore.Migrations
                     b.Property<bool?>("IsDangDoan");
 
                     b.Property<bool?>("IsDeleted");
-
-                    b.Property<bool?>("IsShow");
 
                     b.Property<DateTime?>("NgayBoNhiem");
 
@@ -261,8 +323,6 @@ namespace QLCBCore.Migrations
                     b.Property<decimal?>("HeSoChenhLechBaoLuu");
 
                     b.Property<bool?>("IsDeleted");
-
-                    b.Property<bool?>("IsShow");
 
                     b.Property<int?>("Kieu");
 
@@ -428,8 +488,6 @@ namespace QLCBCore.Migrations
 
                     b.Property<bool?>("IsDeleted");
 
-                    b.Property<bool?>("IsShow");
-
                     b.Property<byte?>("KyLuatID");
 
                     b.Property<DateTime?>("NgayKyLuat");
@@ -494,6 +552,21 @@ namespace QLCBCore.Migrations
                     b.HasIndex("dmQuanHeGiaDinhID");
 
                     b.ToTable("QuanHeGiaDinhs");
+                });
+
+            modelBuilder.Entity("QLCBCore.Models.dmChucDanhKhoaHoc", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("TenChucDanhKhoaHoc");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("dmChucDanhKhoaHoc");
                 });
 
             modelBuilder.Entity("QLCBCore.Models.dmChucVu", b =>
@@ -640,6 +713,36 @@ namespace QLCBCore.Migrations
                     b.ToTable("dmHinhThucKhenThuongs");
                 });
 
+            modelBuilder.Entity("QLCBCore.Models.dmHinhThucThiTuyen", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("TenHinhThucTD");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("dmHinhThucThiTuyens");
+                });
+
+            modelBuilder.Entity("QLCBCore.Models.dmHocHam", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("TenHocHam");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("dmHocHams");
+                });
+
             modelBuilder.Entity("QLCBCore.Models.dmKyLuat", b =>
                 {
                     b.Property<byte>("ID");
@@ -697,6 +800,36 @@ namespace QLCBCore.Migrations
                     b.ToTable("dmNgheNghieps");
                 });
 
+            modelBuilder.Entity("QLCBCore.Models.dmNhomMau", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("TenNhomMau");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("dmNhomMaus");
+                });
+
+            modelBuilder.Entity("QLCBCore.Models.dmQuanHam", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("TenQuanHam");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("dmQuanHams");
+                });
+
             modelBuilder.Entity("QLCBCore.Models.dmQuanHeGiaDinh", b =>
                 {
                     b.Property<int>("ID")
@@ -712,6 +845,21 @@ namespace QLCBCore.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("dmQuanHeGiaDinhs");
+                });
+
+            modelBuilder.Entity("QLCBCore.Models.dmTinhTrangSucKhoe", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("TenTTSK");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("dmTinhTrangSucKhoes");
                 });
 
             modelBuilder.Entity("QLCBCore.Models.dmTonGiao", b =>
@@ -746,6 +894,10 @@ namespace QLCBCore.Migrations
 
             modelBuilder.Entity("QLCBCore.Models.CanBo", b =>
                 {
+                    b.HasOne("QLCBCore.Models.dmChucDanhKhoaHoc", "dmChucDanhKhoaHoc")
+                        .WithMany()
+                        .HasForeignKey("dmChucDanhKhoaHocID");
+
                     b.HasOne("QLCBCore.Models.dmDanToc", "dmDanToc")
                         .WithMany("CanBo")
                         .HasForeignKey("dmDanTocID");
@@ -765,6 +917,14 @@ namespace QLCBCore.Migrations
                     b.HasOne("QLCBCore.Models.dmNgheNghiep", "dmNgheNghiep")
                         .WithMany("CanBo")
                         .HasForeignKey("dmNgheNghiepID");
+
+                    b.HasOne("QLCBCore.Models.dmNhomMau", "dmNhomMau")
+                        .WithMany("CanBo")
+                        .HasForeignKey("dmNhomMauID");
+
+                    b.HasOne("QLCBCore.Models.dmQuanHam", "dmQuanHam")
+                        .WithMany()
+                        .HasForeignKey("dmQuanHamID");
 
                     b.HasOne("QLCBCore.Models.dmTonGiao", "dmTonGiao")
                         .WithMany("CanBo")
