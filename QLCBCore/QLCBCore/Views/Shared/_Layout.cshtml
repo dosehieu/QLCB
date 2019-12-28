@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Select 2 -->
     <link href="~/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- Select 2 -->
+    <link href="~/Layout/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
     <!-- Font Awesome -->
 
     <link href="~/Layout/plugins/fontawesome-free/css/all.css" rel="stylesheet" />
@@ -28,7 +30,7 @@
     <link href="~/Layout/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet" />
     <!-- Daterange picker -->
 
-    <link href="~/Layout/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    @*<link href="~/Layout/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />*@
     <!-- summernote -->
 
 
@@ -38,7 +40,8 @@
     <!-- jQuery -->
 
     <script src="~/Layout/plugins/jquery/jquery.min.js"></script>
-    
+    <script src="~/Layout/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -498,13 +501,17 @@
     <script src="~/Layout/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Select 2 -->
     <script src="~/select2/dist/js/select2.min.js"></script>
+   
+    
+
+
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- JQVMap -->
     @*<script src="~/Layout/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="~/Layout/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>*@
+        <script src="~/Layout/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>*@
     <!-- Bootstrap 4 -->
 
     <script src="~/Layout/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -522,7 +529,7 @@
 
     <script src="~/Layout/plugins/moment/moment.min.js"></script>
 
-    <script src="~/Layout/plugins/daterangepicker/daterangepicker.js"></script>
+    @*<script src="~/Layout/plugins/daterangepicker/daterangepicker.js"></script>*@
     <!-- Tempusdominus Bootstrap 4 -->
 
     <script src="~/Layout/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>

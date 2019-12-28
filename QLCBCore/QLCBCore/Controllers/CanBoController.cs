@@ -53,7 +53,8 @@ namespace QLCBCore.Controllers
                                       Value = a.ID.ToString(),
                                       Text = a.TenDanToc
                                   }).ToList();
-
+            
+            ViewBag.LstDanToc = LstDanToc;
             List<SelectListItem> LstTonGiao;
             LstTonGiao = _context.dmTonGiaos.Select(a =>
                                   new SelectListItem
@@ -61,14 +62,34 @@ namespace QLCBCore.Controllers
                                       Value = a.ID.ToString(),
                                       Text = a.TenTonGiao
                                   }).ToList();
-            CreateCanBoVM _List = new CreateCanBoVM()
-            {
-                LstDanToc = LstDanToc,
-                LstTonGiao = LstTonGiao
+            ViewBag.LstTonGiao = LstTonGiao;
 
-            };
+            List<SelectListItem> LstTrinhDoPT;
+            LstTrinhDoPT = _context.dmTrinhDoPTs.Select(a =>
+                                  new SelectListItem
+                                  {
+                                      Value = a.ID.ToString(),
+                                      Text = a.TenTrinhDo
+                                  }).ToList();
+            ViewBag.LstTrinhDoPT = LstTrinhDoPT;
 
-            return View(_List);
+            List<SelectListItem> LstHocHam;
+            LstHocHam = _context.dmHocHams.Select(a =>
+                                  new SelectListItem
+                                  {
+                                      Value = a.ID.ToString(),
+                                      Text = a.TenHocHam
+                                  }).ToList();
+            ViewBag.LstHocHam = LstHocHam;
+
+            //CreateCanBoVM _List = new CreateCanBoVM()
+            //{
+            //    LstDanToc = LstDanToc,
+            //    LstTonGiao = LstTonGiao
+
+            //};
+
+            return View();
         }
 
         // POST: CanBo/Create
