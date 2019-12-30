@@ -4,447 +4,119 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .table-responsive {
+        display: table;
+    }
+</style>
+    <div class="row">
+        <div class="col-lg-12 col-xs-12 col-md-12">
+            <div class="card card-primary card-outline">
+                <div class="card-header"><h3 class="card-title"><i class="fas fa-list"></i> DANH SÁCH CÁN BỘ : (SỐ LƯỢNG CÁN BỘ : @ViewBag.CountCB)</h3></div>
+                <div class="card-body">
+                    <div class="mb-2">
+                        <button asp-controller="CanBo" asp-action="Create">Click Me</button>
+                        <button class="btn btn-primary"><i class="fa fa-plus"></i> Thêm mới</button>
+                    </div>
+                    
+                    <div class="data-table table-responsive" id="divListUser">
+                        <table class="table table-bordered table-hover table-striped-custom table-responsive gridView">
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Ma)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SoHieu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HoTen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TenGoiKhac)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GioiTinh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgaySinh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DanTocID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TonGiaoID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DonViID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrangThai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DienThoai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CMTND)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayCapCMT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoiCapCMT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoiSinhID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QueQuanID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HKTT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoiO)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TDPhoThongID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ChucDanhKhoaHocID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HinhAnh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgheNghiepID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CoquanTuyenDung)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayTuyen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayVeCQ)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HinhThucThiTuyenID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KieuCanBo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayHetHanHD)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CongViecDuocGiao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SoTruongCongTac)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayVaoDang)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayChinhThuc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayNhapNgu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayXuatNgu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QuanHamCaoNhatID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HangThuongBinhID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GiaDinhCSID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SucKhoeID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ChieuCao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CanNang)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NhomMauID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SoBHXH)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoiCapSoBHXH)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SoBHYT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LichSuBanThan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GhiChu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NhanXetDanhGia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ChucVuID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BacLuong)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgachID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HeSo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayHuong)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhuCapChucVu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhuCapKhac)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrinhDoID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.RegionID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayCapNhat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DanhHieuCaoNhatID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KhenThuong)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KyLuat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayVe)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayThongBaoNghiHuu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayNghiHuu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayGiuNgach)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayThoiViec)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayChuyenCtac)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayTuTran)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DonviOldID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsDeleted)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ma)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoHieu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoTen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenGoiKhac)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GioiTinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgaySinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DanTocID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TonGiaoID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DonViID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrangThai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DienThoai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CMTND)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayCapCMT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoiCapCMT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoiSinhID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QueQuanID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HKTT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoiO)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TDPhoThongID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChucDanhKhoaHocID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HinhAnh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgheNghiepID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CoquanTuyenDung)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayTuyen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayVeCQ)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HinhThucThiTuyenID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KieuCanBo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayHetHanHD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CongViecDuocGiao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoTruongCongTac)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayVaoDang)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayChinhThuc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayNhapNgu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayXuatNgu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuanHamCaoNhatID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HangThuongBinhID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GiaDinhCSID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SucKhoeID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChieuCao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CanNang)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NhomMauID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoBHXH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoiCapSoBHXH)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoBHYT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LichSuBanThan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GhiChu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NhanXetDanhGia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ChucVuID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BacLuong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgachID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HeSo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayHuong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhuCapChucVu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhuCapKhac)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TrinhDoID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegionID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayCapNhat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DanhHieuCaoNhatID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KhenThuong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KyLuat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayVe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayThongBaoNghiHuu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayNghiHuu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayGiuNgach)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayThoiViec)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayChuyenCtac)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayTuTran)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DonviOldID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsDeleted)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Ma)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.HoTen)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.GioiTinh)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NgaySinh)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DonViID)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ChucVuID)
+                                    </th>
+
+
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.KieuCanBo)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TrinhDoID)
+                                    </th>
+
+
+
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Ma)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HoTen)
+                                    </td>
+                                    @{ if (item.GioiTinh == true)
+                                        {
+                                            <td>Nam</td>
+                                        }
+                                        else
+                                        {
+                                            <td>Nữ</td>
+                                        }
+                                    }
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NgaySinh)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dmDonVi.TenDonVi)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dmChucVu.TenChucVu)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dmKieuCanBo.TenKieuCanBo)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dmTrinhDo.TenTrinhDo)
+                                    </td>
+
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-edit"></i></a> 
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                        <a asp-action="Delete" asp-route-id="@item.ID"><i class="fa fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

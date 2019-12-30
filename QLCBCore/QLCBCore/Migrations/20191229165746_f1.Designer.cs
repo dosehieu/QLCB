@@ -10,7 +10,7 @@ using QLCBCore.Models;
 namespace QLCBCore.Migrations
 {
     [DbContext(typeof(QLCBDbContext))]
-    [Migration("20191222085114_f1")]
+    [Migration("20191229165746_f1")]
     partial class f1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,11 +36,7 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("ChieuCao");
 
-                    b.Property<int?>("ChucDanhKhoaHocID");
-
                     b.Property<int?>("ChucVuID");
-
-                    b.Property<string>("CongViecChinh");
 
                     b.Property<string>("CongViecDuocGiao");
 
@@ -80,7 +76,11 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("HinhThucThiTuyenID");
 
-                    b.Property<string>("HoTen");
+                    b.Property<string>("HoTen")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<int?>("HocHamID");
 
                     b.Property<bool?>("IsDeleted");
 
@@ -115,9 +115,9 @@ namespace QLCBCore.Migrations
 
                     b.Property<DateTime?>("NgayNhapNgu");
 
-                    b.Property<DateTime?>("NgaySinh");
-
-                    b.Property<DateTime?>("NgayTD");
+                    b.Property<DateTime?>("NgaySinh")
+                        .IsRequired()
+                        .HasColumnType("Date");
 
                     b.Property<DateTime?>("NgayThoiViec");
 
@@ -125,13 +125,17 @@ namespace QLCBCore.Migrations
 
                     b.Property<DateTime?>("NgayTuTran");
 
-                    b.Property<DateTime?>("NgayTuyen");
+                    b.Property<DateTime?>("NgayTuyen")
+                        .IsRequired()
+                        .HasColumnType("Date");
 
                     b.Property<DateTime?>("NgayVaoDang");
 
                     b.Property<DateTime?>("NgayVe");
 
-                    b.Property<DateTime?>("NgayVeCQ");
+                    b.Property<DateTime?>("NgayVeCQ")
+                        .IsRequired()
+                        .HasColumnType("Date");
 
                     b.Property<DateTime?>("NgayXuatNgu");
 
@@ -187,47 +191,33 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("TrinhDoID");
 
-                    b.Property<int?>("dmChucDanhKhoaHocID");
-
-                    b.Property<int?>("dmDanTocID");
-
-                    b.Property<int?>("dmDonViID");
-
-                    b.Property<int?>("dmGiaDinhCSID");
-
-                    b.Property<int?>("dmHangThuongBinhID");
-
-                    b.Property<int?>("dmNgheNghiepID");
-
-                    b.Property<int?>("dmNhomMauID");
-
-                    b.Property<int?>("dmQuanHamID");
-
-                    b.Property<int?>("dmTonGiaoID");
-
-                    b.Property<int?>("dmTrinhDoPTID");
-
                     b.HasKey("ID");
 
-                    b.HasIndex("dmChucDanhKhoaHocID");
+                    b.HasIndex("ChucVuID");
 
-                    b.HasIndex("dmDanTocID");
+                    b.HasIndex("DanTocID");
 
-                    b.HasIndex("dmDonViID");
+                    b.HasIndex("DonViID");
 
-                    b.HasIndex("dmGiaDinhCSID");
+                    b.HasIndex("GiaDinhCSID");
 
-                    b.HasIndex("dmHangThuongBinhID");
+                    b.HasIndex("HangThuongBinhID");
 
-                    b.HasIndex("dmNgheNghiepID");
+                    b.HasIndex("HocHamID");
 
-                    b.HasIndex("dmNhomMauID");
+                    b.HasIndex("KieuCanBo");
 
-                    b.HasIndex("dmQuanHamID");
+                    b.HasIndex("NgheNghiepID");
 
-                    b.HasIndex("dmTonGiaoID");
+                    b.HasIndex("NhomMauID");
 
-                    b.HasIndex("dmTrinhDoPTID");
+                    b.HasIndex("QuanHamCaoNhatID");
+
+                    b.HasIndex("TDPhoThongID");
+
+                    b.HasIndex("TonGiaoID");
+
+                    b.HasIndex("TrinhDoID");
 
                     b.ToTable("CanBos");
 
@@ -235,23 +225,21 @@ namespace QLCBCore.Migrations
                         new
                         {
                             ID = 1,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = true,
+                            HinhThucThiTuyenID = 1,
                             HoTen = "Nguyễn Việt Hiếu",
                             IsDeleted = false,
-                            NgayCapNhat = new DateTime(2019, 12, 22, 15, 51, 13, 812, DateTimeKind.Local).AddTicks(6740)
-                        },
-                        new
-                        {
-                            ID = 2,
-                            HoTen = "Nguyễn Quang Huy",
-                            IsDeleted = false,
-                            NgayCapNhat = new DateTime(2019, 12, 22, 15, 51, 13, 814, DateTimeKind.Local).AddTicks(3983)
-                        },
-                        new
-                        {
-                            ID = 3,
-                            HoTen = "Ngoo Ngọc Anh",
-                            IsDeleted = false,
-                            NgayCapNhat = new DateTime(2019, 12, 22, 15, 51, 13, 814, DateTimeKind.Local).AddTicks(4013)
+                            KieuCanBo = 1,
+                            NgayCapNhat = new DateTime(2019, 12, 29, 23, 57, 45, 268, DateTimeKind.Local).AddTicks(9960),
+                            NgaySinh = new DateTime(2019, 12, 29, 23, 57, 45, 271, DateTimeKind.Local).AddTicks(2358),
+                            NgayTuyen = new DateTime(2019, 12, 29, 23, 57, 45, 272, DateTimeKind.Local).AddTicks(1209),
+                            NgayVeCQ = new DateTime(2019, 12, 29, 23, 57, 45, 272, DateTimeKind.Local).AddTicks(2284),
+                            TonGiaoID = 1,
+                            TrangThai = 1,
+                            TrinhDoID = 1
                         });
                 });
 
@@ -556,21 +544,6 @@ namespace QLCBCore.Migrations
                     b.ToTable("QuanHeGiaDinhs");
                 });
 
-            modelBuilder.Entity("QLCBCore.Models.dmChucDanhKhoaHoc", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool?>("IsDeleted");
-
-                    b.Property<string>("TenChucDanhKhoaHoc");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("dmChucDanhKhoaHoc");
-                });
-
             modelBuilder.Entity("QLCBCore.Models.dmChucVu", b =>
                 {
                     b.Property<int>("ID")
@@ -598,6 +571,14 @@ namespace QLCBCore.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("dmChucVus");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            IsDeleted = false,
+                            TenChucVu = "Trưởng phòng"
+                        });
                 });
 
             modelBuilder.Entity("QLCBCore.Models.dmDanToc", b =>
@@ -615,6 +596,14 @@ namespace QLCBCore.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("dmDanTocs");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            IsDeleted = false,
+                            TenDanToc = "Kinh"
+                        });
                 });
 
             modelBuilder.Entity("QLCBCore.Models.dmDonVi", b =>
@@ -652,19 +641,7 @@ namespace QLCBCore.Migrations
                         {
                             ID = 1,
                             IsDeleted = false,
-                            TenDonVi = "Ban giám đốc"
-                        },
-                        new
-                        {
-                            ID = 2,
-                            IsDeleted = false,
-                            TenDonVi = "Ban thư kí"
-                        },
-                        new
-                        {
-                            ID = 3,
-                            IsDeleted = false,
-                            TenDonVi = "Nhân viên"
+                            TenDonVi = "Phòng kế hoạch"
                         });
                 });
 
@@ -676,7 +653,7 @@ namespace QLCBCore.Migrations
 
                     b.Property<bool?>("IsDeleted");
 
-                    b.Property<string>("TenGiaDinhChinhSach");
+                    b.Property<string>("TenGiaDinhCS");
 
                     b.HasKey("ID");
 
@@ -723,11 +700,19 @@ namespace QLCBCore.Migrations
 
                     b.Property<bool?>("IsDeleted");
 
-                    b.Property<string>("TenHinhThucTD");
+                    b.Property<string>("TenHinhThucTT");
 
                     b.HasKey("ID");
 
                     b.ToTable("dmHinhThucThiTuyens");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            IsDeleted = false,
+                            TenHinhThucTT = "Xét tuyển"
+                        });
                 });
 
             modelBuilder.Entity("QLCBCore.Models.dmHocHam", b =>
@@ -743,6 +728,29 @@ namespace QLCBCore.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("dmHocHams");
+                });
+
+            modelBuilder.Entity("QLCBCore.Models.dmKieuCanBo", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("TenKieuCanBo");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("dmKieuCanBo");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            IsDeleted = false,
+                            TenKieuCanBo = "Công chức"
+                        });
                 });
 
             modelBuilder.Entity("QLCBCore.Models.dmKyLuat", b =>
@@ -800,6 +808,14 @@ namespace QLCBCore.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("dmNgheNghieps");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            IsDeleted = false,
+                            TenNgheNghiep = "Phóng viên"
+                        });
                 });
 
             modelBuilder.Entity("QLCBCore.Models.dmNhomMau", b =>
@@ -830,6 +846,14 @@ namespace QLCBCore.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("dmQuanHams");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            IsDeleted = false,
+                            TenQuanHam = "Thiếu tướng"
+                        });
                 });
 
             modelBuilder.Entity("QLCBCore.Models.dmQuanHeGiaDinh", b =>
@@ -877,6 +901,37 @@ namespace QLCBCore.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("dmTonGiaos");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            IsDeleted = false,
+                            TenTonGiao = "Không"
+                        });
+                });
+
+            modelBuilder.Entity("QLCBCore.Models.dmTrinhDo", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("IsDeleted");
+
+                    b.Property<string>("TenTrinhDo");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("dmTrinhDos");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            IsDeleted = false,
+                            TenTrinhDo = "Tiến sĩ"
+                        });
                 });
 
             modelBuilder.Entity("QLCBCore.Models.dmTrinhDoPT", b =>
@@ -892,49 +947,69 @@ namespace QLCBCore.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("dmTrinhDoPTs");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            IsDeleted = false,
+                            TenTrinhDo = "12/12"
+                        });
                 });
 
             modelBuilder.Entity("QLCBCore.Models.CanBo", b =>
                 {
-                    b.HasOne("QLCBCore.Models.dmChucDanhKhoaHoc", "dmChucDanhKhoaHoc")
+                    b.HasOne("QLCBCore.Models.dmChucVu", "dmChucVu")
                         .WithMany()
-                        .HasForeignKey("dmChucDanhKhoaHocID");
+                        .HasForeignKey("ChucVuID");
 
                     b.HasOne("QLCBCore.Models.dmDanToc", "dmDanToc")
                         .WithMany("CanBo")
-                        .HasForeignKey("dmDanTocID");
+                        .HasForeignKey("DanTocID");
 
                     b.HasOne("QLCBCore.Models.dmDonVi", "dmDonVi")
                         .WithMany("CanBo")
-                        .HasForeignKey("dmDonViID");
+                        .HasForeignKey("DonViID");
 
                     b.HasOne("QLCBCore.Models.dmGiaDinhCS", "dmGiaDinhCS")
                         .WithMany("CanBo")
-                        .HasForeignKey("dmGiaDinhCSID");
+                        .HasForeignKey("GiaDinhCSID");
 
                     b.HasOne("QLCBCore.Models.dmHangThuongBinh", "dmHangThuongBinh")
                         .WithMany("CanBo")
-                        .HasForeignKey("dmHangThuongBinhID");
+                        .HasForeignKey("HangThuongBinhID");
+
+                    b.HasOne("QLCBCore.Models.dmHocHam", "dmHocHam")
+                        .WithMany()
+                        .HasForeignKey("HocHamID");
+
+                    b.HasOne("QLCBCore.Models.dmKieuCanBo", "dmKieuCanBo")
+                        .WithMany("CanBo")
+                        .HasForeignKey("KieuCanBo");
 
                     b.HasOne("QLCBCore.Models.dmNgheNghiep", "dmNgheNghiep")
                         .WithMany("CanBo")
-                        .HasForeignKey("dmNgheNghiepID");
+                        .HasForeignKey("NgheNghiepID");
 
                     b.HasOne("QLCBCore.Models.dmNhomMau", "dmNhomMau")
                         .WithMany("CanBo")
-                        .HasForeignKey("dmNhomMauID");
+                        .HasForeignKey("NhomMauID");
 
                     b.HasOne("QLCBCore.Models.dmQuanHam", "dmQuanHam")
                         .WithMany()
-                        .HasForeignKey("dmQuanHamID");
-
-                    b.HasOne("QLCBCore.Models.dmTonGiao", "dmTonGiao")
-                        .WithMany("CanBo")
-                        .HasForeignKey("dmTonGiaoID");
+                        .HasForeignKey("QuanHamCaoNhatID");
 
                     b.HasOne("QLCBCore.Models.dmTrinhDoPT", "dmTrinhDoPT")
                         .WithMany("CanBo")
-                        .HasForeignKey("dmTrinhDoPTID");
+                        .HasForeignKey("TDPhoThongID");
+
+                    b.HasOne("QLCBCore.Models.dmTonGiao", "dmTonGiao")
+                        .WithMany("CanBo")
+                        .HasForeignKey("TonGiaoID");
+
+                    b.HasOne("QLCBCore.Models.dmTrinhDo", "dmTrinhDo")
+                        .WithMany("CanBo")
+                        .HasForeignKey("TrinhDoID");
                 });
 
             modelBuilder.Entity("QLCBCore.Models.DienBienChucVu", b =>

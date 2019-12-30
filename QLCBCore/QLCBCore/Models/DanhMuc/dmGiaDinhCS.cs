@@ -8,7 +8,7 @@ namespace QLCBCore.Models
     public class dmGiaDinhCS
     {
         public int ID { get; set; } // ID (Primary key)
-        public string TenGiaDinhChinhSach { get; set; } // TenGiaDinhChinhSach (length: 50)
+        public string TenGiaDinhCS { get; set; } // TenGiaDinhChinhSach (length: 50)
         public bool? IsDeleted { get; set; } // IsDeleted
 
         // Reverse navigation

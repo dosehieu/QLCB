@@ -13,25 +13,33 @@ namespace QLCBCore.Models
         [Display(Name = "Mã")]
         public string Ma { get; set; } // Ma (length: 50)
 
-        //[Required(AllowEmptyStrings = true, ErrorMessage = "Không để trống")]
+       
         //[Display(Name = "Số hiệu")]
         //[MaxLength(50)]
         //[Column("SOHIEU", TypeName = "nvarchar")]
         [Display(Name = "Số hiệu")]
         public string SoHieu { get; set; } // SoHieu (length: 50)
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Trường này không được để trống")]
         [Display(Name = "Họ tên")]
+        [MaxLength(100)]
         public string HoTen { get; set; } // HoTen (length: 100)
         [Display(Name = "Tên gọi khác")]
         public string TenGoiKhac { get; set; } // TenGoiKhac (length: 100)
         [Display(Name = "Giới tính")]
         public bool? GioiTinh { get; set; } // GioiTinh
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Trường này không được để trống")]
         [Display(Name = "Ngày sinh")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "Date")]
         public System.DateTime? NgaySinh { get; set; } // NgaySinh
         [Display(Name = "Dân tộc")]
+        [ForeignKey("dmDanToc")]
         public int? DanTocID { get; set; } // DanTocID
         [Display(Name = "Tôn giáo")]
+        [ForeignKey("dmTonGiao")]
         public int? TonGiaoID { get; set; } // TonGiaoID
         [Display(Name = "Đơn vị")]
+        [ForeignKey("dmDonVi")]
         public int? DonViID { get; set; } // DonViID
 
         ///<summary>
@@ -76,28 +84,41 @@ namespace QLCBCore.Models
         [MaxLength(300)]
         public string NoiO { get; set; } // NoiO (length: 300)
         [Display(Name = "Trình độ phổ thông")]
+        [ForeignKey("dmTrinhDoPT")]
         public int? TDPhoThongID { get; set; } // TDPhoThongID
+        [ForeignKey("dmHocHam")]
         [Display(Name = "Học hàm")]
-        public int? ChucDanhKhoaHocID { get; set; } // ChucDanhKhoaHocID
+        
+        public int? HocHamID { get; set; } // ChucDanhKhoaHocID
         [Display(Name = "Ảnh đại diện")]
         [MaxLength(150)]
         public string HinhAnh { get; set; } // HinhAnh (length: 150)
         //THÔNG TIN TUYỂN DỤNG
         [Display(Name = "Nghề nghiệp")]
+        [ForeignKey("dmNgheNghiep")]
         public int? NgheNghiepID { get; set; } // NgheNghiepID
         [Display(Name = "Cơ quan tuyển dụng")]
         [MaxLength(100)]
         public string CoquanTuyenDung { get; set; } // 100
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Trường này không được để trống")]
         [Display(Name = "Ngày tuyển ")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "Date")]
         public System.DateTime? NgayTuyen { get; set; } // NgayTuTran
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Trường này không được để trống")]
         [Display(Name = "Ngày về CQ")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "Date")]
         public System.DateTime? NgayVeCQ { get; set; } // NgayTuTran
+        
         [Display(Name = "Hình thức thi tuyển")]
         public int? HinhThucThiTuyenID { get; set; } // HinhThucThiTuyen
         ///<summary>
         /// 0 Khác; 1. Công chức; 2. Viên chức;3 Hop Dong
         ///</summary>
+        
         [Display(Name = "Phân loại cán bộ")]
+        [ForeignKey("dmKieuCanBo")]
         public int? KieuCanBo { get; set; } // KieuCanBo
         [Display(Name = "Ngày hết hạn hợp đồng")]
         public System.DateTime? NgayHetHanHD { get; set; } // NgayHetHanHD
@@ -117,20 +138,25 @@ namespace QLCBCore.Models
         [Display(Name = "Ngày xuất ngũ")]
         public System.DateTime? NgayXuatNgu { get; set; } // NgayNghiHuu
         [Display(Name = "Quân hàm cao nhất")]
+        [ForeignKey("dmQuanHam")]
         public int? QuanHamCaoNhatID { get; set; } // QuanHamCaoNhatID
         [Display(Name = "Thương binh hạng")]
+        [ForeignKey("dmHangThuongBinh")]
         public int? HangThuongBinhID { get; set; } // HangThuongBinhID
         [Display(Name = "Gia đình chính sách")]
+        [ForeignKey("dmGiaDinhCS")]
         public int? GiaDinhCSID { get; set; } // GiaDinhCSID
 
         //THÔNG TIN KHÁC
         [Display(Name = "Tình trạng sức khỏe")]
+        [ForeignKey("dmSucKhoe")]
         public int? SucKhoeID { get; set; } // SucKhoeID
         [Display(Name = "Chiều cao(cm)")]
         public int? ChieuCao { get; set; } // ChieuCao
         [Display(Name = "Cân nặng(Kg)")]
         public int? CanNang { get; set; } // CanNang
         [Display(Name = "Nhóm máu")]
+        [ForeignKey("dmNhomMau")]
         public int? NhomMauID { get; set; } // NhomMauID
         [Display(Name = "Số sổ BHXH")]
         [MaxLength(30)]
@@ -150,7 +176,8 @@ namespace QLCBCore.Models
         [Display(Name = "Nhận xét đánh giá")]
         [MaxLength(500)]
         public string NhanXetDanhGia { get; set; } // NhanXetDanhGia (length: 500)
-        
+        [ForeignKey("dmChucVu")]
+        [Display(Name = "Chức vụ")]
         public int? ChucVuID { get; set; } // ChucVuID
         public int? BacLuong { get; set; } // BacLuong
         public int? NgachID { get; set; } // NgachID
@@ -164,6 +191,8 @@ namespace QLCBCore.Models
         public System.DateTime? NgayHuong { get; set; } // NgayHuong
         public double? PhuCapChucVu { get; set; } // PhuCapChucVu
         public double? PhuCapKhac { get; set; } // PhuCapKhac
+        [ForeignKey("dmTrinhDo")]
+        [Display(Name = "Trình độ")]
         public int? TrinhDoID { get; set; } // TrinhDoID
         ///<summary>
         /// Xác định khu vực cán bộ đang công tác.
@@ -211,6 +240,7 @@ namespace QLCBCore.Models
         /// <summary>
         /// Child QTKyLuat where [QTKyLuat].[CanBoID] point to this entity (FK_QTKyLuat_CanBo)
         /// </summary>
+       
         public virtual System.Collections.Generic.ICollection<QTKyLuat> QTKyLuat { get; set; } // QTKyLuat.FK_QTKyLuat_CanBo
         /// <summary>
         /// Child QuanHeGiaDinh where [QuanHeGiaDinh].[CanBoID] point to this entity (FK_QuanHeGiaDinh_CanBo)
@@ -223,7 +253,7 @@ namespace QLCBCore.Models
         /// Parent dmDanToc pointed by [CanBo].([DanTocID]) (FK_CanBo_DanToc)
         /// </summary>
         public virtual dmDanToc dmDanToc { get; set; } // FK_CanBo_DanToc
-        public virtual dmChucDanhKhoaHoc dmChucDanhKhoaHoc { get; set; } // FK_CanBo_ChucDanhKhoaHoc
+        public virtual dmHocHam dmHocHam { get; set; } // FK_CanBo_ChucDanhKhoaHoc
         
 
         /// <summary>
@@ -260,6 +290,9 @@ namespace QLCBCore.Models
         /// Parent dmTrinhDoPT pointed by [CanBo].([TDPhoThongID]) (FK_CanBo_TrinhDoPhoThong)
         /// </summary>
         public virtual dmTrinhDoPT dmTrinhDoPT { get; set; } // FK_CanBo_TrinhDoPhoThong
+        public virtual dmChucVu dmChucVu { get; set; } // FK_CanBo_TrinhDoPhoThong
+        public virtual dmKieuCanBo dmKieuCanBo { get; set; } // FK_CanBo_TrinhDoPhoThong
+        public virtual dmTrinhDo dmTrinhDo { get; set; } // FK_CanBo_TrinhDoPhoThong
 
         public CanBo()
         {

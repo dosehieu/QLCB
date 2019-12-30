@@ -9,20 +9,6 @@ namespace QLCBCore.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "dmChucDanhKhoaHoc",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    TenChucDanhKhoaHoc = table.Column<string>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_dmChucDanhKhoaHoc", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "dmChucVus",
                 columns: table => new
                 {
@@ -86,7 +72,7 @@ namespace QLCBCore.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    TenGiaDinhChinhSach = table.Column<string>(nullable: true),
+                    TenGiaDinhCS = table.Column<string>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
@@ -129,7 +115,7 @@ namespace QLCBCore.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    TenHinhThucTD = table.Column<string>(nullable: true),
+                    TenHinhThucTT = table.Column<string>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
@@ -149,6 +135,20 @@ namespace QLCBCore.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_dmHocHams", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "dmKieuCanBo",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    TenKieuCanBo = table.Column<string>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_dmKieuCanBo", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -285,6 +285,20 @@ namespace QLCBCore.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "dmTrinhDos",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    TenTrinhDo = table.Column<string>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_dmTrinhDos", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "NguoiDungs",
                 columns: table => new
                 {
@@ -342,10 +356,10 @@ namespace QLCBCore.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Ma = table.Column<string>(nullable: true),
                     SoHieu = table.Column<string>(nullable: true),
-                    HoTen = table.Column<string>(nullable: true),
+                    HoTen = table.Column<string>(maxLength: 100, nullable: false),
                     TenGoiKhac = table.Column<string>(nullable: true),
                     GioiTinh = table.Column<bool>(nullable: true),
-                    NgaySinh = table.Column<DateTime>(nullable: true),
+                    NgaySinh = table.Column<DateTime>(type: "Date", nullable: false),
                     DanTocID = table.Column<int>(nullable: true),
                     TonGiaoID = table.Column<int>(nullable: true),
                     DonViID = table.Column<int>(nullable: true),
@@ -360,12 +374,12 @@ namespace QLCBCore.Migrations
                     HKTT = table.Column<string>(maxLength: 300, nullable: true),
                     NoiO = table.Column<string>(maxLength: 300, nullable: true),
                     TDPhoThongID = table.Column<int>(nullable: true),
-                    ChucDanhKhoaHocID = table.Column<int>(nullable: true),
+                    HocHamID = table.Column<int>(nullable: true),
                     HinhAnh = table.Column<string>(maxLength: 150, nullable: true),
                     NgheNghiepID = table.Column<int>(nullable: true),
                     CoquanTuyenDung = table.Column<string>(maxLength: 100, nullable: true),
-                    NgayTuyen = table.Column<DateTime>(nullable: true),
-                    NgayVeCQ = table.Column<DateTime>(nullable: true),
+                    NgayTuyen = table.Column<DateTime>(type: "Date", nullable: false),
+                    NgayVeCQ = table.Column<DateTime>(type: "Date", nullable: false),
                     HinhThucThiTuyenID = table.Column<int>(nullable: true),
                     KieuCanBo = table.Column<int>(nullable: true),
                     NgayHetHanHD = table.Column<DateTime>(nullable: true),
@@ -388,8 +402,6 @@ namespace QLCBCore.Migrations
                     LichSuBanThan = table.Column<string>(maxLength: 2000, nullable: true),
                     GhiChu = table.Column<string>(maxLength: 250, nullable: true),
                     NhanXetDanhGia = table.Column<string>(maxLength: 500, nullable: true),
-                    NgayTD = table.Column<DateTime>(nullable: true),
-                    CongViecChinh = table.Column<string>(nullable: true),
                     ChucVuID = table.Column<int>(nullable: true),
                     BacLuong = table.Column<int>(nullable: true),
                     NgachID = table.Column<int>(nullable: true),
@@ -411,79 +423,87 @@ namespace QLCBCore.Migrations
                     NgayChuyenCtac = table.Column<DateTime>(nullable: true),
                     NgayTuTran = table.Column<DateTime>(nullable: true),
                     DonviOldID = table.Column<int>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: true),
-                    dmNhomMauID = table.Column<int>(nullable: true),
-                    dmDanTocID = table.Column<int>(nullable: true),
-                    dmChucDanhKhoaHocID = table.Column<int>(nullable: true),
-                    dmDonViID = table.Column<int>(nullable: true),
-                    dmGiaDinhCSID = table.Column<int>(nullable: true),
-                    dmHangThuongBinhID = table.Column<int>(nullable: true),
-                    dmNgheNghiepID = table.Column<int>(nullable: true),
-                    dmQuanHamID = table.Column<int>(nullable: true),
-                    dmTonGiaoID = table.Column<int>(nullable: true),
-                    dmTrinhDoPTID = table.Column<int>(nullable: true)
+                    IsDeleted = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CanBos", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_CanBos_dmChucDanhKhoaHoc_dmChucDanhKhoaHocID",
-                        column: x => x.dmChucDanhKhoaHocID,
-                        principalTable: "dmChucDanhKhoaHoc",
+                        name: "FK_CanBos_dmChucVus_ChucVuID",
+                        column: x => x.ChucVuID,
+                        principalTable: "dmChucVus",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CanBos_dmDanTocs_dmDanTocID",
-                        column: x => x.dmDanTocID,
+                        name: "FK_CanBos_dmDanTocs_DanTocID",
+                        column: x => x.DanTocID,
                         principalTable: "dmDanTocs",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CanBos_dmDonVis_dmDonViID",
-                        column: x => x.dmDonViID,
+                        name: "FK_CanBos_dmDonVis_DonViID",
+                        column: x => x.DonViID,
                         principalTable: "dmDonVis",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CanBos_dmGiaDinhCSs_dmGiaDinhCSID",
-                        column: x => x.dmGiaDinhCSID,
+                        name: "FK_CanBos_dmGiaDinhCSs_GiaDinhCSID",
+                        column: x => x.GiaDinhCSID,
                         principalTable: "dmGiaDinhCSs",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CanBos_dmHangThuongBinhs_dmHangThuongBinhID",
-                        column: x => x.dmHangThuongBinhID,
+                        name: "FK_CanBos_dmHangThuongBinhs_HangThuongBinhID",
+                        column: x => x.HangThuongBinhID,
                         principalTable: "dmHangThuongBinhs",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CanBos_dmNgheNghieps_dmNgheNghiepID",
-                        column: x => x.dmNgheNghiepID,
+                        name: "FK_CanBos_dmHocHams_HocHamID",
+                        column: x => x.HocHamID,
+                        principalTable: "dmHocHams",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CanBos_dmKieuCanBo_KieuCanBo",
+                        column: x => x.KieuCanBo,
+                        principalTable: "dmKieuCanBo",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CanBos_dmNgheNghieps_NgheNghiepID",
+                        column: x => x.NgheNghiepID,
                         principalTable: "dmNgheNghieps",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CanBos_dmNhomMaus_dmNhomMauID",
-                        column: x => x.dmNhomMauID,
+                        name: "FK_CanBos_dmNhomMaus_NhomMauID",
+                        column: x => x.NhomMauID,
                         principalTable: "dmNhomMaus",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CanBos_dmQuanHams_dmQuanHamID",
-                        column: x => x.dmQuanHamID,
+                        name: "FK_CanBos_dmQuanHams_QuanHamCaoNhatID",
+                        column: x => x.QuanHamCaoNhatID,
                         principalTable: "dmQuanHams",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CanBos_dmTonGiaos_dmTonGiaoID",
-                        column: x => x.dmTonGiaoID,
+                        name: "FK_CanBos_dmTrinhDoPTs_TDPhoThongID",
+                        column: x => x.TDPhoThongID,
+                        principalTable: "dmTrinhDoPTs",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CanBos_dmTonGiaos_TonGiaoID",
+                        column: x => x.TonGiaoID,
                         principalTable: "dmTonGiaos",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CanBos_dmTrinhDoPTs_dmTrinhDoPTID",
-                        column: x => x.dmTrinhDoPTID,
-                        principalTable: "dmTrinhDoPTs",
+                        name: "FK_CanBos_dmTrinhDos_TrinhDoID",
+                        column: x => x.TrinhDoID,
+                        principalTable: "dmTrinhDos",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -685,74 +705,124 @@ namespace QLCBCore.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "CanBos",
-                columns: new[] { "ID", "BacLuong", "CMTND", "CanNang", "ChieuCao", "ChucDanhKhoaHocID", "ChucVuID", "CongViecChinh", "CongViecDuocGiao", "CoquanTuyenDung", "DanTocID", "DanhHieuCaoNhatID", "DienThoai", "DonViID", "DonviOldID", "Email", "GhiChu", "GiaDinhCSID", "GioiTinh", "HKTT", "HangThuongBinhID", "HeSo", "HinhAnh", "HinhThucThiTuyenID", "HoTen", "IsDeleted", "KhenThuong", "KieuCanBo", "KyLuat", "LichSuBanThan", "Ma", "NgachID", "NgayCapCMT", "NgayCapNhat", "NgayChinhThuc", "NgayChuyenCtac", "NgayGiuNgach", "NgayHetHanHD", "NgayHuong", "NgayNghiHuu", "NgayNhapNgu", "NgaySinh", "NgayTD", "NgayThoiViec", "NgayThongBaoNghiHuu", "NgayTuTran", "NgayTuyen", "NgayVaoDang", "NgayVe", "NgayVeCQ", "NgayXuatNgu", "NgheNghiepID", "NhanXetDanhGia", "NhomMauID", "NoiCapCMT", "NoiCapSoBHXH", "NoiO", "NoiSinhID", "PhuCapChucVu", "PhuCapKhac", "QuanHamCaoNhatID", "QueQuanID", "RegionID", "SoBHXH", "SoBHYT", "SoHieu", "SoTruongCongTac", "SucKhoeID", "TDPhoThongID", "TenGoiKhac", "TonGiaoID", "TrangThai", "TrinhDoID", "dmChucDanhKhoaHocID", "dmDanTocID", "dmDonViID", "dmGiaDinhCSID", "dmHangThuongBinhID", "dmNgheNghiepID", "dmNhomMauID", "dmQuanHamID", "dmTonGiaoID", "dmTrinhDoPTID" },
-                values: new object[,]
-                {
-                    { 1, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "Nguyễn Việt Hiếu", false, null, null, null, null, null, null, null, new DateTime(2019, 12, 22, 15, 51, 13, 812, DateTimeKind.Local).AddTicks(6740), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null },
-                    { 2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "Nguyễn Quang Huy", false, null, null, null, null, null, null, null, new DateTime(2019, 12, 22, 15, 51, 13, 814, DateTimeKind.Local).AddTicks(3983), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null },
-                    { 3, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "Ngoo Ngọc Anh", false, null, null, null, null, null, null, null, new DateTime(2019, 12, 22, 15, 51, 13, 814, DateTimeKind.Local).AddTicks(4013), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null }
-                });
+                table: "dmChucVus",
+                columns: new[] { "ID", "HeSoPhuCap", "IsDangDoan", "IsDeleted", "MaChucVu", "STT", "TenChucVu", "TenVietTat", "iKieu", "iTruongPho" },
+                values: new object[] { 1, null, null, false, null, null, "Trưởng phòng", null, null, null });
+
+            migrationBuilder.InsertData(
+                table: "dmDanTocs",
+                columns: new[] { "ID", "DanTocItNguoi", "IsDeleted", "TenDanToc" },
+                values: new object[] { 1, null, false, "Kinh" });
 
             migrationBuilder.InsertData(
                 table: "dmDonVis",
                 columns: new[] { "ID", "DonViAllID", "IsDeleted", "KieuDonvi", "Leve", "MaCha", "MaDonVi", "RegionID", "STT", "TenDonVi", "TenVietTat" },
-                values: new object[,]
-                {
-                    { 1, null, false, null, null, null, null, null, null, "Ban giám đốc", null },
-                    { 2, null, false, null, null, null, null, null, null, "Ban thư kí", null },
-                    { 3, null, false, null, null, null, null, null, null, "Nhân viên", null }
-                });
+                values: new object[] { 1, null, false, null, null, null, null, null, null, "Phòng kế hoạch", null });
+
+            migrationBuilder.InsertData(
+                table: "dmHinhThucThiTuyens",
+                columns: new[] { "ID", "IsDeleted", "TenHinhThucTT" },
+                values: new object[] { 1, false, "Xét tuyển" });
+
+            migrationBuilder.InsertData(
+                table: "dmKieuCanBo",
+                columns: new[] { "ID", "IsDeleted", "TenKieuCanBo" },
+                values: new object[] { 1, false, "Công chức" });
+
+            migrationBuilder.InsertData(
+                table: "dmNgheNghieps",
+                columns: new[] { "ID", "IsDeleted", "MaNgheNghiep", "STT", "TenNgheNghiep" },
+                values: new object[] { 1, false, null, null, "Phóng viên" });
+
+            migrationBuilder.InsertData(
+                table: "dmQuanHams",
+                columns: new[] { "ID", "IsDeleted", "TenQuanHam" },
+                values: new object[] { 1, false, "Thiếu tướng" });
+
+            migrationBuilder.InsertData(
+                table: "dmTonGiaos",
+                columns: new[] { "ID", "IsDeleted", "TenTonGiao" },
+                values: new object[] { 1, false, "Không" });
+
+            migrationBuilder.InsertData(
+                table: "dmTrinhDoPTs",
+                columns: new[] { "ID", "IsDeleted", "TenTrinhDo" },
+                values: new object[] { 1, false, "12/12" });
+
+            migrationBuilder.InsertData(
+                table: "dmTrinhDos",
+                columns: new[] { "ID", "IsDeleted", "TenTrinhDo" },
+                values: new object[] { 1, false, "Tiến sĩ" });
+
+            migrationBuilder.InsertData(
+                table: "CanBos",
+                columns: new[] { "ID", "BacLuong", "CMTND", "CanNang", "ChieuCao", "ChucVuID", "CongViecDuocGiao", "CoquanTuyenDung", "DanTocID", "DanhHieuCaoNhatID", "DienThoai", "DonViID", "DonviOldID", "Email", "GhiChu", "GiaDinhCSID", "GioiTinh", "HKTT", "HangThuongBinhID", "HeSo", "HinhAnh", "HinhThucThiTuyenID", "HoTen", "HocHamID", "IsDeleted", "KhenThuong", "KieuCanBo", "KyLuat", "LichSuBanThan", "Ma", "NgachID", "NgayCapCMT", "NgayCapNhat", "NgayChinhThuc", "NgayChuyenCtac", "NgayGiuNgach", "NgayHetHanHD", "NgayHuong", "NgayNghiHuu", "NgayNhapNgu", "NgaySinh", "NgayThoiViec", "NgayThongBaoNghiHuu", "NgayTuTran", "NgayTuyen", "NgayVaoDang", "NgayVe", "NgayVeCQ", "NgayXuatNgu", "NgheNghiepID", "NhanXetDanhGia", "NhomMauID", "NoiCapCMT", "NoiCapSoBHXH", "NoiO", "NoiSinhID", "PhuCapChucVu", "PhuCapKhac", "QuanHamCaoNhatID", "QueQuanID", "RegionID", "SoBHXH", "SoBHYT", "SoHieu", "SoTruongCongTac", "SucKhoeID", "TDPhoThongID", "TenGoiKhac", "TonGiaoID", "TrangThai", "TrinhDoID" },
+                values: new object[] { 1, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Việt Hiếu", null, false, null, 1, null, null, null, null, null, new DateTime(2019, 12, 29, 23, 57, 45, 268, DateTimeKind.Local).AddTicks(9960), null, null, null, null, null, null, null, new DateTime(2019, 12, 29, 23, 57, 45, 271, DateTimeKind.Local).AddTicks(2358), null, null, null, new DateTime(2019, 12, 29, 23, 57, 45, 272, DateTimeKind.Local).AddTicks(1209), null, null, new DateTime(2019, 12, 29, 23, 57, 45, 272, DateTimeKind.Local).AddTicks(2284), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1, 1, 1 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CanBos_dmChucDanhKhoaHocID",
+                name: "IX_CanBos_ChucVuID",
                 table: "CanBos",
-                column: "dmChucDanhKhoaHocID");
+                column: "ChucVuID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CanBos_dmDanTocID",
+                name: "IX_CanBos_DanTocID",
                 table: "CanBos",
-                column: "dmDanTocID");
+                column: "DanTocID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CanBos_dmDonViID",
+                name: "IX_CanBos_DonViID",
                 table: "CanBos",
-                column: "dmDonViID");
+                column: "DonViID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CanBos_dmGiaDinhCSID",
+                name: "IX_CanBos_GiaDinhCSID",
                 table: "CanBos",
-                column: "dmGiaDinhCSID");
+                column: "GiaDinhCSID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CanBos_dmHangThuongBinhID",
+                name: "IX_CanBos_HangThuongBinhID",
                 table: "CanBos",
-                column: "dmHangThuongBinhID");
+                column: "HangThuongBinhID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CanBos_dmNgheNghiepID",
+                name: "IX_CanBos_HocHamID",
                 table: "CanBos",
-                column: "dmNgheNghiepID");
+                column: "HocHamID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CanBos_dmNhomMauID",
+                name: "IX_CanBos_KieuCanBo",
                 table: "CanBos",
-                column: "dmNhomMauID");
+                column: "KieuCanBo");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CanBos_dmQuanHamID",
+                name: "IX_CanBos_NgheNghiepID",
                 table: "CanBos",
-                column: "dmQuanHamID");
+                column: "NgheNghiepID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CanBos_dmTonGiaoID",
+                name: "IX_CanBos_NhomMauID",
                 table: "CanBos",
-                column: "dmTonGiaoID");
+                column: "NhomMauID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CanBos_dmTrinhDoPTID",
+                name: "IX_CanBos_QuanHamCaoNhatID",
                 table: "CanBos",
-                column: "dmTrinhDoPTID");
+                column: "QuanHamCaoNhatID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CanBos_TDPhoThongID",
+                table: "CanBos",
+                column: "TDPhoThongID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CanBos_TonGiaoID",
+                table: "CanBos",
+                column: "TonGiaoID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CanBos_TrinhDoID",
+                table: "CanBos",
+                column: "TrinhDoID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DienBienChucVus_CanBoID",
@@ -817,9 +887,6 @@ namespace QLCBCore.Migrations
                 name: "dmHinhThucThiTuyens");
 
             migrationBuilder.DropTable(
-                name: "dmHocHams");
-
-            migrationBuilder.DropTable(
                 name: "dmTinhTrangSucKhoes");
 
             migrationBuilder.DropTable(
@@ -838,9 +905,6 @@ namespace QLCBCore.Migrations
                 name: "QuanHeGiaDinhs");
 
             migrationBuilder.DropTable(
-                name: "dmChucVus");
-
-            migrationBuilder.DropTable(
                 name: "dmNgachs");
 
             migrationBuilder.DropTable(
@@ -856,7 +920,7 @@ namespace QLCBCore.Migrations
                 name: "dmQuanHeGiaDinhs");
 
             migrationBuilder.DropTable(
-                name: "dmChucDanhKhoaHoc");
+                name: "dmChucVus");
 
             migrationBuilder.DropTable(
                 name: "dmDanTocs");
@@ -871,6 +935,12 @@ namespace QLCBCore.Migrations
                 name: "dmHangThuongBinhs");
 
             migrationBuilder.DropTable(
+                name: "dmHocHams");
+
+            migrationBuilder.DropTable(
+                name: "dmKieuCanBo");
+
+            migrationBuilder.DropTable(
                 name: "dmNgheNghieps");
 
             migrationBuilder.DropTable(
@@ -880,10 +950,13 @@ namespace QLCBCore.Migrations
                 name: "dmQuanHams");
 
             migrationBuilder.DropTable(
+                name: "dmTrinhDoPTs");
+
+            migrationBuilder.DropTable(
                 name: "dmTonGiaos");
 
             migrationBuilder.DropTable(
-                name: "dmTrinhDoPTs");
+                name: "dmTrinhDos");
         }
     }
 }

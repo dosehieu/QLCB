@@ -9,7 +9,7 @@ namespace QLCBCore.Models
     public class dmHinhThucThiTuyen
     {
         public int ID { get; set; } // ID (Primary key)
-        public string TenHinhThucTD { get; set; } // TenHinhThucTD (length: 150)
+        public string TenHinhThucTT { get; set; } // TenHinhThucTD (length: 150)
         public bool? IsDeleted { get; set; } // IsDeleted
 
         public dmHinhThucThiTuyen()

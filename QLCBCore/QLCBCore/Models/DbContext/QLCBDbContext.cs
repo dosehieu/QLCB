@@ -15,6 +15,8 @@ namespace QLCBCore.Models
         //Danh mục
         public DbSet<CanBo> CanBos { get; set; }
         public DbSet<dmChucVu> dmChucVus { get; set; }
+        public DbSet<dmTrinhDo> dmTrinhDos { get; set; }
+        public DbSet<dmKieuCanBo> dmKieuCanBo { get; set; }
         public DbSet<dmNhomMau> dmNhomMaus { get; set; }
         public DbSet<dmHinhThucThiTuyen> dmHinhThucThiTuyens { get; set; }
         public DbSet<dmHocHam> dmHocHams { get; set; }
@@ -43,19 +45,66 @@ namespace QLCBCore.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CanBo>().HasData(
-                new CanBo() { ID = 1, HoTen = "Nguyễn Việt Hiếu" },
-                new CanBo() { ID = 2, HoTen = "Nguyễn Quang Huy" },
-                new CanBo() { ID = 3, HoTen = "Ngoo Ngọc Anh"});
+                new CanBo() {
+                    ID = 1,
+                    HoTen = "Nguyễn Việt Hiếu",
+                    GioiTinh = true,
+                    NgaySinh = DateTime.Now,
+                    TonGiaoID = 1,
+                    DanTocID = 1,
+                    DonViID = 1,
+                    TrangThai = 1,
+                    NgayTuyen = DateTime.Now,
+                    NgayVeCQ =DateTime.Now,
+                    HinhThucThiTuyenID=1,
+                    KieuCanBo =1,
+                    TrinhDoID=1,
+                    ChucVuID=1
+                });
 
-            modelBuilder.Entity<dmDonVi>().HasData(
-                new dmDonVi() { ID = 1, TenDonVi = "Ban giám đốc" },
-                new dmDonVi() { ID = 2, TenDonVi = "Ban thư kí" },
-                new dmDonVi() { ID = 3, TenDonVi = "Nhân viên" });
+            //modelBuilder.Entity<dmDonVi>().HasData(
+            //    new dmDonVi() { ID = 1, TenDonVi = "Ban giám đốc" },
+            //    new dmDonVi() { ID = 2, TenDonVi = "Ban thư kí" },
+            //    new dmDonVi() { ID = 3, TenDonVi = "Nhân viên" });
 
             //modelBuilder.Entity<dmDonVi>().HasData(
             //    new NguoiDung() { ID = 1,UserName = "hieu", Password = "E10ADC3949BA59ABBE56E057F20F883E" },
             //    new NguoiDung() { ID = 2, UserName = "huy", Password = "E10ADC3949BA59ABBE56E057F20F883E" },
             //    new NguoiDung() { ID = 3, UserName = "anh", Password = "E10ADC3949BA59ABBE56E057F20F883E" });
+            modelBuilder.Entity<dmChucVu>().HasData(
+                new dmChucVu() { ID = 1, TenChucVu = "Trưởng phòng" }
+                );
+            modelBuilder.Entity<dmDanToc>().HasData(
+               new dmDanToc() { ID = 1, TenDanToc = "Kinh" }
+               );
+            modelBuilder.Entity<dmTrinhDo>().HasData(
+              new dmTrinhDo() { ID = 1, TenTrinhDo = "Tiến sĩ" }
+              );
+            modelBuilder.Entity<dmTrinhDoPT>().HasData(
+              new dmTrinhDoPT() { ID = 1, TenTrinhDo = "12/12" }
+              );
+            
+            modelBuilder.Entity<dmNgheNghiep>().HasData(
+              new dmNgheNghiep() { ID = 1, TenNgheNghiep = "Phóng viên" }
+              );
+            modelBuilder.Entity<dmQuanHam>().HasData(
+              new dmQuanHam() { ID = 1, TenQuanHam = "Thiếu tướng" }
+              );
+            modelBuilder.Entity<dmKieuCanBo>().HasData(
+              new dmKieuCanBo() { ID = 1, TenKieuCanBo = "Công chức" }
+              );
+            modelBuilder.Entity<dmDonVi>().HasData(
+              new dmDonVi() { ID = 1, TenDonVi = "Phòng kế hoạch" }
+              );
+            
+            modelBuilder.Entity<dmHinhThucThiTuyen>().HasData(
+             new dmHinhThucThiTuyen() { ID = 1, TenHinhThucTT = "Xét tuyển" }
+             );
+            modelBuilder.Entity<dmTonGiao>().HasData(
+             new dmTonGiao() { ID = 1, TenTonGiao = "Không" }
+             );
+
+
         }
     }
 }

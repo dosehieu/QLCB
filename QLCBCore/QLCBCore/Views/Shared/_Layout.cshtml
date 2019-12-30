@@ -29,7 +29,6 @@
 
     <link href="~/Layout/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet" />
     <!-- Daterange picker -->
-
     @*<link href="~/Layout/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />*@
     <!-- summernote -->
 
@@ -40,6 +39,7 @@
     <!-- jQuery -->
 
     <script src="~/Layout/plugins/jquery/jquery.min.js"></script>
+    <script src="~/jquery/jquery-validation/js/jquery.validate.min.js"></script>
     <script src="~/Layout/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 </head>
@@ -195,7 +195,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="CanBo/Index" class="nav-link active">
+                            <a href="~/CanBo/Index" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Hồ sơ cán bộ
@@ -467,7 +467,7 @@
             </div>
             <!-- /.content-header -->
             <!-- Main content -->
-            <div class="container">
+            <div class="content">
                 <partial name="_CookieConsentPartial" />
                 <main role="main" class="pb-3">
                     @RenderBody()
@@ -501,8 +501,8 @@
     <script src="~/Layout/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Select 2 -->
     <script src="~/select2/dist/js/select2.min.js"></script>
-   
-    
+
+
 
 
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -513,7 +513,7 @@
     @*<script src="~/Layout/plugins/jqvmap/jquery.vmap.min.js"></script>
         <script src="~/Layout/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>*@
     <!-- Bootstrap 4 -->
-
+    
     <script src="~/Layout/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
 

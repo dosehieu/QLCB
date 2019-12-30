@@ -18,11 +18,12 @@ namespace QLCBCore.Controllers
         {
             _context = context;
         }
-
+        
         // GET: CanBo
         public async Task<IActionResult> Index()
         {
-            return View(await _context.CanBos.ToListAsync());
+            
+            return View(await _context.CanBos.Include(n => n.dmChucVu).Include(n => n.dmDonVi).Include(n => n.dmKieuCanBo).Include(n => n.dmTrinhDo).ToListAsync());
         }
 
         // GET: CanBo/Details/5
@@ -46,48 +47,20 @@ namespace QLCBCore.Controllers
         // GET: CanBo/Create
         public IActionResult Create()
         {
-            List<SelectListItem> LstDanToc;
-            LstDanToc = _context.dmDanTocs.Select(a =>
-                                  new SelectListItem
-                                  {
-                                      Value = a.ID.ToString(),
-                                      Text = a.TenDanToc
-                                  }).ToList();
-            
-            ViewBag.LstDanToc = LstDanToc;
-            List<SelectListItem> LstTonGiao;
-            LstTonGiao = _context.dmTonGiaos.Select(a =>
-                                  new SelectListItem
-                                  {
-                                      Value = a.ID.ToString(),
-                                      Text = a.TenTonGiao
-                                  }).ToList();
-            ViewBag.LstTonGiao = LstTonGiao;
-
-            List<SelectListItem> LstTrinhDoPT;
-            LstTrinhDoPT = _context.dmTrinhDoPTs.Select(a =>
-                                  new SelectListItem
-                                  {
-                                      Value = a.ID.ToString(),
-                                      Text = a.TenTrinhDo
-                                  }).ToList();
-            ViewBag.LstTrinhDoPT = LstTrinhDoPT;
-
-            List<SelectListItem> LstHocHam;
-            LstHocHam = _context.dmHocHams.Select(a =>
-                                  new SelectListItem
-                                  {
-                                      Value = a.ID.ToString(),
-                                      Text = a.TenHocHam
-                                  }).ToList();
-            ViewBag.LstHocHam = LstHocHam;
-
-            //CreateCanBoVM _List = new CreateCanBoVM()
-            //{
-            //    LstDanToc = LstDanToc,
-            //    LstTonGiao = LstTonGiao
-
-            //};
+            ViewData["DanTocID"] = new SelectList(_context.dmDanTocs, "ID", "TenDanToc");
+            ViewData["TonGiaoID"] = new SelectList(_context.dmTonGiaos, "ID", "TenTonGiao");
+            ViewData["TDPhoThongID"] = new SelectList(_context.dmTrinhDoPTs, "ID", "TenTrinhDo");
+            ViewData["HocHamID"] = new SelectList(_context.dmHocHams, "ID", "TenHocHam");
+            ViewData["NgheNghiepID"] = new SelectList(_context.dmNgheNghieps, "ID", "TenNgheNghiep");
+            ViewData["TDPhoThongID"] = new SelectList(_context.dmTrinhDoPTs, "ID", "TenTrinhDo");
+            ViewData["NgheNghiepID"] = new SelectList(_context.dmNgheNghieps, "ID", "TenNgheNghiep");
+            ViewData["HinhThucThiTuyenID"] = new SelectList(_context.dmHinhThucThiTuyens, "ID", "TenHinhThucTT");
+            ViewData["QuanHamCaoNhatID"] = new SelectList(_context.dmQuanHams, "ID", "TenQuanHam");
+            ViewData["HangThuongBinhID"] = new SelectList(_context.dmHangThuongBinhs, "ID", "TenHangThuongBinh");
+            ViewData["GiaDinhCSID"] = new SelectList(_context.dmGiaDinhCSs, "ID", "TenGiaDinhCS");
+            ViewData["SucKhoeID"] = new SelectList(_context.dmTinhTrangSucKhoes, "ID", "TenTTSK");
+            ViewData["DonViID"] = new SelectList(_context.dmDonVis, "ID", "TenDonVi");
+            ViewData["KieuCanBo"] = new SelectList(_context.dmKieuCanBo, "ID", "TenKieuCanBo");
 
             return View();
         }
@@ -97,7 +70,7 @@ namespace QLCBCore.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Ma,SoHieu,HoTen,TenGoiKhac,GioiTinh,NgaySinh,DanTocID,TonGiaoID,DonViID,TrangThai,DienThoai,Email,CMTND,NgayCapCMT,NoiCapCMT,NoiSinhID,QueQuanID,HKTT,NoiO,TDPhoThongID,ChucDanhKhoaHocID,HinhAnh,NgheNghiepID,CoquanTuyenDung,NgayTuyen,NgayVeCQ,HinhThucThiTuyenID,KieuCanBo,NgayHetHanHD,CongViecDuocGiao,SoTruongCongTac,NgayVaoDang,NgayChinhThuc,NgayNhapNgu,NgayXuatNgu,QuanHamCaoNhatID,HangThuongBinhID,GiaDinhCSID,SucKhoeID,ChieuCao,CanNang,NhomMauID,SoBHXH,NoiCapSoBHXH,SoBHYT,LichSuBanThan,GhiChu,NhanXetDanhGia,ChucVuID,BacLuong,NgachID,HeSo,NgayHuong,PhuCapChucVu,PhuCapKhac,TrinhDoID,RegionID,NgayCapNhat,DanhHieuCaoNhatID,KhenThuong,KyLuat,NgayVe,NgayThongBaoNghiHuu,NgayNghiHuu,NgayGiuNgach,NgayThoiViec,NgayChuyenCtac,NgayTuTran,DonviOldID,IsDeleted")] CanBo canBo)
+        public async Task<IActionResult> Create([Bind("ID,Ma,SoHieu,HoTen,TenGoiKhac,GioiTinh,NgaySinh,DanTocID,TonGiaoID,DonViID,TrangThai,DienThoai,Email,CMTND,NgayCapCMT,NoiCapCMT,NoiSinhID,QueQuanID,HKTT,NoiO,TDPhoThongID,HochamID,HinhAnh,NgheNghiepID,CoquanTuyenDung,NgayTuyen,NgayVeCQ,HinhThucThiTuyenID,KieuCanBo,NgayHetHanHD,CongViecDuocGiao,SoTruongCongTac,NgayVaoDang,NgayChinhThuc,NgayNhapNgu,NgayXuatNgu,QuanHamCaoNhatID,HangThuongBinhID,GiaDinhCSID,SucKhoeID,ChieuCao,CanNang,NhomMauID,SoBHXH,NoiCapSoBHXH,SoBHYT,LichSuBanThan,GhiChu,NhanXetDanhGia")] CanBo canBo)
         {
             if (ModelState.IsValid)
             {
@@ -105,6 +78,20 @@ namespace QLCBCore.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DanTocID"] = new SelectList(_context.dmDanTocs, "ID", "TenDanToc");
+            ViewData["TonGiaoID"] = new SelectList(_context.dmTonGiaos, "ID", "TenTonGiao");
+            ViewData["TDPhoThongID"] = new SelectList(_context.dmTrinhDoPTs, "ID", "TenTrinhDo");
+            ViewData["HocHamID"] = new SelectList(_context.dmHocHams, "ID", "TenHocHam");
+            ViewData["NgheNghiepID"] = new SelectList(_context.dmNgheNghieps, "ID", "TenNgheNghiep");
+            ViewData["TDPhoThongID"] = new SelectList(_context.dmTrinhDoPTs, "ID", "TenTrinhDo");
+            ViewData["NgheNghiepID"] = new SelectList(_context.dmNgheNghieps, "ID", "TenNgheNghiep");
+            ViewData["HinhThucThiTuyenID"] = new SelectList(_context.dmHinhThucThiTuyens, "ID", "TenHinhThucTT");
+            ViewData["QuanHamCaoNhatID"] = new SelectList(_context.dmQuanHams, "ID", "TenQuanHam");
+            ViewData["HangThuongBinhID"] = new SelectList(_context.dmHangThuongBinhs, "ID", "TenHangThuongBinh");
+            ViewData["GiaDinhCSID"] = new SelectList(_context.dmGiaDinhCSs, "ID", "TenGiaDinhCS");
+            ViewData["SucKhoeID"] = new SelectList(_context.dmTinhTrangSucKhoes, "ID", "TenTTSK");
+            ViewData["DonViID"] = new SelectList(_context.dmDonVis, "ID", "TenDonVi");
+            ViewData["KieuCanBo"] = new SelectList(_context.dmKieuCanBo, "ID", "TenKieuCanBo");
             return View(canBo);
         }
 
@@ -129,7 +116,7 @@ namespace QLCBCore.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Ma,SoHieu,HoTen,TenGoiKhac,GioiTinh,NgaySinh,DanTocID,TonGiaoID,DonViID,TrangThai,DienThoai,Email,CMTND,NgayCapCMT,NoiCapCMT,NoiSinhID,QueQuanID,HKTT,NoiO,TDPhoThongID,ChucDanhKhoaHocID,HinhAnh,NgheNghiepID,CoquanTuyenDung,NgayTuyen,NgayVeCQ,HinhThucThiTuyenID,KieuCanBo,NgayHetHanHD,CongViecDuocGiao,SoTruongCongTac,NgayVaoDang,NgayChinhThuc,NgayNhapNgu,NgayXuatNgu,QuanHamCaoNhatID,HangThuongBinhID,GiaDinhCSID,SucKhoeID,ChieuCao,CanNang,NhomMauID,SoBHXH,NoiCapSoBHXH,SoBHYT,LichSuBanThan,GhiChu,NhanXetDanhGia,ChucVuID,BacLuong,NgachID,HeSo,NgayHuong,PhuCapChucVu,PhuCapKhac,TrinhDoID,RegionID,NgayCapNhat,DanhHieuCaoNhatID,KhenThuong,KyLuat,NgayVe,NgayThongBaoNghiHuu,NgayNghiHuu,NgayGiuNgach,NgayThoiViec,NgayChuyenCtac,NgayTuTran,DonviOldID,IsDeleted")] CanBo canBo)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Ma,SoHieu,HoTen,TenGoiKhac,GioiTinh,NgaySinh,DanTocID,TonGiaoID,DonViID,TrangThai,DienThoai,Email,CMTND,NgayCapCMT,NoiCapCMT,NoiSinhID,QueQuanID,HKTT,NoiO,TDPhoThongID,HochamID,HinhAnh,NgheNghiepID,CoquanTuyenDung,NgayTuyen,NgayVeCQ,HinhThucThiTuyenID,KieuCanBo,NgayHetHanHD,CongViecDuocGiao,SoTruongCongTac,NgayVaoDang,NgayChinhThuc,NgayNhapNgu,NgayXuatNgu,QuanHamCaoNhatID,HangThuongBinhID,GiaDinhCSID,SucKhoeID,ChieuCao,CanNang,NhomMauID,SoBHXH,NoiCapSoBHXH,SoBHYT,LichSuBanThan,GhiChu,NhanXetDanhGia,ChucVuID,BacLuong,NgachID,HeSo,NgayHuong,PhuCapChucVu,PhuCapKhac,TrinhDoID,RegionID,NgayCapNhat,DanhHieuCaoNhatID,KhenThuong,KyLuat,NgayVe,NgayThongBaoNghiHuu,NgayNghiHuu,NgayGiuNgach,NgayThoiViec,NgayChuyenCtac,NgayTuTran,DonviOldID,IsDeleted")] CanBo canBo)
         {
             if (id != canBo.ID)
             {
