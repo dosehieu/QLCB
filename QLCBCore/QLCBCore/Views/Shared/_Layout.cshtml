@@ -29,7 +29,6 @@
 
     <link href="~/Layout/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet" />
     <!-- Daterange picker -->
-
     @*<link href="~/Layout/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />*@
     <!-- summernote -->
 
@@ -195,11 +194,10 @@
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="CanBo/Index" class="nav-link active">
+                            <a href="/CanBo/Index" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Hồ sơ cán bộ
-
                                 </p>
                             </a>
                         </li>
@@ -222,7 +220,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="./index2.html" class="nav-link">
+                                    <a href="/QTKhenThuongs/Index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>DS cán bộ khen thưởng</p>
                                     </a>
@@ -467,12 +465,15 @@
             </div>
             <!-- /.content-header -->
             <!-- Main content -->
-            <div class="container">
-                <partial name="_CookieConsentPartial" />
-                <main role="main" class="pb-3">
-                    @RenderBody()
-                </main>
-            </div>
+            @*<div class="container">*@
+            <section class="content">
+                <div class="container-fluid">
+                    <partial name="_CookieConsentPartial" />
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+            </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
@@ -501,8 +502,8 @@
     <script src="~/Layout/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Select 2 -->
     <script src="~/select2/dist/js/select2.min.js"></script>
-   
-    
+
+
 
 
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
