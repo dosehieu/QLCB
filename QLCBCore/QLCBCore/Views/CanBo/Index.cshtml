@@ -15,8 +15,9 @@
                 <div class="card-header"><h3 class="card-title"><i class="fas fa-list"></i> DANH SÁCH CÁN BỘ : (SỐ LƯỢNG CÁN BỘ : @ViewBag.CountCB)</h3></div>
                 <div class="card-body">
                     <div class="mb-2">
-                        <button asp-controller="CanBo" asp-action="Create">Click Me</button>
+                        
                         <button class="btn btn-primary"><i class="fa fa-plus"></i> Thêm mới</button>
+
                     </div>
                     
                     <div class="data-table table-responsive" id="divListUser">
@@ -46,8 +47,6 @@
                                     <th>
                                         @Html.DisplayNameFor(model => model.ChucVuID)
                                     </th>
-
-
 
                                     <th>
                                         @Html.DisplayNameFor(model => model.KieuCanBo)

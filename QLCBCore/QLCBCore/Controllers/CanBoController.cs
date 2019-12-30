@@ -22,7 +22,7 @@ namespace QLCBCore.Controllers
         // GET: CanBo
         public async Task<IActionResult> Index()
         {
-            
+            var i = 1;
             return View(await _context.CanBos.Include(n => n.dmChucVu).Include(n => n.dmDonVi).Include(n => n.dmKieuCanBo).Include(n => n.dmTrinhDo).ToListAsync());
         }
 
