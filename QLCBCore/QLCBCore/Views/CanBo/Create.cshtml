@@ -4,27 +4,28 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@{
-    List<SelectListItem> LstDanToc = ViewBag.LstDanToc;
-    List<SelectListItem> LstTonGiao = ViewBag.LstTonGiao;
-    List<SelectListItem> LstHocHam = ViewBag.LstHocHam;
-    List<SelectListItem> LstTrinhDoPT = ViewBag.LstTrinhDoPT;
-    
 
-
-}
 <script type="text/javascript">
     $(document).ready(function () {
         $('#DanTocID').select2();
         $('#TonGiaoID').select2();
-        $('#TrangThai').select2();
         $('#TDPhoThongID').select2();
-        $('#ChucDanhKhoaHocID').select2();
+        $('#HocHamID').select2();
+        $('#NgheNghiepID').select2();
+        $('#TDPhoThongID').select2();
+        $('#NgheNghiepID').select2();
+        $('#HinhThucThiTuyenID').select2();
+        $('#QuanHamCaoNhatID').select2();
+        $('#HangThuongBinhID').select2();
+        $('#GiaDinhCSID').select2();
+        $('#SucKhoeID').select2();
+        $('#DonViID').select2();
+        
     });
-    
     $('#HinhAnh').change(function () {
         $('#FileName').html($(this).val())
     });
+    
 </script>
 
 <style>
@@ -48,7 +49,7 @@
     <form asp-action="Create">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="card card-primary card-outline">
-            <div class="card-header"><h3 class="card-title"><i class="fas fa-edit"></i>THÊM MỚI THÔNG TIN CÁN BỘ</h3></div>
+            <div class="card-header"><h3 class="card-title"><i class="fas fa-edit"></i>  THÊM MỚI THÔNG TIN CÁN BỘ</h3></div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
@@ -71,6 +72,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="HoTen" class="control-label"></label>
+                            <span class="text-danger"> * </span>
                             <input asp-for="HoTen" class="form-control" />
                             <span asp-validation-for="HoTen" class="text-danger"></span>
                         </div>
@@ -88,6 +90,7 @@
                         <div class="form-group">
                             <div>
                                 <label asp-for="GioiTinh" class="control-label"></label>
+                                <span class="text-danger"> * </span>
                             </div>
                             <div class="d-inline-flex mt-2"  >
                                 <div class="custom-control custom-radio">
@@ -106,13 +109,15 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="NgaySinh" class="control-label"></label>
+                            <span class="text-danger"> * </span>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgaySinh" >
-                                <span asp-validation-for="NgaySinh" class="text-danger"></span>
+                                <input type="text" class="form-control date-time" asp-for="NgaySinh">
+
                             </div>
+                            <span asp-validation-for="NgaySinh" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -120,19 +125,23 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="DanTocID" class="control-label"></label>
+                            <span class="text-danger"> * </span>
                             <div>
-                                <select class="form-control" asp-for="DanTocID" asp-items="LstDanToc"></select>
+                                <select class="form-control" asp-for="DanTocID" asp-items="ViewBag.DanTocID">
+                                    
+                                </select>
                             </div>
-                          
+
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="TonGiaoID" class="control-label"></label>
+                            <span class="text-danger"> * </span>
                             <div>
-                                <select class="form-control" asp-for="TonGiaoID" asp-items="LstTonGiao"></select>
+                                <select class="form-control" asp-for="TonGiaoID" asp-items="ViewBag.TonGiaoID"></select>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -140,21 +149,25 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="DonViID" class="control-label"></label>
-                            <input asp-for="DonViID" class="form-control" />
-                            <span asp-validation-for="DonViID" class="text-danger"></span>
+                            <span class="text-danger"> * </span>
+                            <div>
+                                <select class="form-control" asp-for="DonViID" asp-items="ViewBag.DonViID"><option> Chọn </option></select>
+                            </div>
                         </div>
+                        
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="TrangThai" class="control-label"></label>
+                            <span class="text-danger"> * </span>
                             @*<input asp-for="TrangThai" class="form-control" />*@
-                            <select class="form-control"  asp-for="TrangThai" >
+                            <select class="form-control" asp-for="TrangThai">
                                 <option value="0">Đang công tác</option>
                                 <option value="1">Điều chuyển</option>
                                 <option value="2">Nghỉ hưu</option>
                                 <option value="3">Thôi việc</option>
                                 <option value="4">Từ trần</option>
-                                
+
                             </select>
 
                             @*<span asp-validation-for="TrangThai" class="text-danger"></span>*@
@@ -210,9 +223,9 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgayCapCMT" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
-                                <span asp-validation-for="NgayCapCMT" class="text-danger"></span>
+                                <input type="text" class="form-control date-time" asp-for="NgayCapCMT" >
                             </div>
+                            <span asp-validation-for="NgayCapCMT" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -263,7 +276,7 @@
                         <div class="form-group">
                             <label asp-for="TDPhoThongID" class="control-label"></label>
                             <div>
-                                <select class="form-control" asp-for="TDPhoThongID" asp-items="LstTrinhDoPT"></select>
+                                <select class="form-control" asp-for="TDPhoThongID" asp-items="ViewBag.TDPhoThongID"><option> Chọn </option></select>
                             </div>
                         </div>
                         @*<div class="form-group">
@@ -274,9 +287,9 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label asp-for="ChucDanhKhoaHocID" class="control-label"></label>
+                            <label asp-for="HocHamID" class="control-label"></label>
                             <div>
-                                <select class="form-control" asp-for="ChucDanhKhoaHocID" asp-items="LstHocHam"></select>
+                                <select class="form-control" asp-for="HocHamID" asp-items="ViewBag.HocHamID"><option> Chọn </option></select>
                             </div>
                         </div>
                         @*<div class="form-group">
@@ -300,11 +313,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label asp-for="HinhAnh" class="control-label"></label>
-                            <input asp-for="HinhAnh" class="form-control" />
-                            <span asp-validation-for="HinhAnh" class="text-danger"></span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -316,9 +324,15 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="NgheNghiepID" class="control-label"></label>
+                            <div>
+                                <select class="form-control" asp-for="NgheNghiepID" asp-items="ViewBag.NgheNghiepID"><option> Chọn </option></select>
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                            <label asp-for="NgheNghiepID" class="control-label"></label>
                             <input asp-for="NgheNghiepID" class="form-control" />
                             <span asp-validation-for="NgheNghiepID" class="text-danger"></span>
-                        </div>
+                        </div>*@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -333,26 +347,30 @@
 
                         <div class="form-group">
                             <label asp-for="NgayTuyen" class="control-label"></label>
+                            <span class="text-danger"> * </span>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
                                 <input type="text" class="form-control date-time" asp-for="NgayTuyen" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
-                                <span asp-validation-for="NgayTuyen" class="text-danger"></span>
+
                             </div>
+                            <span asp-validation-for="NgayTuyen" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-md-6">
 
                         <div class="form-group">
                             <label asp-for="NgayVeCQ" class="control-label"></label>
+                            <span class="text-danger"> * </span>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
                                 <input type="text" class="form-control date-time" asp-for="NgayVeCQ" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
-                                <span asp-validation-for="NgayVeCQ" class="text-danger"></span>
+
                             </div>
+                            <span asp-validation-for="NgayVeCQ" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -360,16 +378,30 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="HinhThucThiTuyenID" class="control-label"></label>
+                            <span class="text-danger"> * </span>
+                            <div>
+                                <select class="form-control" asp-for="HinhThucThiTuyenID" asp-items="ViewBag.HinhThucThiTuyenID"><option> Chọn </option></select>
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                            <label asp-for="HinhThucThiTuyenID" class="control-label"></label>
                             <input asp-for="HinhThucThiTuyenID" class="form-control" />
                             <span asp-validation-for="HinhThucThiTuyenID" class="text-danger"></span>
-                        </div>
+                        </div>*@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="KieuCanBo" class="control-label"></label>
+                            <span class="text-danger"> * </span>
+                            <div>
+                                <select class="form-control" asp-for="KieuCanBo" asp-items="ViewBag.KieuCanBo"><option> Chọn </option></select>
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                            <label asp-for="KieuCanBo" class="control-label"></label>
                             <input asp-for="KieuCanBo" class="form-control" />
                             <span asp-validation-for="KieuCanBo" class="text-danger"></span>
-                        </div>
+                        </div>*@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -379,8 +411,9 @@
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
                                 <input type="text" class="form-control date-time" asp-for="NgayHetHanHD" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
-                                <span asp-validation-for="NgayHetHanHD" class="text-danger"></span>
+
                             </div>
+                            <span asp-validation-for="NgayHetHanHD" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -416,8 +449,9 @@
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
                                 <input type="text" class="form-control date-time" asp-for="NgayVaoDang" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
-                                <span asp-validation-for="NgayVaoDang" class="text-danger"></span>
+
                             </div>
+                            <span asp-validation-for="NgayVaoDang" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -428,8 +462,9 @@
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
                                 <input type="text" class="form-control date-time" asp-for="NgayChinhThuc" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
-                                <span asp-validation-for="NgayChinhThuc" class="text-danger"></span>
+
                             </div>
+                            <span asp-validation-for="NgayChinhThuc" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -442,8 +477,9 @@
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
                                 <input type="text" class="form-control date-time" asp-for="NgayNhapNgu" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
-                                <span asp-validation-for="NgayNhapNgu" class="text-danger"></span>
+
                             </div>
+                            <span asp-validation-for="NgayNhapNgu" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -454,8 +490,9 @@
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
                                 <input type="text" class="form-control date-time" asp-for="NgayXuatNgu" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
-                                <span asp-validation-for="NgayXuatNgu" class="text-danger"></span>
+
                             </div>
+                            <span asp-validation-for="NgayXuatNgu" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -463,23 +500,37 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="QuanHamCaoNhatID" class="control-label"></label>
+                            <div>
+                                <select class="form-control" asp-for="QuanHamCaoNhatID" asp-items="ViewBag.QuanHamCaoNhatID"><option> Chọn </option></select>
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                            <label asp-for="QuanHamCaoNhatID" class="control-label"></label>
                             <input asp-for="QuanHamCaoNhatID" class="form-control" />
                             <span asp-validation-for="QuanHamCaoNhatID" class="text-danger"></span>
-                        </div>
+                        </div>*@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="HangThuongBinhID" class="control-label"></label>
-                            <input asp-for="HangThuongBinhID" class="form-control" />
-                            <span asp-validation-for="HangThuongBinhID" class="text-danger"></span>
+                            <div>
+                                <select class="form-control" asp-for="HangThuongBinhID" asp-items="ViewBag.HangThuongBinhID"><option> Chọn </option></select>
+                            </div>
                         </div>
+                        
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="GiaDinhCSID" class="control-label"></label>
+                            <div>
+                                <select class="form-control" asp-for="GiaDinhCSID" asp-items="ViewBag.GiaDinhCSID"><option> Chọn </option></select>
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                            <label asp-for="GiaDinhCSID" class="control-label"></label>
                             <input asp-for="GiaDinhCSID" class="form-control" />
                             <span asp-validation-for="GiaDinhCSID" class="text-danger"></span>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
             </div>
@@ -490,11 +541,14 @@
 
                 <div class="row">
                     <div class="col-md-3">
+                        
                         <div class="form-group">
                             <label asp-for="SucKhoeID" class="control-label"></label>
-                            <input asp-for="SucKhoeID" class="form-control" />
-                            <span asp-validation-for="SucKhoeID" class="text-danger"></span>
+                            <div>
+                                <select class="form-control" asp-for="SucKhoeID" asp-items="ViewBag.SucKhoeID"><option> Chọn </option></select>
+                            </div>
                         </div>
+                        
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
@@ -513,9 +567,15 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label asp-for="NhomMauID" class="control-label"></label>
+                            <div>
+                                <select class="form-control" asp-for="NhomMauID" asp-items="ViewBag.NhomMauID"><option> Chọn </option></select>
+                            </div>
+                        </div>
+                        @*<div class="form-group">
+                            <label asp-for="NhomMauID" class="control-label"></label>
                             <input asp-for="NhomMauID" class="form-control" />
                             <span asp-validation-for="NhomMauID" class="text-danger"></span>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
                 <div class="row">
@@ -547,8 +607,9 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label asp-for="LichSuBanThan" class="control-label"></label>
-                            <input asp-for="LichSuBanThan" class="form-control" />
-                            <span asp-validation-for="LichSuBanThan" class="text-danger"></span>
+                            
+                            <textarea class="form-control" asp-for="LichSuBanThan"> </textarea>
+                            
                         </div>
                     </div>
                 </div>
@@ -568,9 +629,9 @@
                         </div>
                     </div>
                 </div>
-                <h4>Lưu ý: Các trường có dấu (<span class="danger">*</span>) bắt buộc nhập thông tin</h4>
+                <h5 class="text-center">Lưu ý: Các trường có dấu (<span class="text-danger">*</span>) bắt buộc nhập thông tin</h5>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <input type="submit" value="Lưu" class="btn btn-primary" />
                 </div>
             </div>
         </div>
@@ -579,7 +640,7 @@
 </div>
 
 <div>
-    <button asp-action="Index">Back to List</button>
+    <button asp-action="Index">Trở lại danh sách</button>
 </div>
 <script src="~/dateformat/date.format.js"></script>
 
