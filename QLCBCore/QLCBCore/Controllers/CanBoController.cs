@@ -37,7 +37,6 @@ namespace QLCBCore.Controllers
         // GET: CanBo
         public async Task<IActionResult> Index()
         {
-
             HtmlPager = QLCBCore.Utils.HtmlPager.getPage(
                    string.Format("#ID_DonVi=" + ID_DonVi + "&RowPerPage={0}&PageStep={1}&Field={2}&FieldOption={3}{4}&Page=", RowPerPage, PageStep,
                     Field, (FieldOption) ? 0 : 1, filter), CurrentPage, RowPerPage, TotalRecord);

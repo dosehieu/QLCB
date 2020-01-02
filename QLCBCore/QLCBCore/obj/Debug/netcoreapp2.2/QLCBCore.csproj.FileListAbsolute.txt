@@ -99,8 +99,11 @@ E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QTKhenThuongs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QTKhenThuongs\Edit.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QTKhenThuongs\Index.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.csprojAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QTKhenThuongs\Create.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QTKhenThuongs\Delete.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QTKhenThuongs\Details.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QTKhenThuongs\Edit.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QTKhenThuongs\Index.g.cshtml.cs
+=======
+>>>>>>> origin/master
