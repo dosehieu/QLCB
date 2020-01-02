@@ -1,0 +1,99 @@
+﻿@model IEnumerable<QLCBCore.Models.QTKhenThuong>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.CanBoID)*@
+                Mã cán bộ
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.HinhThucKhenThuongID)*@
+                Mã hình thức khen thưởng
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.NoiDung)*@
+                Nội Dung
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayKhenThuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCaoNhat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoQuyetDinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayKy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoQuanBanHanhQD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsKhenThuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MucKhenThuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDeleted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanBoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinhThucKhenThuongID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoiDung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayKhenThuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCaoNhat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoQuyetDinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayKy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoQuanBanHanhQD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsKhenThuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MucKhenThuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeleted)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

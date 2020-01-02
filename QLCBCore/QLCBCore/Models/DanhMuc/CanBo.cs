@@ -11,6 +11,7 @@ namespace QLCBCore.Models
     {
         public int ID { get; set; } // ID (Primary key)
         [Display(Name = "Mã")]
+        [MaxLength(50)]
         public string Ma { get; set; } // Ma (length: 50)
 
        
@@ -18,19 +19,21 @@ namespace QLCBCore.Models
         //[MaxLength(50)]
         //[Column("SOHIEU", TypeName = "nvarchar")]
         [Display(Name = "Số hiệu")]
+        [MaxLength(50)]
         public string SoHieu { get; set; } // SoHieu (length: 50)
         [Required(AllowEmptyStrings = false, ErrorMessage = "Trường này không được để trống")]
         [Display(Name = "Họ tên")]
         [MaxLength(100)]
         public string HoTen { get; set; } // HoTen (length: 100)
         [Display(Name = "Tên gọi khác")]
+        [MaxLength(100)]
         public string TenGoiKhac { get; set; } // TenGoiKhac (length: 100)
         [Display(Name = "Giới tính")]
         public bool? GioiTinh { get; set; } // GioiTinh
         [Required(AllowEmptyStrings = false, ErrorMessage = "Trường này không được để trống")]
         [Display(Name = "Ngày sinh")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        [Column(TypeName = "Date")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgaySinh { get; set; } // NgaySinh
         [Display(Name = "Dân tộc")]
         [ForeignKey("dmDanToc")]
@@ -53,9 +56,11 @@ namespace QLCBCore.Models
         public int? TrangThai { get; set; } // TrangThai
         [Display(Name = "Điện thoại")]
         [MaxLength(15)]
+        [Phone]
         public string DienThoai { get; set; } // DienThoai (length: 15)
         [Display(Name = "Email")]
         [MaxLength(250)]
+        [EmailAddress]
         public string Email { get; set; } // Email (length: 250)
         [Display(Name = "CMTND")]
         [MaxLength(15)]
@@ -64,6 +69,8 @@ namespace QLCBCore.Models
         /// Ngày cấp chứng minh thư
         ///</summary>
         [Display(Name = "Ngày cấp")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayCapCMT { get; set; } // NgayCapCMT
         [Display(Name = "Nơi cấp")]
         [MaxLength(300)]
@@ -85,6 +92,7 @@ namespace QLCBCore.Models
         public string NoiO { get; set; } // NoiO (length: 300)
         [Display(Name = "Trình độ phổ thông")]
         [ForeignKey("dmTrinhDoPT")]
+        
         public int? TDPhoThongID { get; set; } // TDPhoThongID
         [ForeignKey("dmHocHam")]
         [Display(Name = "Học hàm")]
@@ -96,6 +104,7 @@ namespace QLCBCore.Models
         //THÔNG TIN TUYỂN DỤNG
         [Display(Name = "Nghề nghiệp")]
         [ForeignKey("dmNgheNghiep")]
+        
         public int? NgheNghiepID { get; set; } // NgheNghiepID
         [Display(Name = "Cơ quan tuyển dụng")]
         [MaxLength(100)]
@@ -103,12 +112,12 @@ namespace QLCBCore.Models
         [Required(AllowEmptyStrings = false, ErrorMessage = "Trường này không được để trống")]
         [Display(Name = "Ngày tuyển ")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        [Column(TypeName = "Date")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayTuyen { get; set; } // NgayTuTran
         [Required(AllowEmptyStrings = false, ErrorMessage = "Trường này không được để trống")]
         [Display(Name = "Ngày về CQ")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        [Column(TypeName = "Date")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayVeCQ { get; set; } // NgayTuTran
         
         [Display(Name = "Hình thức thi tuyển")]
@@ -121,6 +130,8 @@ namespace QLCBCore.Models
         [ForeignKey("dmKieuCanBo")]
         public int? KieuCanBo { get; set; } // KieuCanBo
         [Display(Name = "Ngày hết hạn hợp đồng")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayHetHanHD { get; set; } // NgayHetHanHD
         [Display(Name = "CV được giao")]
         
@@ -130,26 +141,38 @@ namespace QLCBCore.Models
 
         //THAM GIA TỔ CHỨC XÃ HỘI
         [Display(Name = "Ngày vào đảng")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayVaoDang { get; set; } // NgayVaoDang
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         [Display(Name = "Ngày chính thức")]
         public System.DateTime? NgayChinhThuc { get; set; } // NgayChinhThuc
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         [Display(Name = "Ngày nhập ngũ")]
+
         public System.DateTime? NgayNhapNgu { get; set; } // NgayNghiHuu
         [Display(Name = "Ngày xuất ngũ")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayXuatNgu { get; set; } // NgayNghiHuu
         [Display(Name = "Quân hàm cao nhất")]
         [ForeignKey("dmQuanHam")]
         public int? QuanHamCaoNhatID { get; set; } // QuanHamCaoNhatID
         [Display(Name = "Thương binh hạng")]
         [ForeignKey("dmHangThuongBinh")]
+        
         public int? HangThuongBinhID { get; set; } // HangThuongBinhID
         [Display(Name = "Gia đình chính sách")]
         [ForeignKey("dmGiaDinhCS")]
+        
         public int? GiaDinhCSID { get; set; } // GiaDinhCSID
 
         //THÔNG TIN KHÁC
         [Display(Name = "Tình trạng sức khỏe")]
         [ForeignKey("dmSucKhoe")]
+        
         public int? SucKhoeID { get; set; } // SucKhoeID
         [Display(Name = "Chiều cao(cm)")]
         public int? ChieuCao { get; set; } // ChieuCao
@@ -157,6 +180,7 @@ namespace QLCBCore.Models
         public int? CanNang { get; set; } // CanNang
         [Display(Name = "Nhóm máu")]
         [ForeignKey("dmNhomMau")]
+        
         public int? NhomMauID { get; set; } // NhomMauID
         [Display(Name = "Số sổ BHXH")]
         [MaxLength(30)]
@@ -188,6 +212,8 @@ namespace QLCBCore.Models
         ///<summary>
         /// Ngày được hưởng hệ số hiện tại
         ///</summary>
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayHuong { get; set; } // NgayHuong
         public double? PhuCapChucVu { get; set; } // PhuCapChucVu
         public double? PhuCapKhac { get; set; } // PhuCapKhac
@@ -197,26 +223,45 @@ namespace QLCBCore.Models
         ///<summary>
         /// Xác định khu vực cán bộ đang công tác.
         ///</summary>
+        [MaxLength(30)]
         public string RegionID { get; set; } // RegionID (length: 15)
         ///<summary>
         /// Ngày cập nhật thông tin syll lần cuối
         ///</summary>
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayCapNhat { get; set; } // NgayCapNhat
         public int? DanhHieuCaoNhatID { get; set; } // DanhHieuCaoNhatID
+        [MaxLength(250)]
         public string KhenThuong { get; set; } // KhenThuong
+        [MaxLength(250)]
         public string KyLuat { get; set; } // KyLuat (length: 250)
         ///<summary>
         /// là ngày về tổng cục ds nếu cơ quan tuyển dụng ban đầu không phải là tổng cục dân số
         ///</summary>
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayVe { get; set; } // NgayVe
         ///<summary>
         /// Ngày thông báo hoặc dự kiến ngày thông báo
         ///</summary>
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayThongBaoNghiHuu { get; set; } // NgayThongBaoNghiHuu
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayNghiHuu { get; set; } // NgayNghiHuu
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayGiuNgach { get; set; } // NgayGiuNgach
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayThoiViec { get; set; } // NgayThoiViec
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayChuyenCtac { get; set; } // NgayChuyenCtac
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayTuTran { get; set; } // NgayTuTran
         public int? DonviOldID { get; set; } // DonviOldID
         public bool? IsDeleted { get; set; } // IsDeleted

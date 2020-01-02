@@ -20,12 +20,9 @@
         $('#GiaDinhCSID').select2();
         $('#SucKhoeID').select2();
         $('#DonViID').select2();
-        
+        $('#KieuCanBo').select2();
+        $('#TrangThai').select2();
     });
-    $('#HinhAnh').change(function () {
-        $('#FileName').html($(this).val())
-    });
-    
 </script>
 
 <style>
@@ -43,14 +40,20 @@
     }
 </style>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        bsCustomFileInput.init();
+    });
+</script>
 <hr />
 <div class="row">
 
-    <form asp-action="Create">
+    <form method="POST" enctype="multipart/form-data" asp-action="Create">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="card card-primary card-outline">
-            <div class="card-header"><h3 class="card-title"><i class="fas fa-edit"></i>  THÊM MỚI THÔNG TIN CÁN BỘ</h3></div>
+            <div class="card-header"><h3 class="card-title"><i class="fas fa-plus-circle"></i>  THÊM MỚI THÔNG TIN CÁN BỘ</h3></div>
             <div class="card-body">
+                
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -92,19 +95,19 @@
                                 <label asp-for="GioiTinh" class="control-label"></label>
                                 <span class="text-danger"> * </span>
                             </div>
-                            <div class="d-inline-flex mt-2"  >
+                            <div class="d-inline-flex mt-2">
                                 <div class="custom-control custom-radio">
-                                    <input asp-for="GioiTinh" class="custom-control-input" value="true" type="radio" id="customRadio1" name="customRadio" checked="">
-                                    <label for="customRadio1" class="custom-control-label">Nam</label>
+                                    <input class="custom-control-input" value="true" type="radio" id="GioiTinh1" name="GioiTinh" checked="">
+                                    <label for="GioiTinh1" class="custom-control-label">Nam</label>
                                 </div>
                                 <div class="custom-control custom-radio ml-3">
-                                    <input asp-for="GioiTinh" class="custom-control-input" value="false" type="radio" id="customRadio2" name="customRadio">
-                                    <label for="customRadio2" class="custom-control-label">Nữ</label>
+                                    <input class="custom-control-input" value="false" type="radio" id="GioiTinh2" name="GioiTinh">
+                                    <label for="GioiTinh2" class="custom-control-label">Nữ</label>
                                 </div>
                             </div>
 
                         </div>
-                       
+
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -127,9 +130,7 @@
                             <label asp-for="DanTocID" class="control-label"></label>
                             <span class="text-danger"> * </span>
                             <div>
-                                <select class="form-control" asp-for="DanTocID" asp-items="ViewBag.DanTocID">
-                                    
-                                </select>
+                                <select class="form-control" asp-for="DanTocID" asp-items="ViewBag.DanTocID"></select>
                             </div>
 
                         </div>
@@ -151,10 +152,10 @@
                             <label asp-for="DonViID" class="control-label"></label>
                             <span class="text-danger"> * </span>
                             <div>
-                                <select class="form-control" asp-for="DonViID" asp-items="ViewBag.DonViID"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="DonViID" asp-items="ViewBag.DonViID"><option value=""> Chọn </option></select>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -183,15 +184,15 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-phone"></i></span>
                                 </div>
-                                <input asp-for="DienThoai" type="text" class="form-control" >
+                                <input asp-for="DienThoai" type="text" class="form-control">
                                 <span asp-validation-for="DienThoai" class="text-danger"></span>
                             </div>
                         </div>
                         @*<div class="form-group">
-                            <label asp-for="DienThoai" class="control-label"></label>
-                            <input asp-for="DienThoai" class="form-control" />
-                            <span asp-validation-for="DienThoai" class="text-danger"></span>
-                        </div>*@
+                    <label asp-for="DienThoai" class="control-label"></label>
+                    <input asp-for="DienThoai" class="form-control" />
+                    <span asp-validation-for="DienThoai" class="text-danger"></span>
+                </div>*@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -204,7 +205,7 @@
                                 <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                             @*<input asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>*@
+                    <span asp-validation-for="Email" class="text-danger"></span>*@
                         </div>
                     </div>
                 </div>
@@ -223,7 +224,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgayCapCMT" >
+                                <input type="text" class="form-control date-time" asp-for="NgayCapCMT">
                             </div>
                             <span asp-validation-for="NgayCapCMT" class="text-danger"></span>
                         </div>
@@ -276,27 +277,27 @@
                         <div class="form-group">
                             <label asp-for="TDPhoThongID" class="control-label"></label>
                             <div>
-                                <select class="form-control" asp-for="TDPhoThongID" asp-items="ViewBag.TDPhoThongID"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="TDPhoThongID" asp-items="ViewBag.TDPhoThongID"><option value=""> Chọn </option></select>
                             </div>
                         </div>
                         @*<div class="form-group">
-                            <label asp-for="TDPhoThongID" class="control-label"></label>
-                            <input asp-for="TDPhoThongID" class="form-control" />
-                            <span asp-validation-for="TDPhoThongID" class="text-danger"></span>
-                        </div>*@
+                    <label asp-for="TDPhoThongID" class="control-label"></label>
+                    <input asp-for="TDPhoThongID" class="form-control" />
+                    <span asp-validation-for="TDPhoThongID" class="text-danger"></span>
+                </div>*@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="HocHamID" class="control-label"></label>
                             <div>
-                                <select class="form-control" asp-for="HocHamID" asp-items="ViewBag.HocHamID"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="HocHamID" asp-items="ViewBag.HocHamID"><option value=""> Chọn </option></select>
                             </div>
                         </div>
                         @*<div class="form-group">
-                            <label asp-for="ChucDanhKhoaHocID" class="control-label"></label>
-                            <input asp-for="ChucDanhKhoaHocID" class="form-control" />
-                            <span asp-validation-for="ChucDanhKhoaHocID" class="text-danger"></span>
-                        </div>*@
+                    <label asp-for="ChucDanhKhoaHocID" class="control-label"></label>
+                    <input asp-for="ChucDanhKhoaHocID" class="form-control" />
+                    <span asp-validation-for="ChucDanhKhoaHocID" class="text-danger"></span>
+                </div>*@
                     </div>
                 </div>
                 <div class="row">
@@ -305,13 +306,14 @@
                             <label asp-for="HinhAnh" class="control-label"></label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="HinhAnh">
-                                    <label class="custom-file-label" id ="FileName">Choose file</label>
+                                    <input type="file" class="custom-file-input" name="ImageFile" id="ImageFile">
+                                    <label class="custom-file-label" id="FileName">Choose file</label>
                                 </div>
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="">Upload</span>
                                 </div>
                             </div>
+                            <span class="text-danger">@(ViewBag.Image_Notif)</span>
                         </div>
                     </div>
                 </div>
@@ -325,7 +327,7 @@
                         <div class="form-group">
                             <label asp-for="NgheNghiepID" class="control-label"></label>
                             <div>
-                                <select class="form-control" asp-for="NgheNghiepID" asp-items="ViewBag.NgheNghiepID"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="NgheNghiepID" asp-items="ViewBag.NgheNghiepID"><option value=""> Chọn </option></select>
                             </div>
                         </div>
                         @*<div class="form-group">
@@ -380,7 +382,7 @@
                             <label asp-for="HinhThucThiTuyenID" class="control-label"></label>
                             <span class="text-danger"> * </span>
                             <div>
-                                <select class="form-control" asp-for="HinhThucThiTuyenID" asp-items="ViewBag.HinhThucThiTuyenID"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="HinhThucThiTuyenID" asp-items="ViewBag.HinhThucThiTuyenID"></select>
                             </div>
                         </div>
                         @*<div class="form-group">
@@ -394,7 +396,7 @@
                             <label asp-for="KieuCanBo" class="control-label"></label>
                             <span class="text-danger"> * </span>
                             <div>
-                                <select class="form-control" asp-for="KieuCanBo" asp-items="ViewBag.KieuCanBo"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="KieuCanBo" asp-items="ViewBag.KieuCanBo"></select>
                             </div>
                         </div>
                         @*<div class="form-group">
@@ -501,7 +503,7 @@
                         <div class="form-group">
                             <label asp-for="QuanHamCaoNhatID" class="control-label"></label>
                             <div>
-                                <select class="form-control" asp-for="QuanHamCaoNhatID" asp-items="ViewBag.QuanHamCaoNhatID"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="QuanHamCaoNhatID" asp-items="ViewBag.QuanHamCaoNhatID"><option value=""> Chọn </option></select>
                             </div>
                         </div>
                         @*<div class="form-group">
@@ -514,7 +516,7 @@
                         <div class="form-group">
                             <label asp-for="HangThuongBinhID" class="control-label"></label>
                             <div>
-                                <select class="form-control" asp-for="HangThuongBinhID" asp-items="ViewBag.HangThuongBinhID"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="HangThuongBinhID" asp-items="ViewBag.HangThuongBinhID"><option value=""> Chọn </option></select>
                             </div>
                         </div>
                         
@@ -523,7 +525,7 @@
                         <div class="form-group">
                             <label asp-for="GiaDinhCSID" class="control-label"></label>
                             <div>
-                                <select class="form-control" asp-for="GiaDinhCSID" asp-items="ViewBag.GiaDinhCSID"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="GiaDinhCSID" asp-items="ViewBag.GiaDinhCSID"><option value=""> Chọn </option></select>
                             </div>
                         </div>
                         @*<div class="form-group">
@@ -545,7 +547,7 @@
                         <div class="form-group">
                             <label asp-for="SucKhoeID" class="control-label"></label>
                             <div>
-                                <select class="form-control" asp-for="SucKhoeID" asp-items="ViewBag.SucKhoeID"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="SucKhoeID" asp-items="ViewBag.SucKhoeID"><option value=""> Chọn </option></select>
                             </div>
                         </div>
                         
@@ -568,7 +570,7 @@
                         <div class="form-group">
                             <label asp-for="NhomMauID" class="control-label"></label>
                             <div>
-                                <select class="form-control" asp-for="NhomMauID" asp-items="ViewBag.NhomMauID"><option> Chọn </option></select>
+                                <select class="form-control" asp-for="NhomMauID" asp-items="ViewBag.NhomMauID"><option value=""> Chọn </option></select>
                             </div>
                         </div>
                         @*<div class="form-group">
@@ -642,5 +644,5 @@
 <div>
     <button asp-action="Index">Trở lại danh sách</button>
 </div>
-<script src="~/dateformat/date.format.js"></script>
+
 

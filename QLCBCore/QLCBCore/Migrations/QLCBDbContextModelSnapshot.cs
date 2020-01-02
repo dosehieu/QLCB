@@ -82,60 +82,78 @@ namespace QLCBCore.Migrations
 
                     b.Property<bool?>("IsDeleted");
 
-                    b.Property<string>("KhenThuong");
+                    b.Property<string>("KhenThuong")
+                        .HasMaxLength(250);
 
                     b.Property<int?>("KieuCanBo");
 
-                    b.Property<string>("KyLuat");
+                    b.Property<string>("KyLuat")
+                        .HasMaxLength(250);
 
                     b.Property<string>("LichSuBanThan")
                         .HasMaxLength(2000);
 
-                    b.Property<string>("Ma");
+                    b.Property<string>("Ma")
+                        .HasMaxLength(50);
 
                     b.Property<int?>("NgachID");
 
-                    b.Property<DateTime?>("NgayCapCMT");
+                    b.Property<DateTime?>("NgayCapCMT")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayCapNhat");
+                    b.Property<DateTime?>("NgayCapNhat")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayChinhThuc");
+                    b.Property<DateTime?>("NgayChinhThuc")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayChuyenCtac");
+                    b.Property<DateTime?>("NgayChuyenCtac")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayGiuNgach");
+                    b.Property<DateTime?>("NgayGiuNgach")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayHetHanHD");
+                    b.Property<DateTime?>("NgayHetHanHD")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayHuong");
+                    b.Property<DateTime?>("NgayHuong")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayNghiHuu");
+                    b.Property<DateTime?>("NgayNghiHuu")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayNhapNgu");
+                    b.Property<DateTime?>("NgayNhapNgu")
+                        .HasColumnType("DateTime");
 
                     b.Property<DateTime?>("NgaySinh")
                         .IsRequired()
-                        .HasColumnType("Date");
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayThoiViec");
+                    b.Property<DateTime?>("NgayThoiViec")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayThongBaoNghiHuu");
+                    b.Property<DateTime?>("NgayThongBaoNghiHuu")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayTuTran");
+                    b.Property<DateTime?>("NgayTuTran")
+                        .HasColumnType("DateTime");
 
                     b.Property<DateTime?>("NgayTuyen")
                         .IsRequired()
-                        .HasColumnType("Date");
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayVaoDang");
+                    b.Property<DateTime?>("NgayVaoDang")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayVe");
+                    b.Property<DateTime?>("NgayVe")
+                        .HasColumnType("DateTime");
 
                     b.Property<DateTime?>("NgayVeCQ")
                         .IsRequired()
-                        .HasColumnType("Date");
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayXuatNgu");
+                    b.Property<DateTime?>("NgayXuatNgu")
+                        .HasColumnType("DateTime");
 
                     b.Property<int?>("NgheNghiepID");
 
@@ -165,7 +183,8 @@ namespace QLCBCore.Migrations
                     b.Property<string>("QueQuanID")
                         .HasMaxLength(500);
 
-                    b.Property<string>("RegionID");
+                    b.Property<string>("RegionID")
+                        .HasMaxLength(30);
 
                     b.Property<string>("SoBHXH")
                         .HasMaxLength(30);
@@ -173,7 +192,8 @@ namespace QLCBCore.Migrations
                     b.Property<string>("SoBHYT")
                         .HasMaxLength(30);
 
-                    b.Property<string>("SoHieu");
+                    b.Property<string>("SoHieu")
+                        .HasMaxLength(50);
 
                     b.Property<string>("SoTruongCongTac");
 
@@ -181,7 +201,8 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("TDPhoThongID");
 
-                    b.Property<string>("TenGoiKhac");
+                    b.Property<string>("TenGoiKhac")
+                        .HasMaxLength(100);
 
                     b.Property<int?>("TonGiaoID");
 
@@ -231,10 +252,10 @@ namespace QLCBCore.Migrations
                             HoTen = "Nguyễn Việt Hiếu",
                             IsDeleted = false,
                             KieuCanBo = 1,
-                            NgayCapNhat = new DateTime(2019, 12, 29, 23, 57, 45, 268, DateTimeKind.Local).AddTicks(9960),
-                            NgaySinh = new DateTime(2019, 12, 29, 23, 57, 45, 271, DateTimeKind.Local).AddTicks(2358),
-                            NgayTuyen = new DateTime(2019, 12, 29, 23, 57, 45, 272, DateTimeKind.Local).AddTicks(1209),
-                            NgayVeCQ = new DateTime(2019, 12, 29, 23, 57, 45, 272, DateTimeKind.Local).AddTicks(2284),
+                            NgayCapNhat = new DateTime(2020, 1, 1, 11, 35, 21, 410, DateTimeKind.Local).AddTicks(6748),
+                            NgaySinh = new DateTime(2020, 1, 1, 11, 35, 21, 411, DateTimeKind.Local).AddTicks(7632),
+                            NgayTuyen = new DateTime(2020, 1, 1, 11, 35, 21, 411, DateTimeKind.Local).AddTicks(9107),
+                            NgayVeCQ = new DateTime(2020, 1, 1, 11, 35, 21, 411, DateTimeKind.Local).AddTicks(9418),
                             TonGiaoID = 1,
                             TrangThai = 1,
                             TrinhDoID = 1

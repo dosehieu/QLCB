@@ -9,61 +9,61 @@
         display: table;
     }
 </style>
-    <div class="row">
-        <div class="col-lg-12 col-xs-12 col-md-12">
-            <div class="card card-primary card-outline">
-                <div class="card-header"><h3 class="card-title"><i class="fas fa-list"></i> DANH SÁCH CÁN BỘ : (SỐ LƯỢNG CÁN BỘ : @ViewBag.CountCB)</h3></div>
-                <div class="card-body">
-                    <div class="mb-2">
-                        
-                        <button class="btn btn-primary"><i class="fa fa-plus"></i> Thêm mới</button>
+<div class="row">
+    <div class="col-lg-12 col-xs-12 col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header"><h3 class="card-title"><i class="fas fa-list"></i> DANH SÁCH CÁN BỘ : (SỐ LƯỢNG CÁN BỘ : @ViewBag.CountCB)</h3></div>
+            <div class="card-body">
+                <div class="mb-2">
 
-                    </div>
-                    
-                    <div class="data-table table-responsive" id="divListUser">
-                        <table class="table table-bordered table-hover table-striped-custom table-responsive gridView">
+                    <button id="btn_add" data-link="/CanBo/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Thêm mới</button>
 
+                </div>
 
-                            <thead>
-                                <tr>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Ma)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.HoTen)
-                                    </th>
-
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.GioiTinh)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.NgaySinh)
-                                    </th>
-
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.DonViID)
-                                    </th>
-
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.ChucVuID)
-                                    </th>
-
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.KieuCanBo)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.TrinhDoID)
-                                    </th>
+                <div class="data-table table-responsive" id="divListUser">
+                    <table class="table table-bordered table-hover table-striped-custom table-responsive gridView">
 
 
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Ma)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.HoTen)
+                                </th>
 
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model)
-                                {
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GioiTinh)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NgaySinh)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DonViID)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ChucVuID)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.KieuCanBo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TrinhDoID)
+                                </th>
+
+
+
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
                                 <tr>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Ma)
@@ -76,9 +76,13 @@
                                         {
                                             <td>Nam</td>
                                         }
-                                        else
+                                        else if (item.GioiTinh == false)
                                         {
                                             <td>Nữ</td>
+                                        }
+                                        else
+                                        {
+                                            <td></td>
                                         }
                                     }
 
@@ -103,19 +107,143 @@
                                     </td>
 
                                     <td>
-                                        <a asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-edit"></i></a> 
-                                        
+                                        <a asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-edit"></i></a>
+
                                     </td>
                                     <td>
-                                        
-                                        <a asp-action="Delete" asp-route-id="@item.ID"><i class="fa fa-trash-alt"></i></a>
+
+                                        @*<a  asp-action="Delete" asp-route-id="@item.ID"><i class="fa fa-trash-alt"></i></a>*@
+                                        <div class="islink" id="btn_delete" data-link="/CanBo/Delete" data-id="@item.ID" data-name="@item.HoTen" data-title="cán bộ" data-type="delete"><i class="fa fa-trash-alt"></i></div>
                                     </td>
                                 </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                            }
+                        </tbody>
+                    </table>
+                    @Html.Raw(ViewBag.HtmlPager)
                 </div>
             </div>
         </div>
     </div>
+</div>
+<style>
+    .islink {
+        color: #007bff;
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+        .islink:hover {
+            color: -webkit-link;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+    .table {
+        margin-bottom: unset;
+    }
+
+    .bottom-pager {
+        display: inline-block;
+        background: #F9F9F9;
+        font-family: arial,Tahoma;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-top: 0;
+        padding: 5px;
+    }
+
+        .bottom-pager .left {
+            float: left;
+            margin: 8px;
+        }
+
+        .bottom-pager .right {
+            float: right;
+            margin: 8px;
+        }
+
+        .bottom-pager a, .bottom-pager input, .bottom-pager span {
+            margin-right: 5px;
+        }
+
+        .bottom-pager span {
+            float: left;
+            font-weight: 700;
+            font-size: 12px;
+            padding-top: 2px;
+        }
+
+        .bottom-pager input {
+            float: left;
+            width: 22px !important;
+            height: 20px !important;
+            border: 1px solid #ccc;
+            font-size: 12px;
+            padding: 1px !important;
+            text-align: center;
+        }
+
+        .bottom-pager select {
+            float: left;
+            width: 50px !important;
+            height: 22px !important;
+            border: 1px solid #ccc;
+            font-size: 11px;
+            padding: 2px !important;
+        }
+
+        .bottom-pager a {
+            float: left;
+            display: block;
+            width: 21px;
+            height: 21px;
+        }
+
+            .bottom-pager a.first {
+                background: url(../Layout/dist/img/icon.png) left -74px no-repeat;
+            }
+
+                .bottom-pager a.first:hover {
+                    background: url(../Layout/dist/img/icon.png) left -101px no-repeat;
+                }
+
+            .bottom-pager a.first-disable {
+                background: url(../Layout/dist/img/icon.png) left -128px no-repeat;
+            }
+
+            .bottom-pager a.pre {
+                background: url(../Layout/dist/img/icon.png) left -392px no-repeat;
+            }
+
+                .bottom-pager a.pre:hover {
+                    background: url(../Layout/dist/img/icon.png) left -419px no-repeat;
+                }
+
+            .bottom-pager a.pre-disable {
+                background: url(../Layout/dist/img/icon.png) left -446px no-repeat;
+            }
+
+            .bottom-pager a.next {
+                background: url(../Layout/dist/img/icon.png) left -286px no-repeat;
+            }
+
+                .bottom-pager a.next:hover {
+                    background: url(../Layout/dist/img/icon.png) left -313px no-repeat;
+                }
+
+            .bottom-pager a.next-disable {
+                background: url(../Layout/dist/img/icon.png) left -340px no-repeat;
+            }
+
+            .bottom-pager a.last {
+                background: url(../Layout/dist/img/icon.png) left -180px no-repeat;
+            }
+
+                .bottom-pager a.last:hover {
+                    background: url(../Layout/dist/img/icon.png) left -207px no-repeat;
+                }
+
+            .bottom-pager a.last-disable {
+                background: url(../Layout/dist/img/icon.png) left -234px no-repeat;
+            }
+</style>

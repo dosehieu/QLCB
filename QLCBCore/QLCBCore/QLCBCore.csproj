@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -11,7 +11,6 @@
     <Compile Remove="wwwroot\Layout\plugins\bootstrap-slider\**" />
     <Compile Remove="wwwroot\Layout\plugins\bootstrap-switch\**" />
     <Compile Remove="wwwroot\Layout\plugins\bootstrap4-duallistbox\**" />
-    <Compile Remove="wwwroot\Layout\plugins\bs-custom-file-input\**" />
     <Compile Remove="wwwroot\Layout\plugins\datatables-autofill\**" />
     <Compile Remove="wwwroot\Layout\plugins\datatables-bs4\**" />
     <Compile Remove="wwwroot\Layout\plugins\datatables-buttons\**" />
@@ -49,13 +48,11 @@
     <Compile Remove="wwwroot\Layout\plugins\raphael\**" />
     <Compile Remove="wwwroot\Layout\plugins\select2\**" />
     <Compile Remove="wwwroot\Layout\plugins\sweetalert2-theme-bootstrap-4\**" />
-    <Compile Remove="wwwroot\Layout\plugins\sweetalert2\**" />
     <Compile Remove="wwwroot\Layout\plugins\toastr\**" />
     <Content Remove="wwwroot\Layout\plugins\bootstrap-colorpicker\**" />
     <Content Remove="wwwroot\Layout\plugins\bootstrap-slider\**" />
     <Content Remove="wwwroot\Layout\plugins\bootstrap-switch\**" />
     <Content Remove="wwwroot\Layout\plugins\bootstrap4-duallistbox\**" />
-    <Content Remove="wwwroot\Layout\plugins\bs-custom-file-input\**" />
     <Content Remove="wwwroot\Layout\plugins\datatables-autofill\**" />
     <Content Remove="wwwroot\Layout\plugins\datatables-bs4\**" />
     <Content Remove="wwwroot\Layout\plugins\datatables-buttons\**" />
@@ -93,13 +90,11 @@
     <Content Remove="wwwroot\Layout\plugins\raphael\**" />
     <Content Remove="wwwroot\Layout\plugins\select2\**" />
     <Content Remove="wwwroot\Layout\plugins\sweetalert2-theme-bootstrap-4\**" />
-    <Content Remove="wwwroot\Layout\plugins\sweetalert2\**" />
     <Content Remove="wwwroot\Layout\plugins\toastr\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\bootstrap-colorpicker\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\bootstrap-slider\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\bootstrap-switch\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\bootstrap4-duallistbox\**" />
-    <EmbeddedResource Remove="wwwroot\Layout\plugins\bs-custom-file-input\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-autofill\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-bs4\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-buttons\**" />
@@ -137,13 +132,11 @@
     <EmbeddedResource Remove="wwwroot\Layout\plugins\raphael\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\select2\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\sweetalert2-theme-bootstrap-4\**" />
-    <EmbeddedResource Remove="wwwroot\Layout\plugins\sweetalert2\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\toastr\**" />
     <None Remove="wwwroot\Layout\plugins\bootstrap-colorpicker\**" />
     <None Remove="wwwroot\Layout\plugins\bootstrap-slider\**" />
     <None Remove="wwwroot\Layout\plugins\bootstrap-switch\**" />
     <None Remove="wwwroot\Layout\plugins\bootstrap4-duallistbox\**" />
-    <None Remove="wwwroot\Layout\plugins\bs-custom-file-input\**" />
     <None Remove="wwwroot\Layout\plugins\datatables-autofill\**" />
     <None Remove="wwwroot\Layout\plugins\datatables-bs4\**" />
     <None Remove="wwwroot\Layout\plugins\datatables-buttons\**" />
@@ -181,7 +174,6 @@
     <None Remove="wwwroot\Layout\plugins\raphael\**" />
     <None Remove="wwwroot\Layout\plugins\select2\**" />
     <None Remove="wwwroot\Layout\plugins\sweetalert2-theme-bootstrap-4\**" />
-    <None Remove="wwwroot\Layout\plugins\sweetalert2\**" />
     <None Remove="wwwroot\Layout\plugins\toastr\**" />
   </ItemGroup>
 
@@ -201,8 +193,17 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Business\" />
+    <Folder Include="Base\" />
+    <Folder Include="wwwroot\images\" />
+
+
   </ItemGroup>
 
 
