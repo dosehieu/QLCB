@@ -18,10 +18,13 @@ namespace QLCBCore.Models
         /// </summary>
         public virtual System.Collections.Generic.ICollection<CanBo> CanBo { get; set; } // CanBo.FK_CanBo_dmGiaDinhCS
 
+        public virtual System.Collections.Generic.ICollection<QuanHeGiaDinh> QuanHeGiaDinh { get; set; }
+
         public dmGiaDinhCS()
         {
             IsDeleted = false;
             CanBo = new System.Collections.Generic.List<CanBo>();
+            QuanHeGiaDinh = new System.Collections.Generic.List<QuanHeGiaDinh>();
         }
     }
 }
