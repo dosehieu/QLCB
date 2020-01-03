@@ -15,33 +15,30 @@ namespace QLCBCore.Controllers
 {
    
    
-    public class CanBoController : Controller
+    public class CanBoController : Base.BaseController
     {
-        public int ID_DonVi;
-        public int CurrentPage=1;
-        public int RowPerPage=10;
-        public int PageStep=2;
-        public string Field;
-        public int TotalRecord =12;
-        public bool FieldOption;
-        public string filter;
-        public string HtmlPager;
-
         private readonly QLCBDbContext _context;
-
         public CanBoController(QLCBDbContext context)
         {
             _context = context;
         }
        
         // GET: CanBo
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? Page,int? RowPerPage,string Field,bool FieldOption, string Filter)
         {
-            HtmlPager = QLCBCore.Utils.HtmlPager.getPage(
-                   string.Format("#ID_DonVi=" + ID_DonVi + "&RowPerPage={0}&PageStep={1}&Field={2}&FieldOption={3}{4}&Page=", RowPerPage, PageStep,
-                    Field, (FieldOption) ? 0 : 1, filter), CurrentPage, RowPerPage, TotalRecord);
-            ViewData["HtmlPager"] = HtmlPager;
-            return View(await _context.CanBos.Where(n=>n.IsDeleted==false).Include(n => n.dmChucVu).Include(n => n.dmDonVi).Include(n => n.dmKieuCanBo).Include(n => n.dmTrinhDo).ToListAsync());
+            //SetPage(Page, RowPerPage, Field,  FieldOption,  Filter);
+            var List = await _context.CanBos.Where(n => n.IsDeleted == false)
+                                            .Include(n => n.dmChucVu)
+                                            .Include(n => n.dmDonVi)
+                                            .Include(n => n.dmKieuCanBo)
+                                            .Include(n => n.dmTrinhDo)
+                                            .ToListAsync();
+            ViewData["CountCB"] = List.Count;
+            //TotalRecord = List.Count;
+            //SetHtmlPager(TotalRecord);
+            //ViewData["HtmlPager"] = HtmlPager;
+            //return View(List.Skip((_Page - 1) * _RowPerPage).Take(_RowPerPage));
+            return View(List);
         }
 
         // GET: CanBo/Details/5

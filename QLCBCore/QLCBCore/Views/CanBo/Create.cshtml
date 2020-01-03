@@ -22,6 +22,12 @@
         $('#DonViID').select2();
         $('#KieuCanBo').select2();
         $('#TrangThai').select2();
+        $('#NgaySinh').datepicker({ dateFormat: 'dd/mm/yy' });
+        //$("#NgaySinh").datepicker({
+        //    format: "dd/mm/yyyy",
+        //}).change(function () {
+        //    $(this).datepicker('hide');
+        //});
     });
 </script>
 
@@ -117,7 +123,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgaySinh">
+                                <input type="text" class="form-control date-time"  placeholder="DD/MM/YYYY" asp-for="NgaySinh">
 
                             </div>
                             <span asp-validation-for="NgaySinh" class="text-danger"></span>
@@ -224,7 +230,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgayCapCMT">
+                                <input type="text" class="form-control date-time"  placeholder="DD/MM/YYYY" asp-for="NgayCapCMT">
                             </div>
                             <span asp-validation-for="NgayCapCMT" class="text-danger"></span>
                         </div>
@@ -354,7 +360,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgayTuyen" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                <input type="text" class="form-control date-time"  placeholder="DD/MM/YYYY" asp-for="NgayTuyen" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
 
                             </div>
                             <span asp-validation-for="NgayTuyen" class="text-danger"></span>
@@ -369,7 +375,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgayVeCQ" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                <input type="text" class="form-control date-time"  placeholder="DD/MM/YYYY" asp-for="NgayVeCQ" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
 
                             </div>
                             <span asp-validation-for="NgayVeCQ" class="text-danger"></span>
@@ -412,7 +418,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgayHetHanHD" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                <input type="text" class="form-control date-time"  placeholder="DD/MM/YYYY" asp-for="NgayHetHanHD" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
 
                             </div>
                             <span asp-validation-for="NgayHetHanHD" class="text-danger"></span>
@@ -450,7 +456,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgayVaoDang" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                <input type="text" class="form-control date-time"  placeholder="DD/MM/YYYY" asp-for="NgayVaoDang" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
 
                             </div>
                             <span asp-validation-for="NgayVaoDang" class="text-danger"></span>
@@ -463,7 +469,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgayChinhThuc" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                <input type="text" class="form-control date-time"  placeholder="DD/MM/YYYY" asp-for="NgayChinhThuc" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
 
                             </div>
                             <span asp-validation-for="NgayChinhThuc" class="text-danger"></span>
@@ -478,7 +484,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgayNhapNgu" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                <input type="text" class="form-control date-time"  placeholder="DD/MM/YYYY" asp-for="NgayNhapNgu" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
 
                             </div>
                             <span asp-validation-for="NgayNhapNgu" class="text-danger"></span>
@@ -491,7 +497,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                 </div>
-                                <input type="text" class="form-control date-time" asp-for="NgayXuatNgu" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                <input type="text" class="form-control date-time"  placeholder="DD/MM/YYYY" asp-for="NgayXuatNgu" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
 
                             </div>
                             <span asp-validation-for="NgayXuatNgu" class="text-danger"></span>

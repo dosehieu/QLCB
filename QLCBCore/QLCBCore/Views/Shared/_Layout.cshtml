@@ -7,9 +7,9 @@
     <title>@ViewData["Title"] - QLCBCore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Select 2 -->
-    <link href="~/select2/dist/css/select2.min.css" rel="stylesheet" />
-    <!-- Select 2 -->
-    <link href="~/Layout/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+    <link href="~/Layout/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <!-- jquery-ui -->
+    <link href="~/Layout/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
     <link href="~/Layout/plugins/fontawesome-free/css/all.css" rel="stylesheet" />
     <!-- Ionicons -->
@@ -27,16 +27,19 @@
     <!-- Daterange picker -->
     @*<link href="~/Layout/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />*@
     <!-- summernote -->
-
     <link href="~/Layout/plugins/summernote/summernote-bs4.css" rel="stylesheet" />
+    <!-- base css -->
+    <link href="~/css/base.css" rel="stylesheet" />
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- jQuery -->
     <script src="~/Layout/plugins/jquery/jquery.min.js"></script>
-    <script src="~/jquery/jquery-validation/js/jquery.validate.min.js"></script>
-    <script src="~/Layout/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Layout/plugins/jquery-ui/jquery-ui.min.js"></script>
+    @*<script src="~/jquery/jquery-validation/js/jquery.validate.min.js"></script>*@
     <link href="~/Layout/plugins/sweetalert2/sweetalert2.css" rel="stylesheet" />
     <script src="~/Layout/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Datatable  -->
+    <link href="~/Layout/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -485,7 +488,6 @@
                 <b>Version</b> 1
             </div>
         </footer>
-
         @RenderSection("Scripts", required: false)
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -495,12 +497,9 @@
     </div>
     <!-- ./wrapper -->
     <!-- jQuery UI 1.11.4 -->
-
     <script src="~/Layout/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Select 2 -->
-    <script src="~/select2/dist/js/select2.min.js"></script>
-
-
+    <script src="~/Layout/plugins/select2/js/select2.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
@@ -509,7 +508,6 @@
     @*<script src="~/Layout/plugins/jqvmap/jquery.vmap.min.js"></script>
         <script src="~/Layout/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>*@
     <!-- Bootstrap 4 -->
-
     <script src="~/Layout/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
     <script src="~/Layout/plugins/chart.js/Chart.min.js"></script>
@@ -532,8 +530,11 @@
     <script src="~/Layout/dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/Layout/dist/js/demo.js"></script>
-    <script src="~/dateformat/date.format.js"></script>
+    <script src="~/js/date.format.js"></script>
     <script src="~/js/base.js"></script>
     <script src="~/Layout/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <!-- Datatable  -->
+    <script src="~/Layout/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Layout/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 </body>
 </html>
