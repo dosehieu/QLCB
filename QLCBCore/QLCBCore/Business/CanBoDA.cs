@@ -22,6 +22,5 @@ namespace QLCBCore.Business
         {
             _context = context;
         }
-        
     }
 }

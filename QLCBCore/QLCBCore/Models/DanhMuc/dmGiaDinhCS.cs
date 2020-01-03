@@ -18,6 +18,7 @@ namespace QLCBCore.Models
         /// </summary>
         public virtual System.Collections.Generic.ICollection<CanBo> CanBo { get; set; } // CanBo.FK_CanBo_dmGiaDinhCS
 
+
         public dmGiaDinhCS()
         {
             IsDeleted = false;

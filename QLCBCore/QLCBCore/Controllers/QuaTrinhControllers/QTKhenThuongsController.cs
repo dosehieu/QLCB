@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QLCBCore.Models;
 
-namespace QLCBCore.Controllers
+namespace QLCBCore.Controllers.QuaTrinhControllers
 {
     public class QTKhenThuongsController : Controller
     {
@@ -21,19 +21,8 @@ namespace QLCBCore.Controllers
         // GET: QTKhenThuongs
         public async Task<IActionResult> Index()
         {
-            return View(await _context.QTKhenThuongs.ToListAsync());
-            //return View(await _context.QTKhenThuongs
-            //    .GroupJoin(
-            //        _context.dmHinhThucKhenThuongs,
-            //        invoice => invoice,
-            //        item => item.ID,
-            //        (invoice, invoiceItems) =>
-            //            new
-            //            {
-            //                InvoiceId = invoice.HinhThucKhenThuongID,
-            //                Items = invoiceItems.Select(item => item.ID)
-            //            }
-            //        ).ToList());
+            var qLCBDbContext = _context.QTKhenThuongs.Include(q => q.CanBo).Include(q => q.dmHinhThucKhenThuong);
+            return View(await qLCBDbContext.ToListAsync());
         }
 
         // GET: QTKhenThuongs/Details/5
@@ -45,6 +34,8 @@ namespace QLCBCore.Controllers
             }
 
             var qTKhenThuong = await _context.QTKhenThuongs
+                .Include(q => q.CanBo)
+                .Include(q => q.dmHinhThucKhenThuong)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (qTKhenThuong == null)
             {
@@ -57,6 +48,8 @@ namespace QLCBCore.Controllers
         // GET: QTKhenThuongs/Create
         public IActionResult Create()
         {
+            ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen");
+            ViewData["HinhThucKhenThuongID"] = new SelectList(_context.dmHinhThucKhenThuongs, "ID", "ID");
             return View();
         }
 
@@ -73,6 +66,8 @@ namespace QLCBCore.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen", qTKhenThuong.CanBoID);
+            ViewData["HinhThucKhenThuongID"] = new SelectList(_context.dmHinhThucKhenThuongs, "ID", "ID", qTKhenThuong.HinhThucKhenThuongID);
             return View(qTKhenThuong);
         }
 
@@ -89,6 +84,8 @@ namespace QLCBCore.Controllers
             {
                 return NotFound();
             }
+            ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen", qTKhenThuong.CanBoID);
+            ViewData["HinhThucKhenThuongID"] = new SelectList(_context.dmHinhThucKhenThuongs, "ID", "ID", qTKhenThuong.HinhThucKhenThuongID);
             return View(qTKhenThuong);
         }
 
@@ -124,6 +121,8 @@ namespace QLCBCore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen", qTKhenThuong.CanBoID);
+            ViewData["HinhThucKhenThuongID"] = new SelectList(_context.dmHinhThucKhenThuongs, "ID", "ID", qTKhenThuong.HinhThucKhenThuongID);
             return View(qTKhenThuong);
         }
 
@@ -136,6 +135,8 @@ namespace QLCBCore.Controllers
             }
 
             var qTKhenThuong = await _context.QTKhenThuongs
+                .Include(q => q.CanBo)
+                .Include(q => q.dmHinhThucKhenThuong)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (qTKhenThuong == null)
             {
