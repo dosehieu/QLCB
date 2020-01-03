@@ -1,4 +1,4 @@
-﻿@model QLCBCore.Models.QTKhenThuong
+﻿@model QLCBCore.Models.QTKyLuat
 
 @{
     ViewData["Title"] = "Details";
@@ -8,20 +8,20 @@
 <h1>Details</h1>
 
 <div>
-    <h4>QTKhenThuong</h4>
+    <h4>QTKyLuat</h4>
     <hr />
     <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NgayKyLuat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NgayKyLuat)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.NoiDung)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NoiDung)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayKhenThuong)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayKhenThuong)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IsCaoNhat)
@@ -36,28 +36,10 @@
             @Html.DisplayFor(model => model.SoQuyetDinh)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayKy)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayKy)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CoQuanBanHanhQD)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CoQuanBanHanhQD)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IsKhenThuong)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IsKhenThuong)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MucKhenThuong)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MucKhenThuong)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IsDeleted)
@@ -66,16 +48,16 @@
             @Html.DisplayFor(model => model.IsDeleted)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.dmHinhThucKhenThuong)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.dmHinhThucKhenThuong.ID)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CanBo)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CanBo.HoTen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dmKyLuat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dmKyLuat.ID)
         </dd>
     </dl>
 </div>

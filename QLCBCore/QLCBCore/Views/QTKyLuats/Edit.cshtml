@@ -1,4 +1,4 @@
-﻿@model QLCBCore.Models.QTKhenThuong
+﻿@model QLCBCore.Models.QTKyLuat
 
 @{
     ViewData["Title"] = "Edit";
@@ -7,7 +7,7 @@
 
 <h1>Edit</h1>
 
-<h4>QTKhenThuong</h4>
+<h4>QTKyLuat</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,19 +20,19 @@
                 <span asp-validation-for="CanBoID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="HinhThucKhenThuongID" class="control-label"></label>
-                <select asp-for="HinhThucKhenThuongID" class="form-control" asp-items="ViewBag.HinhThucKhenThuongID"></select>
-                <span asp-validation-for="HinhThucKhenThuongID" class="text-danger"></span>
+                <label asp-for="NgayKyLuat" class="control-label"></label>
+                <input asp-for="NgayKyLuat" class="form-control" />
+                <span asp-validation-for="NgayKyLuat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KyLuatID" class="control-label"></label>
+                <select asp-for="KyLuatID" class="form-control" asp-items="ViewBag.KyLuatID"></select>
+                <span asp-validation-for="KyLuatID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="NoiDung" class="control-label"></label>
                 <input asp-for="NoiDung" class="form-control" />
                 <span asp-validation-for="NoiDung" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NgayKhenThuong" class="control-label"></label>
-                <input asp-for="NgayKhenThuong" class="form-control" />
-                <span asp-validation-for="NgayKhenThuong" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IsCaoNhat" class="control-label"></label>
@@ -45,24 +45,9 @@
                 <span asp-validation-for="SoQuyetDinh" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NgayKy" class="control-label"></label>
-                <input asp-for="NgayKy" class="form-control" />
-                <span asp-validation-for="NgayKy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="CoQuanBanHanhQD" class="control-label"></label>
                 <input asp-for="CoQuanBanHanhQD" class="form-control" />
                 <span asp-validation-for="CoQuanBanHanhQD" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IsKhenThuong" class="control-label"></label>
-                <input asp-for="IsKhenThuong" class="form-control" />
-                <span asp-validation-for="IsKhenThuong" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MucKhenThuong" class="control-label"></label>
-                <input asp-for="MucKhenThuong" class="form-control" />
-                <span asp-validation-for="MucKhenThuong" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IsDeleted" class="control-label"></label>

@@ -1,0 +1,148 @@
+﻿@model IEnumerable<QLCBCore.Models.QuanHeGiaDinh>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .table-responsive {
+        display: table;
+    }
+</style>
+<div class="row">
+    <div class="col-lg-12 col-xs-12 col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header"><h3 class="card-title"><i class="fas fa-list"></i> DANH SÁCH QUAN GIA ĐÌNH</h3></div>
+            <div class="card-body">
+                <div class="mb-2">
+
+                    <button class="btn btn-primary" onclick="window.location.href = '/QuanHeGiaDinhs/Create';"><i class="fa fa-plus"></i> Thêm mới</button>
+
+                </div>
+
+                <div class="data-table table-responsive" id="divListUser">
+                    <table class="table table-bordered table-hover table-striped-custom table-responsive gridView">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CanBo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.HoTen)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NamSinh)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NgheNghiep)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GhiChu)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ThongTinKhac)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ThongTinTCXH)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.QueQuan)
+                                </th>
+                                @*<th>
+                                        @Html.DisplayNameFor(model => model.Type)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.IsDeleted)
+                                    </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ChucVu)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CoQuan)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.HoKhau)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DiaChi)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.dmQuanHeGiaDinh)
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CanBo.HoTen)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HoTen)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NamSinh)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NgheNghiep)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GhiChu)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ThongTinKhac)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ThongTinTCXH)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.QueQuan)
+                                    </td>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.Type)
+                                        </td>*@
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.IsDeleted)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ChucVu)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CoQuan)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HoKhau)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DiaChi)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dmQuanHeGiaDinh.ID)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-edit"></i></a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="Delete" asp-route-id="@item.ID"><i class="fa fa-trash-alt"></i></a>
+                                    </td>
+                                    @*<td>
+                                            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                                        </td>*@
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

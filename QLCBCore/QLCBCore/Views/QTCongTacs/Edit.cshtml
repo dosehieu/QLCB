@@ -1,0 +1,57 @@
+﻿@model QLCBCore.Models.QTCongTac
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>QTCongTac</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="CanBoID" class="control-label"></label>
+                <select asp-for="CanBoID" class="form-control" asp-items="ViewBag.CanBoID"></select>
+                <span asp-validation-for="CanBoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TuThangNam" class="control-label"></label>
+                <input asp-for="TuThangNam" class="form-control" />
+                <span asp-validation-for="TuThangNam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DenThangNam" class="control-label"></label>
+                <input asp-for="DenThangNam" class="form-control" />
+                <span asp-validation-for="DenThangNam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GhiChu" class="control-label"></label>
+                <input asp-for="GhiChu" class="form-control" />
+                <span asp-validation-for="GhiChu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="isChuyenCT" class="control-label"></label>
+                <input asp-for="isChuyenCT" class="form-control" />
+                <span asp-validation-for="isChuyenCT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsDeleted" class="control-label"></label>
+                <input asp-for="IsDeleted" class="form-control" />
+                <span asp-validation-for="IsDeleted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

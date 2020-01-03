@@ -15,7 +15,7 @@ namespace QLCBCore.Models
         [Display(Name = "Cán bộ")]
         public int? CanBoID { get; set; } // CanBoID
 
-        [ForeignKey("dmGiaDinhCS")]
+        [ForeignKey("dmQuanHeGiaDinh")]
         [Display(Name = "Quan hệ gia đình")]
         public int? QuanHeGDID { get; set; } // QuanHeGDID
 
