@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -49,7 +49,7 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
         public IActionResult Create()
         {
             ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen");
-            ViewData["NgachID"] = new SelectList(_context.dmNgachs, "ID", "ID");
+            ViewData["NgachID"] = new SelectList(_context.dmNgachs, "ID", "TenNgach");
             return View();
         }
 
@@ -85,7 +85,7 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
                 return NotFound();
             }
             ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen", dienBienNgachBac.CanBoID);
-            ViewData["NgachID"] = new SelectList(_context.dmNgachs, "ID", "ID", dienBienNgachBac.NgachID);
+            ViewData["NgachID"] = new SelectList(_context.dmNgachs, "ID", "TenNgach", dienBienNgachBac.NgachID);
             return View(dienBienNgachBac);
         }
 
