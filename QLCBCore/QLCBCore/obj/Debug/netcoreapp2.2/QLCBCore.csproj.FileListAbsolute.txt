@@ -68,7 +68,6 @@ E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\MenuTo
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\TopNavigation.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
-E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout2.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs

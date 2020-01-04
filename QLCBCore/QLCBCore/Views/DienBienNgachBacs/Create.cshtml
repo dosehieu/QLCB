@@ -4,8 +4,14 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script type="text/javascript">
+    $(document).ready(function () {
 
+        $('#NgayHuong').datepicker({ dateFormat: 'dd/mm/yy' });
+
+    });</script>
 <style>
+
 
     .row {
         padding: 5px;
@@ -54,7 +60,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label asp-for="NgayHuong" class="control-label"></label>
-                            <input asp-for="NgayHuong" class="form-control" />
+                            @*<input asp-for="NgayHuong" class="form-control" />*@
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                </div>
+                                <input type="text" class="form-control date-time" placeholder="DD/MM/YYYY" asp-for="NgayHuong">
+                            </div>
                             <span asp-validation-for="NgayHuong" class="text-danger"></span>
                         </div>
                     </div>
