@@ -1,4 +1,3 @@
-﻿
 ﻿<!DOCTYPE html>
 <html>
 <head>
@@ -7,45 +6,62 @@
     <title>@ViewData["Title"] - QLCBCore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Select 2 -->
-    <link href="~/select2/dist/css/select2.min.css" rel="stylesheet" />
-    <!-- Select 2 -->
-    <link href="~/Layout/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+    <link href="~/Layout/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <!-- jquery-ui -->
+    <link href="~/Layout/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
-
     <link href="~/Layout/plugins/fontawesome-free/css/all.css" rel="stylesheet" />
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
-
     <link href="~/Layout/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.css" rel="stylesheet" />
     <!-- iCheck -->
-
     <link href="~/Layout/plugins/icheck-bootstrap/icheck-bootstrap.css" rel="stylesheet" />
     <!-- JQVMap -->
     <link href="~/Layout/plugins/jqvmap/jqvmap.min.css" rel="stylesheet" />
     <!-- Theme style -->
-
     <link href="~/Layout/dist/css/adminlte.min.css" rel="stylesheet" />
     <!-- overlayScrollbars -->
-
     <link href="~/Layout/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet" />
     <!-- Daterange picker -->
     @*<link href="~/Layout/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />*@
     <!-- summernote -->
-
-
     <link href="~/Layout/plugins/summernote/summernote-bs4.css" rel="stylesheet" />
+    <!-- base css -->
+    <link href="~/css/base.css" rel="stylesheet" />
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- jQuery -->
-
     <script src="~/Layout/plugins/jquery/jquery.min.js"></script>
-    <script src="~/Layout/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Layout/plugins/jquery-ui/jquery-ui.min.js"></script>
+    @*<script src="~/jquery/jquery-validation/js/jquery.validate.min.js"></script>*@
+    <link href="~/Layout/plugins/sweetalert2/sweetalert2.css" rel="stylesheet" />
+    <script src="~/Layout/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Datatable  -->
+    <link href="~/Layout/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Vertically Centered Modal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn_ok" data-type="" data-link="" data-id="" class="btn btn-primary">OK</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="wrapper">
-
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -60,7 +76,6 @@
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
-
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
@@ -72,7 +87,6 @@
                     </div>
                 </div>
             </form>
-
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
@@ -176,7 +190,6 @@
                      style="opacity: .8">
                 <span class="brand-text font-weight-light">QLCB 2019</span>
             </a>
-
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
@@ -185,20 +198,20 @@
                         <img src="~/Layout/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Admin</a>
+                        <a href="#" class="d-block">Nguyễn Việt Hiếu</a>
                     </div>
                 </div>
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="/CanBo/Index" class="nav-link active">
+                            <a href="~/CanBo/Index" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Hồ sơ cán bộ
+
                                 </p>
                             </a>
                         </li>
@@ -211,9 +224,7 @@
                                     @*<span class="badge badge-info right">6</span>*@
                                 </p>
                             </a>
-
                             <ul class="nav nav-treeview">
-
                                 <li class="nav-item">
                                     <a href="./index3.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
@@ -221,7 +232,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/QTKhenThuongs/Index" class="nav-link">
+                                    <a href="./index2.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>DS cán bộ khen thưởng</p>
                                     </a>
@@ -270,57 +281,6 @@
                                 </li>
                             </ul>
                         </li>
-
-
-                        @*Quá Trình*@
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
-                                <p>
-                                    Quá trình
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/DienBienChucVus/Index" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Diễn biến chức vụ</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/DienBienNgachBacs/Index" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Diễn biến ngạch bậc</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/QTCongTacs/Index" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Quá trình công tác</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/QTKhenThuongs/Index" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Quá trình khen thưởng</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/QTKyLuats/Index" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Quá trình kỷ luật</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/QuanHeGiaDinhs/Index" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Quan hệ gia đình</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
@@ -457,7 +417,6 @@
                                 </li>
                             </ul>
                         </li>
-
                         <li class="nav-header">Hỗ trợ</li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
@@ -467,7 +426,6 @@
 
                                 </p>
                             </a>
-
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
@@ -477,7 +435,6 @@
 
                                 </p>
                             </a>
-
                         </li>
                         <li class="nav-item">
                             <a href="pages/calendar.html" class="nav-link">
@@ -488,14 +445,12 @@
                                 </p>
                             </a>
                         </li>
-
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
         </aside>
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -516,15 +471,12 @@
             </div>
             <!-- /.content-header -->
             <!-- Main content -->
-            @*<div class="container">*@
-            <section class="content">
-                <div class="container-fluid">
-                    <partial name="_CookieConsentPartial" />
-                    <main role="main" class="pb-3">
-                        @RenderBody()
-                    </main>
-                </div>
-            </section>
+            <div class="content">
+                <partial name="_CookieConsentPartial" />
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
@@ -535,11 +487,7 @@
                 <b>Version</b> 1
             </div>
         </footer>
-
-
-
         @RenderSection("Scripts", required: false)
-
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
@@ -548,15 +496,9 @@
     </div>
     <!-- ./wrapper -->
     <!-- jQuery UI 1.11.4 -->
-
-
     <script src="~/Layout/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Select 2 -->
-    <script src="~/select2/dist/js/select2.min.js"></script>
-
-
-
-
+    <script src="~/Layout/plugins/select2/js/select2.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
@@ -565,39 +507,34 @@
     @*<script src="~/Layout/plugins/jqvmap/jquery.vmap.min.js"></script>
         <script src="~/Layout/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>*@
     <!-- Bootstrap 4 -->
-
     <script src="~/Layout/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
-
     <script src="~/Layout/plugins/chart.js/Chart.min.js"></script>
     <!-- Sparkline -->
-
     <script src="~/Layout/plugins/sparklines/sparkline.js"></script>
-
     <!-- jQuery Knob Chart -->
-
     <script src="~/Layout/plugins/jquery-knob/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
-
     <script src="~/Layout/plugins/moment/moment.min.js"></script>
-
     @*<script src="~/Layout/plugins/daterangepicker/daterangepicker.js"></script>*@
     <!-- Tempusdominus Bootstrap 4 -->
-
     <script src="~/Layout/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
     <!-- Summernote -->
-
     <script src="~/Layout/plugins/summernote/summernote-bs4.min.js"></script>
     <!-- overlayScrollbars -->
-
     <script src="~/Layout/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="~/Layout/dist/js/adminlte.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-
     <script src="~/Layout/dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
-
     <script src="~/Layout/dist/js/demo.js"></script>
+    <script src="~/js/date.format.js"></script>
+    <script src="~/js/base.js"></script>
+    <script src="~/Layout/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <!-- Datatable  -->
+    <script src="~/Layout/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Layout/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 </body>
 </html>
+

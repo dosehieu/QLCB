@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="obj\**" />
     <Compile Remove="wwwroot\Layout\plugins\bootstrap-colorpicker\**" />
     <Compile Remove="wwwroot\Layout\plugins\bootstrap-slider\**" />
     <Compile Remove="wwwroot\Layout\plugins\bootstrap-switch\**" />
     <Compile Remove="wwwroot\Layout\plugins\bootstrap4-duallistbox\**" />
-    <Compile Remove="wwwroot\Layout\plugins\bs-custom-file-input\**" />
     <Compile Remove="wwwroot\Layout\plugins\datatables-autofill\**" />
-    <Compile Remove="wwwroot\Layout\plugins\datatables-bs4\**" />
     <Compile Remove="wwwroot\Layout\plugins\datatables-buttons\**" />
     <Compile Remove="wwwroot\Layout\plugins\datatables-colreorder\**" />
     <Compile Remove="wwwroot\Layout\plugins\datatables-fixedcolumns\**" />
@@ -24,7 +24,6 @@
     <Compile Remove="wwwroot\Layout\plugins\datatables-rowreorder\**" />
     <Compile Remove="wwwroot\Layout\plugins\datatables-scroller\**" />
     <Compile Remove="wwwroot\Layout\plugins\datatables-select\**" />
-    <Compile Remove="wwwroot\Layout\plugins\datatables\**" />
     <Compile Remove="wwwroot\Layout\plugins\ekko-lightbox\**" />
     <Compile Remove="wwwroot\Layout\plugins\fastclick\**" />
     <Compile Remove="wwwroot\Layout\plugins\filterizr\**" />
@@ -47,17 +46,16 @@
     <Compile Remove="wwwroot\Layout\plugins\pdfmake\**" />
     <Compile Remove="wwwroot\Layout\plugins\popper\**" />
     <Compile Remove="wwwroot\Layout\plugins\raphael\**" />
-    <Compile Remove="wwwroot\Layout\plugins\select2\**" />
     <Compile Remove="wwwroot\Layout\plugins\sweetalert2-theme-bootstrap-4\**" />
-    <Compile Remove="wwwroot\Layout\plugins\sweetalert2\**" />
     <Compile Remove="wwwroot\Layout\plugins\toastr\**" />
+    <Compile Remove="wwwroot\select2\**" />
+    <Content Remove="bin\**" />
+    <Content Remove="obj\**" />
     <Content Remove="wwwroot\Layout\plugins\bootstrap-colorpicker\**" />
     <Content Remove="wwwroot\Layout\plugins\bootstrap-slider\**" />
     <Content Remove="wwwroot\Layout\plugins\bootstrap-switch\**" />
     <Content Remove="wwwroot\Layout\plugins\bootstrap4-duallistbox\**" />
-    <Content Remove="wwwroot\Layout\plugins\bs-custom-file-input\**" />
     <Content Remove="wwwroot\Layout\plugins\datatables-autofill\**" />
-    <Content Remove="wwwroot\Layout\plugins\datatables-bs4\**" />
     <Content Remove="wwwroot\Layout\plugins\datatables-buttons\**" />
     <Content Remove="wwwroot\Layout\plugins\datatables-colreorder\**" />
     <Content Remove="wwwroot\Layout\plugins\datatables-fixedcolumns\**" />
@@ -68,7 +66,6 @@
     <Content Remove="wwwroot\Layout\plugins\datatables-rowreorder\**" />
     <Content Remove="wwwroot\Layout\plugins\datatables-scroller\**" />
     <Content Remove="wwwroot\Layout\plugins\datatables-select\**" />
-    <Content Remove="wwwroot\Layout\plugins\datatables\**" />
     <Content Remove="wwwroot\Layout\plugins\ekko-lightbox\**" />
     <Content Remove="wwwroot\Layout\plugins\fastclick\**" />
     <Content Remove="wwwroot\Layout\plugins\filterizr\**" />
@@ -91,17 +88,16 @@
     <Content Remove="wwwroot\Layout\plugins\pdfmake\**" />
     <Content Remove="wwwroot\Layout\plugins\popper\**" />
     <Content Remove="wwwroot\Layout\plugins\raphael\**" />
-    <Content Remove="wwwroot\Layout\plugins\select2\**" />
     <Content Remove="wwwroot\Layout\plugins\sweetalert2-theme-bootstrap-4\**" />
-    <Content Remove="wwwroot\Layout\plugins\sweetalert2\**" />
     <Content Remove="wwwroot\Layout\plugins\toastr\**" />
+    <Content Remove="wwwroot\select2\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="obj\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\bootstrap-colorpicker\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\bootstrap-slider\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\bootstrap-switch\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\bootstrap4-duallistbox\**" />
-    <EmbeddedResource Remove="wwwroot\Layout\plugins\bs-custom-file-input\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-autofill\**" />
-    <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-bs4\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-buttons\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-colreorder\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-fixedcolumns\**" />
@@ -112,7 +108,6 @@
     <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-rowreorder\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-scroller\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables-select\**" />
-    <EmbeddedResource Remove="wwwroot\Layout\plugins\datatables\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\ekko-lightbox\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\fastclick\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\filterizr\**" />
@@ -135,17 +130,16 @@
     <EmbeddedResource Remove="wwwroot\Layout\plugins\pdfmake\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\popper\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\raphael\**" />
-    <EmbeddedResource Remove="wwwroot\Layout\plugins\select2\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\sweetalert2-theme-bootstrap-4\**" />
-    <EmbeddedResource Remove="wwwroot\Layout\plugins\sweetalert2\**" />
     <EmbeddedResource Remove="wwwroot\Layout\plugins\toastr\**" />
+    <EmbeddedResource Remove="wwwroot\select2\**" />
+    <None Remove="bin\**" />
+    <None Remove="obj\**" />
     <None Remove="wwwroot\Layout\plugins\bootstrap-colorpicker\**" />
     <None Remove="wwwroot\Layout\plugins\bootstrap-slider\**" />
     <None Remove="wwwroot\Layout\plugins\bootstrap-switch\**" />
     <None Remove="wwwroot\Layout\plugins\bootstrap4-duallistbox\**" />
-    <None Remove="wwwroot\Layout\plugins\bs-custom-file-input\**" />
     <None Remove="wwwroot\Layout\plugins\datatables-autofill\**" />
-    <None Remove="wwwroot\Layout\plugins\datatables-bs4\**" />
     <None Remove="wwwroot\Layout\plugins\datatables-buttons\**" />
     <None Remove="wwwroot\Layout\plugins\datatables-colreorder\**" />
     <None Remove="wwwroot\Layout\plugins\datatables-fixedcolumns\**" />
@@ -156,7 +150,6 @@
     <None Remove="wwwroot\Layout\plugins\datatables-rowreorder\**" />
     <None Remove="wwwroot\Layout\plugins\datatables-scroller\**" />
     <None Remove="wwwroot\Layout\plugins\datatables-select\**" />
-    <None Remove="wwwroot\Layout\plugins\datatables\**" />
     <None Remove="wwwroot\Layout\plugins\ekko-lightbox\**" />
     <None Remove="wwwroot\Layout\plugins\fastclick\**" />
     <None Remove="wwwroot\Layout\plugins\filterizr\**" />
@@ -179,10 +172,9 @@
     <None Remove="wwwroot\Layout\plugins\pdfmake\**" />
     <None Remove="wwwroot\Layout\plugins\popper\**" />
     <None Remove="wwwroot\Layout\plugins\raphael\**" />
-    <None Remove="wwwroot\Layout\plugins\select2\**" />
     <None Remove="wwwroot\Layout\plugins\sweetalert2-theme-bootstrap-4\**" />
-    <None Remove="wwwroot\Layout\plugins\sweetalert2\**" />
     <None Remove="wwwroot\Layout\plugins\toastr\**" />
+    <None Remove="wwwroot\select2\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -201,129 +193,23 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
-  </ItemGroup>
 
+
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
+
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Business\" />
+    <Folder Include="wwwroot\images\" />
     <Folder Include="Base\" />
+
   </ItemGroup>
 
 
   <ItemGroup>
     <None Include="wwwroot\css\avatar_2x.png" />
     <None Include="wwwroot\css\Login.css" />
-    <None Include="wwwroot\jquery\jquery-validation\js\additional-methods.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\additional-methods.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\jquery.validate.rar" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ar.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ar.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_bg.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_bg.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ca.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ca.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_cs.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_cs.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_da.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_da.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_de.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_de.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_el.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_el.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_es.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_es.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_es_AR.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_es_AR.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_et.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_et.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_eu.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_eu.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_fa.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_fa.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_fi.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_fi.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_fr.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_fr.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_gl.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_gl.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_he.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_he.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_hr.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_hr.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_hu.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_hu.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_id.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_id.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_is.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_is.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_it.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_it.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ja.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ja.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ka.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ka.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_kk.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_kk.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ko.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ko.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_lt.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_lt.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_lv.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_lv.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_my.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_my.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_nl.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_nl.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_no.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_no.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_pl.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_pl.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_pt_BR.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_pt_BR.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_pt_PT.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_pt_PT.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ro.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ro.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ru.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_ru.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_si.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_si.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_sk.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_sk.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_sl.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_sl.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_sr.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_sr.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_sr_lat.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_sr_lat.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_sv.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_sv.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_th.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_th.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_tj.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_tj.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_tr.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_tr.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_uk.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_uk.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_vi.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_vi.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_zh.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_zh.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_zh_TW.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\messages_zh_TW.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\methods_de.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\methods_de.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\methods_es_CL.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\methods_es_CL.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\methods_fi.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\methods_fi.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\methods_nl.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\methods_nl.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\methods_pt.js" />
-    <None Include="wwwroot\jquery\jquery-validation\js\localization\methods_pt.min.js" />
-    <None Include="wwwroot\jquery\jquery-validation\README.md" />
     <None Include="wwwroot\Layout\dist\css\adminlte.css.map" />
     <None Include="wwwroot\Layout\dist\css\adminlte.min.css.map" />
     <None Include="wwwroot\Layout\dist\css\alt\adminlte.components.css.map" />
@@ -387,7 +273,6 @@
     <None Include="wwwroot\Layout\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.th.js" />
     <None Include="wwwroot\Layout\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.tr.js" />
     <None Include="wwwroot\Layout\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ua.js" />
-    <None Include="wwwroot\Layout\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.vi.js" />
     <None Include="wwwroot\Layout\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
     <None Include="wwwroot\Layout\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
     <None Include="wwwroot\Layout\plugins\bootstrap-datepicker\less\datepicker.less" />
@@ -581,6 +466,65 @@
     <None Include="wwwroot\Layout\plugins\overlayScrollbars\js\jquery.overlayScrollbars.js" />
     <None Include="wwwroot\Layout\plugins\overlayScrollbars\js\OverlayScrollbars.js" />
     <None Include="wwwroot\Layout\plugins\overlayScrollbars\js\OverlayScrollbars.min.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\af.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\ar.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\az.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\bg.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\bn.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\bs.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\ca.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\cs.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\da.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\de.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\dsb.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\el.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\en.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\es.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\et.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\eu.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\fa.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\fi.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\fr.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\gl.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\he.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\hi.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\hr.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\hsb.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\hu.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\hy.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\id.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\is.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\it.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\ja.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\ka.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\km.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\ko.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\lt.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\lv.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\mk.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\ms.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\nb.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\ne.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\nl.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\pl.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\ps.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\pt-BR.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\pt.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\ro.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\ru.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\sk.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\sl.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\sq.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\sr-Cyrl.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\sr.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\sv.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\th.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\tk.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\tr.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\uk.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\vi.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\zh-CN.js" />
+    <None Include="wwwroot\Layout\plugins\select2\js\i18n\zh-TW.js" />
     <None Include="wwwroot\Layout\plugins\summernote\lang\summernote-ar-AR.js" />
     <None Include="wwwroot\Layout\plugins\summernote\lang\summernote-ar-AR.min.js" />
     <None Include="wwwroot\Layout\plugins\summernote\lang\summernote-bg-BG.js" />
@@ -676,70 +620,6 @@
     <None Include="wwwroot\Layout\plugins\summernote\summernote.js.map" />
     <None Include="wwwroot\Layout\plugins\summernote\summernote.min.js" />
     <None Include="wwwroot\Layout\plugins\tempusdominus-bootstrap-4\js\tempusdominus-bootstrap-4.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\af.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\ar.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\az.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\bg.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\bn.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\bs.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\ca.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\cs.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\da.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\de.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\dsb.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\el.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\en.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\es.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\et.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\eu.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\fa.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\fi.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\fr.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\gl.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\he.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\hi.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\hr.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\hsb.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\hu.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\hy.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\id.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\is.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\it.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\ja.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\ka.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\km.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\ko.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\lt.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\lv.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\mk.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\ms.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\nb.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\ne.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\nl.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\pl.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\ps.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\pt-BR.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\pt.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\ro.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\ru.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\sk.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\sl.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\sq.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\sr-Cyrl.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\sr.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\sv.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\th.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\tk.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\tr.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\uk.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\vi.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\zh-CN.js" />
-    <None Include="wwwroot\select2\dist\js\i18n\zh-TW.js" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="Base\" />
   </ItemGroup>
 
 </Project>
