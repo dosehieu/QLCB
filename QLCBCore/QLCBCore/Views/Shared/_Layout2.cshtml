@@ -454,7 +454,6 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Dashboard</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -468,7 +467,6 @@
             <!-- /.content-header -->
             <!-- Main content -->
             <div class="content">
-                <partial name="_CookieConsentPartial" />
                 <main role="main" class="pb-3">
                     @RenderBody()
                 </main>
@@ -505,14 +503,12 @@
 
 
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-        $.widget.bridge('uibutton', $.ui.button)
-    </script>
+    <script>$.widget.bridge('uibutton', $.ui.button)</script>
     <!-- JQVMap -->
     @*<script src="~/Layout/plugins/jqvmap/jquery.vmap.min.js"></script>
         <script src="~/Layout/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>*@
     <!-- Bootstrap 4 -->
-    
+
     <script src="~/Layout/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- ChartJS -->
 

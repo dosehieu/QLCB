@@ -12,17 +12,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using QLCBCore.Models;
+using QLCBCore.ViewModels;
 
 namespace QLCBCore
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { set; get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -75,6 +77,16 @@ namespace QLCBCore
     });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<QLCBDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
+            services.Configure<ConnectionString>(Configuration.GetSection("ConnectionStrings"));
+        }
+
+        public Startup(IHostingEnvironment env)
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+
+            Configuration = builder.Build();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
