@@ -28,9 +28,12 @@
                 </div>
 
                 <div class="data-table table-responsive" id="divListUser">
-                    <table class="table table-bordered table-hover table-striped-custom table-responsive gridView">
+                    <table class="table table-bordered table-hover table-striped-custom table-responsive gridView table-jquery">
                         <thead>
                             <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CanBo)
+                                </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.TuNgay)
                                 </th>
@@ -43,9 +46,9 @@
                                 @*<th>
                                         @Html.DisplayNameFor(model => model.Curent)
                                     </th>*@
-                                <th>
+                                @*<th>
                                     @Html.DisplayNameFor(model => model.isLeader)
-                                </th>
+                                </th>*@
                                 <th>
                                     @Html.DisplayNameFor(model => model.NgayBoNhiem)
                                 </th>
@@ -55,20 +58,18 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.NguoiKy)
                                 </th>
-                                <th>
+                                @*<th>
                                     @Html.DisplayNameFor(model => model.IsDangDoan)
-                                </th>
+                                </th>*@
                                 @*<th>
                                         @Html.DisplayNameFor(model => model.IsDeleted)
                                     </th>*@
+
                                 <th>
-                                    @Html.DisplayNameFor(model => model.CanBo)
+                                    @Html.DisplayNameFor(model => model.dmChucVu.TenChucVu)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.dmChucVu)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.dmDonVi)
+                                    @Html.DisplayNameFor(model => model.dmDonVi.TenDonVi)
                                 </th>
                                 <th></th>
                                 <th></th>
@@ -78,6 +79,9 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CanBo.HoTen)
+                                    </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.TuNgay)
                                     </td>
@@ -90,9 +94,9 @@
                                     @*<td>
                                             @Html.DisplayFor(modelItem => item.Curent)
                                         </td>*@
-                                    <td>
+                                    @*<td>
                                         @Html.DisplayFor(modelItem => item.isLeader)
-                                    </td>
+                                    </td>*@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.NgayBoNhiem)
                                     </td>
@@ -102,20 +106,18 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.NguoiKy)
                                     </td>
-                                    <td>
+                                    @*<td>
                                         @Html.DisplayFor(modelItem => item.IsDangDoan)
-                                    </td>
+                                    </td>*@
                                     @*<td>
                                             @Html.DisplayFor(modelItem => item.IsDeleted)
                                         </td>*@
+
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.CanBo.HoTen)
+                                        @Html.DisplayFor(modelItem => item.dmChucVu.TenChucVu)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.dmChucVu.ID)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.dmDonVi.ID)
+                                        @Html.DisplayFor(modelItem => item.dmDonVi.TenDonVi)
                                     </td>
                                     <td>
                                         <a asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-edit"></i></a>

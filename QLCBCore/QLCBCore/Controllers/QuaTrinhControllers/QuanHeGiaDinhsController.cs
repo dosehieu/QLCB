@@ -49,7 +49,7 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
         public IActionResult Create()
         {
             ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen");
-            ViewData["QuanHeGDID"] = new SelectList(_context.dmQuanHeGiaDinhs, "ID", "ID");
+            ViewData["QuanHeGDID"] = new SelectList(_context.dmQuanHeGiaDinhs, "ID", "TenQuanHeGD");
             return View();
         }
 
@@ -85,11 +85,12 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
                 return NotFound();
             }
             ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen", quanHeGiaDinh.CanBoID);
-            ViewData["QuanHeGDID"] = new SelectList(_context.dmQuanHeGiaDinhs, "ID", "ID", quanHeGiaDinh.QuanHeGDID);
+            ViewData["QuanHeGDID"] = new SelectList(_context.dmQuanHeGiaDinhs, "ID", "TenQuanHeGD", quanHeGiaDinh.QuanHeGDID);
             return View(quanHeGiaDinh);
         }
 
         // POST: QuanHeGiaDinhs/Edit/5
+
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]

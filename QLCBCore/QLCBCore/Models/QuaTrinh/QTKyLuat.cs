@@ -17,6 +17,8 @@ namespace QLCBCore.Models
         public int? CanBoID { get; set; } // CanBoID
 
         [Display(Name = "Ngày kỷ luật")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayKyLuat { get; set; } // NgayKyLuat
 
         [ForeignKey("dmKyLuat")]

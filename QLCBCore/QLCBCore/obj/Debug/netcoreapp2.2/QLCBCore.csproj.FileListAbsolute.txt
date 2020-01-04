@@ -17,7 +17,6 @@ E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.TagHelpers.outpu
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.RazorCoreGenerate.cache
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Account\Index.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBo\Create.cshtml.g.cs
-E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBo\Delete.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBo\Details.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBo\Edit.cshtml.g.cs
 E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBo\Index.cshtml.g.cs
@@ -148,3 +147,4 @@ C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.p
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.csproj.CopyComplete
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.csprojAssemblyReference.cache
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\Menu\Index.g.cshtml.cs
+E:\chuyende1\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\Menu\Index.cshtml.g.cs

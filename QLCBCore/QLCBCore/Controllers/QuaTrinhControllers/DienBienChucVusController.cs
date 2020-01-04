@@ -21,6 +21,7 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
         // GET: DienBienChucVus
         public async Task<IActionResult> Index()
         {
+
             var qLCBDbContext = _context.DienBienChucVus.Include(d => d.CanBo).Include(d => d.dmChucVu).Include(d => d.dmDonVi);
             return View(await qLCBDbContext.ToListAsync());
         }
@@ -50,8 +51,8 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
         public IActionResult Create()
         {
             ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen");
-            ViewData["ChucVuID"] = new SelectList(_context.dmChucVus, "ID", "ID");
-            ViewData["PhongBanID"] = new SelectList(_context.dmDonVis, "ID", "ID");
+            ViewData["ChucVuID"] = new SelectList(_context.dmChucVus, "ID", "TenChucVu");
+            ViewData["PhongBanID"] = new SelectList(_context.dmDonVis, "ID", "TenDonVi");
             return View();
         }
 
@@ -88,8 +89,8 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
                 return NotFound();
             }
             ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen", dienBienChucVu.CanBoID);
-            ViewData["ChucVuID"] = new SelectList(_context.dmChucVus, "ID", "ID", dienBienChucVu.ChucVuID);
-            ViewData["PhongBanID"] = new SelectList(_context.dmDonVis, "ID", "ID", dienBienChucVu.PhongBanID);
+            ViewData["ChucVuID"] = new SelectList(_context.dmChucVus, "ID", "TenChucVu", dienBienChucVu.ChucVuID);
+            ViewData["PhongBanID"] = new SelectList(_context.dmDonVis, "ID", "TenDonVi", dienBienChucVu.PhongBanID);
             return View(dienBienChucVu);
         }
 

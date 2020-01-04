@@ -49,7 +49,7 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
         public IActionResult Create()
         {
             ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen");
-            ViewData["KyLuatID"] = new SelectList(_context.dmKyLuats, "ID", "ID");
+            ViewData["KyLuatID"] = new SelectList(_context.dmKyLuats, "ID", "IDTenKyLuat");
             return View();
         }
 
@@ -85,7 +85,7 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
                 return NotFound();
             }
             ViewData["CanBoID"] = new SelectList(_context.CanBos, "ID", "HoTen", qTKyLuat.CanBoID);
-            ViewData["KyLuatID"] = new SelectList(_context.dmKyLuats, "ID", "ID", qTKyLuat.KyLuatID);
+            ViewData["KyLuatID"] = new SelectList(_context.dmKyLuats, "ID", "TenKyLuat", qTKyLuat.KyLuatID);
             return View(qTKyLuat);
         }
 
