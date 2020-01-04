@@ -165,7 +165,6 @@ D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.TagHel
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.TagHelpers.output.cache
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.RazorCoreGenerate.cache
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Account\Index.g.cshtml.cs
-D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\BaoCao\ReportSLCLCBTheoDoTuoi\Index.g.cshtml.cs
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBo\Create.g.cshtml.cs
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBo\Details.g.cshtml.cs
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\CanBo\Edit.g.cshtml.cs
@@ -215,7 +214,6 @@ D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Sha
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\TopNavigation.g.cshtml.cs
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
-D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout2.g.cshtml.cs
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
@@ -225,3 +223,6 @@ D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.Views.
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.dll
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.pdb
 D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.csproj.CopyComplete
+D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\ReportCBThiDua\Index.g.cshtml.cs
+D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\ReportCBThiDua\Index2.g.cshtml.cs
+D:\Data\chuyende1\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\ReportCBKyLuats\Index.g.cshtml.cs
