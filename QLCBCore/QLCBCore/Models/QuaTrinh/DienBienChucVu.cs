@@ -39,6 +39,7 @@ namespace QLCBCore.Models
         public bool? isLeader { get; set; } // isLeader
 
         [Display(Name = "Ngày bổ nhiệm")]
+
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Column(TypeName = "DateTime")]
         public System.DateTime? NgayBoNhiem { get; set; } // NgayBoNhiem

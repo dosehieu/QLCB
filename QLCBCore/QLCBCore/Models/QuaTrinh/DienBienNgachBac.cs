@@ -23,10 +23,10 @@ namespace QLCBCore.Models
         public int? BacLuong { get; set; } // BacLuong
 
         [Display(Name = "Ngày hưởng")]
+
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Column(TypeName = "DateTime")]
         public System.DateTime? NgayHuong { get; set; } // NgayHuong
-
 
         [Display(Name = "Ngày kết thúc")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
@@ -54,6 +54,7 @@ namespace QLCBCore.Models
 
 
         [Display(Name = "Ngày ký")]
+
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Column(TypeName = "DateTime")]
         public System.DateTime? NgayKy { get; set; } // NgayKy

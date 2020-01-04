@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using QLCBCore.Models.BaoCao;
 
 namespace QLCBCore.Models
 {
@@ -106,5 +107,7 @@ namespace QLCBCore.Models
 
 
         }
+       
+        public DbSet<QLCBCore.Models.BaoCao.ReportSLCLCBTheoDoTuoi> ReportSLCLCBTheoDoTuoi { get; set; }
     }
 }
