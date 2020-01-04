@@ -205,7 +205,7 @@
 
 
   <ItemGroup>
-    <None Include="wwwroot\css\avatar_2x.png" />
+    <None Include="wwwroot\images\base\avatar_2x.png" />
     <None Include="wwwroot\css\Login.css" />
     <None Include="wwwroot\Layout\dist\css\adminlte.css.map" />
     <None Include="wwwroot\Layout\dist\css\adminlte.min.css.map" />
