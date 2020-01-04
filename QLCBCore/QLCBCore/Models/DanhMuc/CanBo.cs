@@ -240,7 +240,9 @@ namespace QLCBCore.Models
         /// <summary>
         /// Child QTKyLuat where [QTKyLuat].[CanBoID] point to this entity (FK_QTKyLuat_CanBo)
         /// </summary>
-       
+
+        public virtual System.Collections.Generic.ICollection<QTKhenThuong> QTKhenThuong { get; set; } // 
+
         public virtual System.Collections.Generic.ICollection<QTKyLuat> QTKyLuat { get; set; } // QTKyLuat.FK_QTKyLuat_CanBo
         /// <summary>
         /// Child QuanHeGiaDinh where [QuanHeGiaDinh].[CanBoID] point to this entity (FK_QuanHeGiaDinh_CanBo)
@@ -303,7 +305,7 @@ namespace QLCBCore.Models
             QTCongTac = new System.Collections.Generic.List<QTCongTac>();
             QTKyLuat = new System.Collections.Generic.List<QTKyLuat>();
             QuanHeGiaDinh = new System.Collections.Generic.List<QuanHeGiaDinh>();
-            
+            QTKhenThuong = new System.Collections.Generic.List<QTKhenThuong>();
         }
     }
 }

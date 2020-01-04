@@ -5,71 +5,121 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<style>
 
-<h4>QTKhenThuong</h4>
+    .row {
+        padding: 5px;
+    }
+
+    form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    select {
+        width: 100%;
+    }
+</style>
+@*<h4>QTKhenThuong</h4>*@
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CanBoID" class="control-label"></label>
-                <input asp-for="CanBoID" class="form-control" />
-                <span asp-validation-for="CanBoID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HinhThucKhenThuongID" class="control-label"></label>
-                <input asp-for="HinhThucKhenThuongID" class="form-control" />
-                <span asp-validation-for="HinhThucKhenThuongID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NoiDung" class="control-label"></label>
-                <input asp-for="NoiDung" class="form-control" />
-                <span asp-validation-for="NoiDung" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NgayKhenThuong" class="control-label"></label>
-                <input asp-for="NgayKhenThuong" class="form-control" />
-                <span asp-validation-for="NgayKhenThuong" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IsCaoNhat" class="control-label"></label>
-                <input asp-for="IsCaoNhat" class="form-control" />
-                <span asp-validation-for="IsCaoNhat" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SoQuyetDinh" class="control-label"></label>
-                <input asp-for="SoQuyetDinh" class="form-control" />
-                <span asp-validation-for="SoQuyetDinh" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NgayKy" class="control-label"></label>
-                <input asp-for="NgayKy" class="form-control" />
-                <span asp-validation-for="NgayKy" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CoQuanBanHanhQD" class="control-label"></label>
-                <input asp-for="CoQuanBanHanhQD" class="form-control" />
-                <span asp-validation-for="CoQuanBanHanhQD" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IsKhenThuong" class="control-label"></label>
-                <input asp-for="IsKhenThuong" class="form-control" />
-                <span asp-validation-for="IsKhenThuong" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MucKhenThuong" class="control-label"></label>
-                <input asp-for="MucKhenThuong" class="form-control" />
-                <span asp-validation-for="MucKhenThuong" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IsDeleted" class="control-label"></label>
-                <input asp-for="IsDeleted" class="form-control" />
-                <span asp-validation-for="IsDeleted" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="card card-primary card-outline">
+                <div class="card-header"><h3 class="card-title"><i class="fas fa-edit"></i>  THÊM MỚI QUÁ TRÌNH CÔNG TÁC</h3></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="CanBoID" class="control-label"></label>
+                                <select asp-for="CanBoID" class="form-control" asp-items="ViewBag.CanBoID"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="HinhThucKhenThuongID" class="control-label"></label>
+                                <select asp-for="HinhThucKhenThuongID" class="form-control" asp-items="ViewBag.HinhThucKhenThuongID"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="NoiDung" class="control-label"></label>
+                                <input asp-for="NoiDung" class="form-control" />
+                                <span asp-validation-for="NoiDung" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="NgayKhenThuong" class="control-label"></label>
+                                <input asp-for="NgayKhenThuong" class="form-control" />
+                                <span asp-validation-for="NgayKhenThuong" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="IsCaoNhat" class="control-label"></label>
+                                <input asp-for="IsCaoNhat" class="form-control" />
+                                <span asp-validation-for="IsCaoNhat" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="SoQuyetDinh" class="control-label"></label>
+                                <input asp-for="SoQuyetDinh" class="form-control" />
+                                <span asp-validation-for="SoQuyetDinh" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="NgayKy" class="control-label"></label>
+                                <input asp-for="NgayKy" class="form-control" />
+                                <span asp-validation-for="NgayKy" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="CoQuanBanHanhQD" class="control-label"></label>
+                                <input asp-for="CoQuanBanHanhQD" class="form-control" />
+                                <span asp-validation-for="CoQuanBanHanhQD" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="IsKhenThuong" class="control-label"></label>
+                                <input asp-for="IsKhenThuong" class="form-control" />
+                                <span asp-validation-for="IsKhenThuong" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="MucKhenThuong" class="control-label"></label>
+                                <input asp-for="MucKhenThuong" class="form-control" />
+                                <span asp-validation-for="MucKhenThuong" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="IsDeleted" class="control-label"></label>
+                                <input asp-for="IsDeleted" class="form-control" />
+                                <span asp-validation-for="IsDeleted" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Lưu" class="btn btn-primary" />
+                    </div>
+                </div>
             </div>
         </form>
     </div>

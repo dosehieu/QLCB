@@ -1,0 +1,139 @@
+﻿@model IEnumerable<QLCBCore.Models.DienBienChucVu>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .table-responsive {
+        display: table;
+    }
+</style>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+
+<div class="row">
+    <div class="col-lg-12 col-xs-12 col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header"><h3 class="card-title"><i class="fas fa-list"></i> DANH SÁCH DIỄN BIẾN CHỨC VỤ</h3></div>
+            <div class="card-body">
+                <div class="mb-2">
+
+                    <button class="btn btn-primary" onclick="window.location.href = '/DienBienChucVus/Create';"><i class="fa fa-plus"></i> Thêm mới</button>
+
+                </div>
+
+                <div class="data-table table-responsive" id="divListUser">
+                    <table class="table table-bordered table-hover table-striped-custom table-responsive gridView">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TuNgay)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DenNgay)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PhuCapChucVu)
+                                </th>
+                                @*<th>
+                                        @Html.DisplayNameFor(model => model.Curent)
+                                    </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.isLeader)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NgayBoNhiem)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SoQuyetDinh)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NguoiKy)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IsDangDoan)
+                                </th>
+                                @*<th>
+                                        @Html.DisplayNameFor(model => model.IsDeleted)
+                                    </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CanBo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.dmChucVu)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.dmDonVi)
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TuNgay)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DenNgay)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhuCapChucVu)
+                                    </td>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.Curent)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.isLeader)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NgayBoNhiem)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SoQuyetDinh)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NguoiKy)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IsDangDoan)
+                                    </td>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.IsDeleted)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CanBo.HoTen)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dmChucVu.ID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.dmDonVi.ID)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.ID"><i class="fa fa-edit"></i></a>
+                                    </td>
+                                    <td>
+                                        <a asp-action="Delete" asp-route-id="@item.ID"><i class="fa fa-trash-alt"></i></a>
+                                    </td>
+                                    @*<td>
+                                            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                                        </td>*@
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
