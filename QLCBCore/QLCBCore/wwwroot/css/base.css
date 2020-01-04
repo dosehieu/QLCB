@@ -1,17 +1,18 @@
 ﻿.table-responsive {
     display: table;
 }
+
 .islink {
     color: #007bff;
     text-decoration: none;
     background-color: transparent;
 }
 
-.islink:hover {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;
-}
+    .islink:hover {
+        color: -webkit-link;
+        cursor: pointer;
+        text-decoration: underline;
+    }
 
 .table {
     margin-bottom: unset;
@@ -122,3 +123,34 @@
             background: url(../Layout/dist/img/icon.png) left -234px no-repeat;
         }
 
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
+    padding-right: unset !important;
+}
+
+.gotop {
+    display: none;
+    bottom: 1%;
+    right: 10px;
+    cursor: pointer;
+    position: fixed;
+    z-index: 1000;
+    opacity: 0.5;
+}
+
+    .gotop:hover {
+        opacity: 1;
+    }
+
+    .gotop div {
+        background: #007bff;
+        border: 2px solid #007bff;
+        border-radius: 45px;
+        padding: 11px 12.5px;
+        padding-top: 9px;
+        box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.3)
+    }
+
+    .gotop img {
+        width: 20px;
+        height: 16px;
+    }
