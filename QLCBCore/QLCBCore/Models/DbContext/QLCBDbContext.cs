@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using QLCBCore.Models.BaoCao;
+using QLCBCore.Models.ThongKe;
 
 namespace QLCBCore.Models
 {
@@ -113,5 +114,15 @@ namespace QLCBCore.Models
         public DbSet<QLCBCore.Models.BaoCao.ReportCBThiDua> ReportCBThiDua { get; set; }
        
         public DbSet<QLCBCore.Models.BaoCao.ReportCBKyLuat> ReportCBKyLuat { get; set; }
+       
+        public DbSet<QLCBCore.Models.BaoCao.ReportCBNghiHuucs> ReportCBNghiHuucs { get; set; }
+       
+        public DbSet<QLCBCore.Models.ThongKe.ThongKeTheoTonGiao> ThongKeTheoTonGiao { get; set; }
+       
+        public DbSet<QLCBCore.Models.ThongKe.ThongKeDangVien> ThongKeDangVien { get; set; }
+       
+        public DbSet<QLCBCore.Models.ThongKe.ThongKeGDCS> ThongKeGDCS { get; set; }
+       
+        public DbSet<QLCBCore.Models.ThongKe.ThongKeHocHam> ThongKeHocHam { get; set; }
     }
 }

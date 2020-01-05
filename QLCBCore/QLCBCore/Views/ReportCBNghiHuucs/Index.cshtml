@@ -1,0 +1,79 @@
+﻿@model IEnumerable<QLCBCore.Models.BaoCao.ReportCBNghiHuucs>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .table-responsive {
+        display: table;
+    }
+</style>
+<div class="row">
+    <div class="col-lg-12 col-xs-12 col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-body" style="line-height:20px;">
+                <h4 style="text-align:center; padding-bottom: 10px;">
+                    DANH SÁCH CÁN BỘ ĐẾN TUỔI NGHỈ HƯU NĂM @DateTime.Now.Year.ToString()
+                </h4>
+                <h6 style="text-align:center; padding-bottom: 10px;">Tính đến hết ngày @DateTime.Now.ToString("dd/MM/yyyy")</h6>
+                <div class="data-table table-responsive" id="divListUser">
+                    <table class="table table-bordered table-hover table-striped-custom table-responsive gridView">
+                        <thead style="text-align:center; vertical-align: middle;">
+                            <tr style="vertical-align:middle;">
+                                <th rowspan="2" style="vertical-align:middle;">STT</th>
+                                <th rowspan="2" style="vertical-align:middle;">Họ và tên</th>
+                                <th rowspan="2" style="vertical-align:middle;">Đơn vị</th>
+                                <th colspan="2" style="vertical-align:middle;">Năm sinh</th>
+                                <th colspan="4" style="vertical-align:middle;">Hệ số lương, mã ngạch</th>
+                            </tr>
+                            <tr>
+                                <th>Nam</th>
+                                <th>Nữ</th>
+                                <th>Mã số ngạch</th>
+                                <th>Hệ số</th>
+                                <th>Ngày thông báo nghỉ hưu</th>
+                                <th>Ngày nghỉ hưu chính thức</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{int i = 0;}
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th style="text-align:center;">
+                                        @(i = i + 1)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.HoTen)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.TenDonVi)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.NgaySinh_Nam.Value.ToString("dd/MM/yyyy"))
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.NgaySinh_Nu.Value.ToString("dd/MM/yyyy"))
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.MaNgach)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.HeSo)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.NgayThongBaoNghiHuu.Value.ToString("dd/MM/YYYY"))
+                                    </th>
+                                    <th>
+                                        @Html.DisplayFor(modelItem => item.NgayNghiHuu.Value.ToString("dd/MM/YYYY"))
+                                    </th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

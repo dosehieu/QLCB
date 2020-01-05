@@ -198,6 +198,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
     <Folder Include="Business\" />
+    <Folder Include="Stored\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="Base\" />
 
