@@ -197,6 +197,9 @@
 
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
 
+
+    <PackageReference Include="Syncfusion.XlsIO.Net.Core" Version="17.4.0.40" />
+
   </ItemGroup>
 
 
@@ -613,6 +616,11 @@
     <None Include="wwwroot\Layout\plugins\summernote\summernote.js.map" />
     <None Include="wwwroot\Layout\plugins\summernote\summernote.min.js" />
     <None Include="wwwroot\Layout\plugins\tempusdominus-bootstrap-4\js\tempusdominus-bootstrap-4.js" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="wwwroot\export\files\" />
   </ItemGroup>
 
 </Project>

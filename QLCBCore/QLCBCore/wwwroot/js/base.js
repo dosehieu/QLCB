@@ -2,12 +2,13 @@
     base_formAction();
     base_pagination();
     base_datatable();
-    base_navLink();
     base_lentop();
+    bsCustomFileInput.init();
+    base_menuActive();
 });
 
 function base_formAction() {
-    $('#btn_add').click(function () {
+    $('.btn_link').click(function () {
         var link = $(this).attr("data-link");
         window.location.href = link;
     });
@@ -144,12 +145,6 @@ function base_datatable() {
     });
 }
 
-function base_navLink() {
-    var title = $('.nav-link.active > p').text();
-    $('.breadcrumb-item.active').html(title);
-    $('.m-0.text-dark').html(title);
-}
-
 function base_lentop() {
     
     $(window).scroll(function () {
@@ -161,5 +156,33 @@ function base_lentop() {
     });
     
 }
+
+function base_menuActive() {
+    var pathname = window.location.pathname;
+    var div = pathname.split('/', 2);
+    var re = div[1];
+    $("[data-active=" + re + "]").addClass("active");
+    var parent = $("[data-active=" + re + "]").attr('data-parent');
+    $("[data-active=" + re + "]").closest("ul").css("display", "block");
+    $("[data-active=" + parent + "]").addClass("active");
+    $("[data-active=" + parent + "]").closest("li").addClass("menu-open");
+}
+
+function base_navLink(title) {
+    $('.breadcrumb-item.active').html(title);
+    $('.m-0.text-dark').html(title);
+}
+
+function base_navLink2(title, title2, link) {
+    $('.breadcrumb-item.active').html(title);
+    $('.m-0.text-dark').html(title);
+    $('.breadcrumb-item.display-none > a').html(title2);
+    $('.breadcrumb-item.display-none > a').attr("href", link);
+    $('.breadcrumb-item.display-none').removeClass("display-none");
+    $('.m-0.text-dark').html(title);
+}
+
+
+
     
 

@@ -104,11 +104,9 @@ C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\View
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\DienBienNgachBacs\Details.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\DienBienNgachBacs\Edit.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\DienBienNgachBacs\Index.g.cshtml.cs
-C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\dmDonVis\Create.g.cshtml.cs
-C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\dmDonVis\Delete.g.cshtml.cs
-C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\dmDonVis\Details.g.cshtml.cs
-C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\dmDonVis\Edit.g.cshtml.cs
-C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\dmDonVis\Index.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\DonVi\Create.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\DonVi\Edit.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\DonVi\Index.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
@@ -132,6 +130,7 @@ C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\View
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QuanHeGiaDinhs\Details.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QuanHeGiaDinhs\Edit.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\QuanHeGiaDinhs\Index.g.cshtml.cs
+C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\Menu\Index.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\MenuTop.g.cshtml.cs
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\TopNavigation.g.cshtml.cs
@@ -147,4 +146,3 @@ C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.d
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.pdb
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.csproj.CopyComplete
 C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\QLCBCore.csprojAssemblyReference.cache
-C:\Users\ABC\Documents\QLCB\QLCBCore\QLCBCore\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\Menu\Index.g.cshtml.cs

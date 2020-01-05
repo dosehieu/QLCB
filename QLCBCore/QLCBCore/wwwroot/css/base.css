@@ -154,3 +154,29 @@ table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sor
         width: 20px;
         height: 16px;
     }
+.row {
+    padding: 5px !important;
+}
+
+form {
+    width: 100% !important;
+    padding: 10px !important;
+}
+
+select {
+    width: 100% !important;
+}
+
+
+
+.selected {
+    background-color: bisque;
+}
+
+    .selected:hover {
+        background-color: bisque !important;
+    }
+
+.display-none {
+    display: none !important;
+}

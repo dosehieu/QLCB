@@ -1,0 +1,63 @@
+﻿@model IEnumerable<QLCBCore.Models.dmDonVi>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12 col-xs-12 col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header"><h3 class="card-title"><i class="fas fa-list"> </i> <span class="col-6">DANH SÁCH ĐƠN VỊ : (SỐ LƯỢNG ĐƠN VỊ : <span style="font-size:20px">@ViewBag.Count</span>)</span></h3></div>
+            <div class="card-body">
+                <div class="mb-2">
+                    <button id="btn_add" data-link="/CanBo/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Thêm mới</button>
+                </div>
+                <div class="data-table table-responsive">
+                    <table style="width:100% !important" class="table table-bordered table-hover table-striped-custom table-responsive gridView table-jquery">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MaDonVi)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TenDonVi)
+                                </th>
+                                
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TenVietTat)
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaDonVi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenDonVi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenVietTat)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.ID" title="Cập nhật đơn vị @item.TenDonVi"><i class="fa fa-edit"></i></a>
+
+                                </td>
+
+                                <td>
+                                    <div class="islink btn_delete" data-link="/DonVi/Delete" data-id="@item.ID" data-name="@item.TenDonVi" data-title="đơn vị" data-type="delete" title="Xóa đơn vị @item.TenDonVi"><i class="fa fa-trash-alt"></i></div>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

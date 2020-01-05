@@ -10,12 +10,46 @@
             <div class="card-header"><h3 class="card-title"><i class="fas fa-list"> </i> <span class="col-6">DANH SÁCH CÁN BỘ : (SỐ LƯỢNG CÁN BỘ : <span style="font-size:20px">@ViewBag.CountCB</span>)</span></h3></div>
             <div class="card-body">
                 <div class="mb-2">
-                    <button id="btn_add" data-link="/CanBo/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Thêm mới</button>
+                    <button data-link="/CanBo/Create" class="btn btn-primary btn_link"><i class="fa fa-plus"></i> Thêm mới</button>
+                    <button id="BoSung" data-link="" class="btn btn-primary btn_link"><i class="fa fa-edit"></i> Bổ sung</button>
+
+                    @*<button data-link="/CanBo/Create" class="btn btn-primary btn_link"><i class="fa fa-user-alt"></i> Sơ yếu lý lịch</button>*@
+
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-eye"></i>Hiển thị
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="~/CanBo/Index/0">Danh sách</a>
+                            <a class="dropdown-item" href="~/CanBo/Index/1">Hình ảnh</a>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-cog"></i> Thao tác
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="~/CanBo/Index/0">Chuyển công tác</a>
+                            <a class="dropdown-item" href="~/CanBo/Index/1">Nghỉ hưu</a>
+                            <a class="dropdown-item" href="~/CanBo/Index/1">Thôi việc</a>
+                            <a class="dropdown-item" href="~/CanBo/Index/1">Từ trần</a>
+                        </div>
+                    </div>
+                    <button onclick="exported()" class="btn btn-primary"><i class="fa fa-download"></i> Xuất Excel</button>
                 </div>
                 <div class="data-table table-responsive">
                     <table style="width:100% !important" class="table table-bordered table-hover table-striped-custom table-responsive gridView table-jquery">
                         <thead>
                             <tr>
+                                @if (ViewBag.HinhAnh == 1)
+                                {
+                                <th>
+                                    @Html.DisplayNameFor(model => model.HinhAnh)
+                                </th>
+                                }
+                                
                                 <th>
                                     @Html.DisplayNameFor(model => model.Ma)
                                 </th>
@@ -51,55 +85,62 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Ma)
+                            <tr id="@item.ID">
+                                @if (ViewBag.HinhAnh == 1)
+                                {
+                                    <td >
+                                        <img width="110" height="150" src="~/images/@item.HinhAnh" />
                                     </td>
+                                }
 
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.HoTen)
-                                    </td>
-                                    @{ if (item.GioiTinh == true)
-                                        {
-                                            <td>Nam</td>
-                                        }
-                                        else if (item.GioiTinh == false)
-                                        {
-                                            <td>Nữ</td>
-                                        }
-                                        else
-                                        {
-                                            <td></td>
-                                        }
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ma)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HoTen)
+                                </td>
+                                @{ if (item.GioiTinh == true)
+                                    {
+                                        <td>Nam</td>
                                     }
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.NgaySinh)
-                                    </td>
+                                    else if (item.GioiTinh == false)
+                                    {
+                                        <td>Nữ</td>
+                                    }
+                                    else
+                                    {
+                                        <td></td>
+                                    }
+                                }
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgaySinh)
+                                </td>
 
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.dmDonVi.TenDonVi)
-                                    </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.dmDonVi.TenDonVi)
+                                </td>
 
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.dmChucVu.TenChucVu)
-                                    </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.dmChucVu.TenChucVu)
+                                </td>
 
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.dmKieuCanBo.TenKieuCanBo)
-                                    </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.dmKieuCanBo.TenKieuCanBo)
+                                </td>
 
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.dmTrinhDo.TenTrinhDo)
-                                    </td>
-                                    <td>
-                                        <a asp-action="Edit" asp-route-id="@item.ID" title="Cập nhật cán bộ @item.HoTen"><i class="fa fa-edit"></i></a>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.dmTrinhDo.TenTrinhDo)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.ID" title="Cập nhật cán bộ @item.HoTen"><i class="fa fa-edit"></i></a>
 
-                                    </td>
+                                </td>
 
-                                    <td>
-                                        <div class="islink btn_delete" data-link="/CanBo/Delete" data-id="@item.ID" data-name="@item.HoTen" data-title="cán bộ" data-type="delete" title="Xóa cán bộ @item.HoTen"><i class="fa fa-trash-alt"></i></div>
-                                    </td>
-                                </tr>
+                                <td>
+                                    <div class="islink btn_delete" data-link="/CanBo/Delete" data-id="@item.ID" data-name="@item.HoTen" data-title="cán bộ" data-type="delete" title="Xóa cán bộ @item.HoTen"><i class="fa fa-trash-alt"></i></div>
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>
@@ -109,3 +150,37 @@
         </div>
     </div>
 </div>
+<script>
+    //base_navLink2("Lương","Hồ sơ cán bộ","/CanBo/Index")
+    base_navLink("Hồ sơ cán bộ");
+    var id = $('tbody').find('tr').first().attr("id");
+    $('#BoSung').attr("data-link", "/DienBienChucVus/Index/" + id);
+
+    $('tbody tr').click(function () {
+        var id = $(this).attr("id");
+        $("tr").removeClass("selected")
+        $(this).addClass("selected");
+        $('#BoSung').attr("data-link", "/DienBienChucVus/Index/" + id);
+    });
+
+
+   function exported(e) {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("ExportExcel", "CanBo")', //call your controller and action
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+        }).done(function (data) {
+ 
+            //get the file name for download
+            if (data.fileName != "") {
+                //use window.location.href for redirect to download action for download the file
+                window.location.href = "@Url.RouteUrl(new { Controller = "CanBo", Action = "Download" })/?fileName=" + data.fileName;
+            }
+        });
+    }
+</script>
+<style>
+
+</style>
+

@@ -13,7 +13,7 @@
                 <img src="~/Layout/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Nguyễn Việt Hiếu</a>
+                <a href="#" class="d-block">Admin</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -22,7 +22,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="~/CanBo/Index" class="nav-link active">
+                    <a data-active="CanBo" href="~/CanBo/Index" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Hồ sơ cán bộ</p>
                     </a>
@@ -34,24 +34,7 @@
                         <i class="fas fa-angle-left right"></i>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>DS cán bộ thi đua</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>DS cán bộ khen thưởng</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>DS cán bộ kỉ luật</p>
-                            </a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a href="./index3.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -91,52 +74,35 @@
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                    <a data-active="BaoCao" href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>Báo cáo</p>
                         <i class="fas fa-angle-left right"></i>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
+                            <a href="./index3.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Top Navigation</p>
+                                <p>DS cán bộ thi đua</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/boxed.html" class="nav-link">
+                            <a href="./index2.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Boxed</p>
+                                <p>DS cán bộ khen thưởng</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                            <a href="./index3.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Fixed Sidebar</p>
+                                <p>DS cán bộ kỉ luật</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/fixed-topnav.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Fixed Navbar</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/fixed-footer.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Fixed Footer</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Collapsed Sidebar</p>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                    <a data-active="ThongKe" href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>Thống kê</p>
                         <i class="right fas fa-angle-left"></i>
@@ -148,92 +114,40 @@
                                 <p>ChartJS</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Flot</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/inline.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inline</p>
-                            </a>
-                        </li>
+                        
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                    <a data-active="HeThong" href="#" class="nav-link">
                         <i class="nav-icon fas fa-tree"></i>
                         <p>Hệ thống</p>
                         <i class="fas fa-angle-left right"></i>
                     </a>
-                    <ul class="nav nav-treeview">
+                    <ul class="nav nav-treeview" >
                         <li class="nav-item">
-                            <a href="pages/UI/general.html" class="nav-link">
+                            <a data-active="DonVi" data-parent="HeThong" href="~/DonVi/Index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>General</p>
+                                <p>Đơn vị</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/icons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Icons</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/buttons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Buttons</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/sliders.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Sliders</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/modals.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Modals & Alerts</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/navbar.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Navbar & Tabs</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/timeline.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Timeline</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/ribbons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Ribbons</p>
-                            </a>
-                        </li>
+                        
                     </ul>
                 </li>
                 <li class="nav-header">Hỗ trợ</li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                    <a data-active="TaiLieu" href="#" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>Tài liệu</p>
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                    <a data-active="LienHe" href="#" class="nav-link">
                         <i class="nav-icon fas fa-table"></i>
                         <p>Liên hệ</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/calendar.html" class="nav-link">
+                    <a data-active="TroGiup" href="pages/calendar.html" class="nav-link">
                         <i class="nav-icon far fa-calendar-alt"></i>
                         <p>Trợ giúp</p>
                     </a>
