@@ -19,6 +19,47 @@ namespace QLCBCore.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("QLCBCore.Models.BaoCao.ReportSLCLCBTheoDoTuoi", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("DonViID");
+
+                    b.Property<int?>("Nam");
+
+                    b.Property<int?>("Nam20den30");
+
+                    b.Property<int?>("Nam30den50");
+
+                    b.Property<int?>("Namtren50");
+
+                    b.Property<int?>("Nu20den30");
+
+                    b.Property<int?>("Nu30den50");
+
+                    b.Property<int?>("Nutren50");
+
+                    b.Property<int?>("PhuNu");
+
+                    b.Property<int?>("STT");
+
+                    b.Property<string>("TenDonVi");
+
+                    b.Property<int?>("TongSo");
+
+                    b.Property<int?>("Total20den30");
+
+                    b.Property<int?>("Total30den50");
+
+                    b.Property<int?>("Totaltren50");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("ReportSLCLCBTheoDoTuoi");
+                });
+
             modelBuilder.Entity("QLCBCore.Models.CanBo", b =>
                 {
                     b.Property<int>("ID")
@@ -252,12 +293,221 @@ namespace QLCBCore.Migrations
                             HoTen = "Nguyễn Việt Hiếu",
                             IsDeleted = false,
                             KieuCanBo = 1,
-                            NgayCapNhat = new DateTime(2020, 1, 2, 17, 3, 15, 129, DateTimeKind.Local).AddTicks(333),
-                            NgaySinh = new DateTime(2020, 1, 2, 17, 3, 15, 130, DateTimeKind.Local).AddTicks(2941),
-                            NgayTuyen = new DateTime(2020, 1, 2, 17, 3, 15, 130, DateTimeKind.Local).AddTicks(6052),
-                            NgayVeCQ = new DateTime(2020, 1, 2, 17, 3, 15, 130, DateTimeKind.Local).AddTicks(6662),
-                            TonGiaoID = 1,
-                            TrangThai = 1,
+                            Ma = "NVH1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 135, DateTimeKind.Local).AddTicks(7430),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 137, DateTimeKind.Local).AddTicks(4114),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 137, DateTimeKind.Local).AddTicks(9777),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(1402),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(611),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 2,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = true,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Nguyễn Quang Huy",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "NQH1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(2984),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3046),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3095),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3110),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3102),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 3,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = true,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Ngô Ngọc Anh",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "NNA1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3125),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3130),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3133),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3135),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3134),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 4,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = true,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Nguyễn Quang Anh",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "NQA1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3138),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3141),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3144),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3147),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3145),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 5,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = true,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Nguyễn Quang Công",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "NQC1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3182),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3186),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3187),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3191),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3190),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 6,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = true,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Trần Quang Thắng",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "TQT1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3193),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3197),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3200),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3201),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3201),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 7,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = true,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Nguyễn Văn Anh",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "NVA1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3202),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3206),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3207),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3210),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3208),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 8,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = true,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Nguyễn Tuấn Quang",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "NTQ1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3212),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3215),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3216),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3220),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3219),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 9,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = true,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Lê Đức Anh",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "LDA1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3222),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3225),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3227),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3229),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3228),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 10,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = false,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Trần Thị Thảo",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "TTT1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3230),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3233),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3234),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3236),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3235),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 11,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = false,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Nguyễn Mộng Điệp",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "NMD1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3237),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3240),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3242),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3244),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3244),
+                            TrinhDoID = 1
+                        },
+                        new
+                        {
+                            ID = 12,
+                            ChucVuID = 1,
+                            DanTocID = 1,
+                            DonViID = 1,
+                            GioiTinh = false,
+                            HinhThucThiTuyenID = 1,
+                            HoTen = "Nguyễn Lê Trang",
+                            IsDeleted = false,
+                            KieuCanBo = 1,
+                            Ma = "NLT1",
+                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3254),
+                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3257),
+                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3260),
+                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3261),
+                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3260),
                             TrinhDoID = 1
                         });
                 });
@@ -274,13 +524,15 @@ namespace QLCBCore.Migrations
 
                     b.Property<bool?>("Curent");
 
-                    b.Property<DateTime?>("DenNgay");
+                    b.Property<DateTime?>("DenNgay")
+                        .HasColumnType("DateTime");
 
                     b.Property<bool?>("IsDangDoan");
 
                     b.Property<bool?>("IsDeleted");
 
-                    b.Property<DateTime?>("NgayBoNhiem");
+                    b.Property<DateTime?>("NgayBoNhiem")
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("NguoiKy");
 
@@ -290,9 +542,8 @@ namespace QLCBCore.Migrations
 
                     b.Property<string>("SoQuyetDinh");
 
-                    b.Property<DateTime?>("TuNgay");
-
-                    b.Property<int?>("dmChucVuID");
+                    b.Property<DateTime?>("TuNgay")
+                        .HasColumnType("DateTime");
 
                     b.Property<bool?>("isLeader");
 
@@ -300,7 +551,9 @@ namespace QLCBCore.Migrations
 
                     b.HasIndex("CanBoID");
 
-                    b.HasIndex("dmChucVuID");
+                    b.HasIndex("ChucVuID");
+
+                    b.HasIndex("PhongBanID");
 
                     b.ToTable("DienBienChucVus");
                 });
@@ -343,11 +596,14 @@ namespace QLCBCore.Migrations
 
                     b.Property<DateTime?>("NgayBatDauGiuNgach");
 
-                    b.Property<DateTime?>("NgayHuong");
+                    b.Property<DateTime?>("NgayHuong")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayKetThuc");
+                    b.Property<DateTime?>("NgayKetThuc")
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("NgayKy");
+                    b.Property<DateTime?>("NgayKy")
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("NguoiKy");
 
@@ -381,15 +637,13 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("ThoiHanNangBac");
 
-                    b.Property<int?>("dmNgachID");
-
                     b.Property<bool?>("isTapSu");
 
                     b.HasKey("ID");
 
                     b.HasIndex("CanBoID");
 
-                    b.HasIndex("dmNgachID");
+                    b.HasIndex("NgachID");
 
                     b.ToTable("DienBienNgachBacs");
                 });
@@ -468,17 +722,18 @@ namespace QLCBCore.Migrations
 
                     b.Property<string>("NgayKhenThuong");
 
-                    b.Property<DateTime?>("NgayKy");
+                    b.Property<DateTime?>("NgayKy")
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("NoiDung");
 
                     b.Property<string>("SoQuyetDinh");
 
-                    b.Property<byte?>("dmHinhThucKhenThuongID");
-
                     b.HasKey("ID");
 
-                    b.HasIndex("dmHinhThucKhenThuongID");
+                    b.HasIndex("CanBoID");
+
+                    b.HasIndex("HinhThucKhenThuongID");
 
                     b.ToTable("QTKhenThuongs");
                 });
@@ -499,19 +754,18 @@ namespace QLCBCore.Migrations
 
                     b.Property<byte?>("KyLuatID");
 
-                    b.Property<DateTime?>("NgayKyLuat");
+                    b.Property<DateTime?>("NgayKyLuat")
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("NoiDung");
 
                     b.Property<string>("SoQuyetDinh");
 
-                    b.Property<byte?>("dmKyLuatID");
-
                     b.HasKey("ID");
 
                     b.HasIndex("CanBoID");
 
-                    b.HasIndex("dmKyLuatID");
+                    b.HasIndex("KyLuatID");
 
                     b.ToTable("QTKyLuats");
                 });
@@ -552,13 +806,11 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("Type");
 
-                    b.Property<int?>("dmQuanHeGiaDinhID");
-
                     b.HasKey("ID");
 
                     b.HasIndex("CanBoID");
 
-                    b.HasIndex("dmQuanHeGiaDinhID");
+                    b.HasIndex("QuanHeGDID");
 
                     b.ToTable("QuanHeGiaDinhs");
                 });
@@ -641,15 +893,18 @@ namespace QLCBCore.Migrations
 
                     b.Property<int?>("MaCha");
 
-                    b.Property<string>("MaDonVi");
+                    b.Property<string>("MaDonVi")
+                        .HasMaxLength(30);
 
                     b.Property<string>("RegionID");
 
                     b.Property<int?>("STT");
 
-                    b.Property<string>("TenDonVi");
+                    b.Property<string>("TenDonVi")
+                        .HasMaxLength(150);
 
-                    b.Property<string>("TenVietTat");
+                    b.Property<string>("TenVietTat")
+                        .HasMaxLength(150);
 
                     b.HasKey("ID");
 
@@ -1039,7 +1294,11 @@ namespace QLCBCore.Migrations
 
                     b.HasOne("QLCBCore.Models.dmChucVu", "dmChucVu")
                         .WithMany("DienBienChucVu")
-                        .HasForeignKey("dmChucVuID");
+                        .HasForeignKey("ChucVuID");
+
+                    b.HasOne("QLCBCore.Models.dmDonVi", "dmDonVi")
+                        .WithMany("DienBienChucVu")
+                        .HasForeignKey("PhongBanID");
                 });
 
             modelBuilder.Entity("QLCBCore.Models.DienBienNgachBac", b =>
@@ -1049,8 +1308,8 @@ namespace QLCBCore.Migrations
                         .HasForeignKey("CanBoID");
 
                     b.HasOne("QLCBCore.Models.dmNgach", "dmNgach")
-                        .WithMany()
-                        .HasForeignKey("dmNgachID");
+                        .WithMany("DienBienNgachBac")
+                        .HasForeignKey("NgachID");
                 });
 
             modelBuilder.Entity("QLCBCore.Models.QTCongTac", b =>
@@ -1062,9 +1321,13 @@ namespace QLCBCore.Migrations
 
             modelBuilder.Entity("QLCBCore.Models.QTKhenThuong", b =>
                 {
+                    b.HasOne("QLCBCore.Models.CanBo", "CanBo")
+                        .WithMany("QTKhenThuong")
+                        .HasForeignKey("CanBoID");
+
                     b.HasOne("QLCBCore.Models.dmHinhThucKhenThuong", "dmHinhThucKhenThuong")
                         .WithMany("QTKhenThuong")
-                        .HasForeignKey("dmHinhThucKhenThuongID");
+                        .HasForeignKey("HinhThucKhenThuongID");
                 });
 
             modelBuilder.Entity("QLCBCore.Models.QTKyLuat", b =>
@@ -1075,7 +1338,7 @@ namespace QLCBCore.Migrations
 
                     b.HasOne("QLCBCore.Models.dmKyLuat", "dmKyLuat")
                         .WithMany("QTKyLuat")
-                        .HasForeignKey("dmKyLuatID");
+                        .HasForeignKey("KyLuatID");
                 });
 
             modelBuilder.Entity("QLCBCore.Models.QuanHeGiaDinh", b =>
@@ -1086,7 +1349,7 @@ namespace QLCBCore.Migrations
 
                     b.HasOne("QLCBCore.Models.dmQuanHeGiaDinh", "dmQuanHeGiaDinh")
                         .WithMany("QuanHeGiaDinh")
-                        .HasForeignKey("dmQuanHeGiaDinhID");
+                        .HasForeignKey("QuanHeGDID");
                 });
 #pragma warning restore 612, 618
         }

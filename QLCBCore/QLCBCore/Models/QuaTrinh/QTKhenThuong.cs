@@ -33,6 +33,8 @@ namespace QLCBCore.Models
         public string SoQuyetDinh { get; set; } // SoQuyetDinh (length: 50)
 
         [Display(Name = "Ngày ký")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Column(TypeName = "DateTime")]
         public System.DateTime? NgayKy { get; set; } // NgayKy
 
         [Display(Name = "Cơ quan ban hành")]

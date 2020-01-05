@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using QLCBCore.Models.BaoCao;
 
 namespace QLCBCore.Models
 {
@@ -44,23 +45,23 @@ namespace QLCBCore.Models
        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CanBo>().HasData(
-                new CanBo() {
-                    ID = 1,
-                    HoTen = "Nguyễn Việt Hiếu",
-                    GioiTinh = true,
-                    NgaySinh = DateTime.Now,
-                    TonGiaoID = 1,
-                    DanTocID = 1,
-                    DonViID = 1,
-                    TrangThai = 1,
-                    NgayTuyen = DateTime.Now,
-                    NgayVeCQ =DateTime.Now,
-                    HinhThucThiTuyenID=1,
-                    KieuCanBo =1,
-                    TrinhDoID=1,
-                    ChucVuID=1
-                });
+            //modelBuilder.Entity<CanBo>().HasData(
+            //    new CanBo() {
+            //        ID = 1,
+            //        HoTen = "Nguyễn Việt Hiếu",
+            //        GioiTinh = true,
+            //        NgaySinh = DateTime.Now,
+            //        TonGiaoID = 1,
+            //        DanTocID = 1,
+            //        DonViID = 1,
+            //        TrangThai = 1,
+            //        NgayTuyen = DateTime.Now,
+            //        NgayVeCQ =DateTime.Now,
+            //        HinhThucThiTuyenID=1,
+            //        KieuCanBo =1,
+            //        TrinhDoID=1,
+            //        ChucVuID=1
+            //    });
 
             //modelBuilder.Entity<dmDonVi>().HasData(
             //    new dmDonVi() { ID = 1, TenDonVi = "Ban giám đốc" },
@@ -103,8 +104,214 @@ namespace QLCBCore.Models
             modelBuilder.Entity<dmTonGiao>().HasData(
              new dmTonGiao() { ID = 1, TenTonGiao = "Không" }
              );
+            modelBuilder.Entity<CanBo>().HasData(
+            new CanBo() { ID = 1,
+                Ma="NVH1",
+                HoTen = "Nguyễn Việt Hiếu",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = true,
+                DonViID = 1,
+                KieuCanBo =1,
+                ChucVuID=1,
+                TrinhDoID=1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID =1,
+            },
+            new CanBo()
+            {
+                ID = 2,
+                Ma = "NQH1",
+                HoTen = "Nguyễn Quang Huy",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = true,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            },
+            new CanBo()
+            {
+                ID = 3,
+                Ma = "NNA1",
+                HoTen = "Ngô Ngọc Anh",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = true,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            },
+            new CanBo()
+            {
+                ID = 4,
+                Ma = "NQA1",
+                HoTen = "Nguyễn Quang Anh",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = true,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            },
+            new CanBo()
+            {
+                ID = 5,
+                Ma = "NQC1",
+                HoTen = "Nguyễn Quang Công",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = true,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            },
+            new CanBo()
+            {
+                ID = 6,
+                Ma = "TQT1",
+                HoTen = "Trần Quang Thắng",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = true,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            },
+            new CanBo()
+            {
+                ID = 7,
+                Ma = "NVA1",
+                HoTen = "Nguyễn Văn Anh",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = true,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            },
+            new CanBo()
+            {
+                ID = 8,
+                Ma = "NTQ1",
+                HoTen = "Nguyễn Tuấn Quang",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = true,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            },
+            new CanBo()
+            {
+                ID = 9,
+                Ma = "LDA1",
+                HoTen = "Lê Đức Anh",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = true,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            },
+            new CanBo()
+            {
+                ID = 10,
+                Ma = "TTT1",
+                HoTen = "Trần Thị Thảo",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = false,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            },
+            new CanBo()
+            {
+                ID = 11,
+                Ma = "NMD1",
+                HoTen = "Nguyễn Mộng Điệp",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = false,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            },
+            new CanBo()
+            {
+                ID = 12,
+                Ma = "NLT1",
+                HoTen = "Nguyễn Lê Trang",
+                NgaySinh = DateTime.Now,
+                DanTocID = 1,
+                GioiTinh = false,
+                DonViID = 1,
+                KieuCanBo = 1,
+                ChucVuID = 1,
+                TrinhDoID = 1,
+                NgayTuyen = DateTime.Now,
+                NgayVeCQ = DateTime.Now,
+                NgayVe = DateTime.Now,
+                HinhThucThiTuyenID = 1,
+            }
+            );
 
 
         }
+       
+        public DbSet<QLCBCore.Models.BaoCao.ReportSLCLCBTheoDoTuoi> ReportSLCLCBTheoDoTuoi { get; set; }
     }
 }
