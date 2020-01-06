@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using QLCBCore.Models.BaoCao;
+using QLCBCore.ViewModels;
 
 namespace QLCBCore.Models
 {
@@ -313,5 +314,9 @@ namespace QLCBCore.Models
         }
        
         public DbSet<QLCBCore.Models.BaoCao.ReportSLCLCBTheoDoTuoi> ReportSLCLCBTheoDoTuoi { get; set; }
+       
+        public DbSet<QLCBCore.ViewModels.CanBoSapHetHanChucVuVM> CanBoSapHetHanChucVuVM { get; set; }
+       
+        public DbSet<QLCBCore.ViewModels.CanBoNangLuongVM> CanBoNangLuongVM { get; set; }
     }
 }

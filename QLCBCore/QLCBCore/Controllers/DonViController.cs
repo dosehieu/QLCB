@@ -117,33 +117,13 @@ namespace QLCBCore.Controllers
             return View(dmDonVi);
         }
 
-        // GET: DonVi/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        
+        public string Delete(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var dmDonVi = await _context.dmDonVis
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (dmDonVi == null)
-            {
-                return NotFound();
-            }
-
-            return View(dmDonVi);
-        }
-
-        // POST: DonVi/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var dmDonVi = await _context.dmDonVis.FindAsync(id);
+            var dmDonVi =  _context.dmDonVis.Find(id);
             _context.dmDonVis.Remove(dmDonVi);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+             _context.SaveChanges();
+            return "1";
         }
 
         private bool dmDonViExists(int id)

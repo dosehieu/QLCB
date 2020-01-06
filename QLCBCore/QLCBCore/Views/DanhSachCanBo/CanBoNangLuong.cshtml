@@ -1,0 +1,95 @@
+﻿@model IEnumerable<QLCBCore.ViewModels.CanBoNangLuongVM>
+
+@{
+    ViewData["Title"] = "CanBoNangLuong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-lg-12 col-xs-12 col-md-12">
+        <div class="card card-primary card-outline">
+            <div class="card-header"><h3 class="card-title"><i class="fas fa-list"> </i> <span class="col-6">DANH SÁCH CÁN BỘ ĐẾN HẠN NÂNG LƯƠNG : (SỐ LƯỢNG : <span style="font-size:20px">@ViewBag.CountCBNL</span>)</span></h3></div>
+            <div class="card-body">
+                <div class="mb-2 text-right">
+                    <button onclick="exported()" class="btn btn-primary"><i class="fa fa-download"></i> Xuất Excel</button>
+                </div>
+                <div class="data-table table-responsive">
+                    <table style="width:100% !important" class="table table-bordered table-hover table-striped-custom table-responsive gridView table-jquery">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Họ tên
+                                </th>
+                                <th>
+                                    Ngày sinh
+                                </th>
+                                <th>
+                                    Giới tính
+                                </th>
+                                <th>
+                                    Tên đơn vị
+                                </th>
+                                <th>
+                                   Mã ngạch
+                                </th>
+                                <th>
+                                    Tên ngạch
+                                </th>
+                                <th>
+                                    Bậc lương
+                                </th>
+                                <th>
+                                   Hệ số
+                                </th>
+                                <th>
+                                    Ngày kết thúc
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HoTen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgaySinh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GioiTinh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenDonVi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaNgach)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenNgach)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BacLuong)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HeSo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgayKetThuc)
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    base_navLink("Danh sách cán bộ");
+</script>

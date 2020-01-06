@@ -180,3 +180,7 @@ select {
 .display-none {
     display: none !important;
 }
+.nav-item d-none d-sm-inline-block
+{
+    width:100px !important;
+}

@@ -11,8 +11,20 @@
             <div class="card-body">
                 <div class="mb-2">
                     <button data-link="/CanBo/Create" class="btn btn-primary btn_link"><i class="fa fa-plus"></i> Thêm mới</button>
-                    <button id="BoSung" data-link="" class="btn btn-primary btn_link"><i class="fa fa-edit"></i> Bổ sung</button>
-
+                    @*<button id="BoSung" data-link="" class="btn btn-primary btn_link"><i class="fa fa-edit"></i> Bổ sung</button>*@
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-edit"></i> Bổ sung
+                        </button>
+                        <div class="dropdown-menu">
+                            <a id="DienBienNgachBacs" class="dropdown-item" >Lương</a>
+                            <a id="DienBienChucVus" class="dropdown-item" >Chức vụ</a>
+                            <a id="QTCongTacs" class="dropdown-item" >Quá trình công tác</a>
+                            <a id="QtKhenThuongs" class="dropdown-item" >Khen thưởng</a>
+                            <a id="QtKyLuats" class="dropdown-item" >Kỷ luật</a>
+                            <a id="QuanHeGiaDinhs" class="dropdown-item" >Quan hệ gia đình</a>
+                        </div>
+                    </div>
                     @*<button data-link="/CanBo/Create" class="btn btn-primary btn_link"><i class="fa fa-user-alt"></i> Sơ yếu lý lịch</button>*@
 
 
@@ -154,13 +166,24 @@
     //base_navLink2("Lương","Hồ sơ cán bộ","/CanBo/Index")
     base_navLink("Hồ sơ cán bộ");
     var id = $('tbody').find('tr').first().attr("id");
-    $('#BoSung').attr("data-link", "/DienBienChucVus/Index/" + id);
+    $('#DienBienNgachBacs').attr("href", "/DienBienChucVus/Index/" + id);
+    $('#DienBienChucVus').attr("href", "/DienBienChucVus/Index/" + id);
+    $('#QTCongTacs').attr("href", "/QTCongTacs/Index/" + id);
+    $('#QtKhenThuongs').attr("href", "/QtKhenThuongs/Index/" + id);
+    $('#QtKyLuats').attr("href", "/QtKyLuats/Index/" + id);
+    $('#QuanHeGiaDinhs').attr("href", "/QuanHeGiaDinhs/Index/" + id);
 
+        
     $('tbody tr').click(function () {
         var id = $(this).attr("id");
         $("tr").removeClass("selected")
         $(this).addClass("selected");
-        $('#BoSung').attr("data-link", "/DienBienChucVus/Index/" + id);
+        $('#DienBienNgachBacs').attr("href", "/DienBienChucVus/Index/" + id);
+        $('#DienBienChucVus').attr("href", "/DienBienChucVus/Index/" + id);
+        $('#QTCongTacs').attr("href", "/QTCongTacs/Index/" + id);
+        $('#QtKhenThuongs').attr("href", "/QtKhenThuongs/Index/" + id);
+        $('#QtKyLuats').attr("href", "/QtKyLuats/Index/" + id);
+        $('#QuanHeGiaDinhs').attr("href", "/QuanHeGiaDinhs/Index/" + id);
     });
 
 
@@ -180,7 +203,4 @@
         });
     }
 </script>
-<style>
-
-</style>
 

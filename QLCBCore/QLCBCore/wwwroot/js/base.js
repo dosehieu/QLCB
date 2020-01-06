@@ -31,7 +31,7 @@ function base_formAction() {
         var type = $(this).attr("data-type");
         //type =1 : Xóa
         if (type == "delete") {
-
+            debugger
             var id = $(this).attr("data-id");
             var link_delete = $(this).attr("data-link");
             $.ajax({
@@ -39,6 +39,7 @@ function base_formAction() {
                 url: link_delete + "/" + id,
                 dataType: "text",
                 success: function (data) {
+                    flag = 1;
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -48,7 +49,11 @@ function base_formAction() {
                     Toast.fire({
                         type: 'success',
                         title: 'Xóa bản ghi thành công',
-                    })
+                    });
+                    $('#myModal').modal('toggle');
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 2000)
                 },
                 error: function (result) {
                     const Toast = Swal.mixin({
@@ -59,14 +64,16 @@ function base_formAction() {
                     });
                     Toast.fire({
                         type: 'error',
-                        title: 'Xóa bản ghi thất bại: ' + result,
-                    })
+                        title: 'Xóa thất bại do đơn vị đang được sử dụng ! ',
+                    });
+                    $('#myModal').modal('toggle');
+                    
                 }
             });
-            $('#myModal').modal('toggle');
-            setTimeout(function () {
-                window.location.reload();
-            }, 2000)
+            
+            
+            
+            
         }
     });
 }

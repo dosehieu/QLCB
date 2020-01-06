@@ -6,11 +6,12 @@
     <title>@ViewData["Title"] - QLCBCore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Select 2 -->
-    <link href="~/select2/dist/css/select2.min.css" rel="stylesheet" />
-    <!-- Select 2 -->
-    <link href="~/Layout/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+    <link href="~/Layout/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <!-- jquery-ui -->
+    <link href="~/Layout/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
-
+    <!-- base css -->
+    <link href="~/css/base.css" rel="stylesheet" />
     <link href="~/Layout/plugins/fontawesome-free/css/all.css" rel="stylesheet" />
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -82,7 +83,7 @@
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
+                <li style="width:100px" class="nav-item d-none d-sm-inline-block">
                     <a href="@Url.Action("Index","Home")" class="nav-link">Trang chủ</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
@@ -173,7 +174,7 @@
 
     <script src="~/Layout/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Select 2 -->
-    <script src="~/select2/dist/js/select2.min.js"></script>
+    <script src="~/Layout/plugins/select2/js/select2.min.js"></script>
 
 
 

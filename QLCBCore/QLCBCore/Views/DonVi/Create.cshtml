@@ -4,9 +4,14 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script>
+    $(document).ready(function () {
+        $('#KieuDonvi').select2();
+    });
+</script>
 <div class="row">
 
-    <form method="POST" enctype="multipart/form-data" asp-action="Create">
+    <form asp-action="Create">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="card card-primary card-outline">
             <div class="card-header"><h3 class="card-title"><i class="fas fa-plus-circle"></i>  THÊM MỚI ĐƠN VỊ</h3></div>
@@ -38,7 +43,16 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        
+                        <div class="form-group">
+                            <label  class="control-label">Kiểu đơn vị</label>
+                            <select asp-for="KieuDonvi" class="form-control">
+                                <option value="" >Chọn</option>
+                                <option value="1" >Đơn vị</option>
+                                <option value="2" >Nhóm</option>
+                                <option value="3" >Phòng ban</option>
+                            </select>
+                            <span asp-validation-for="KieuDonvi" class="text-danger"></span>
+                        </div>
                     </div>
                 </div>
                 <h5 class="text-center">Lưu ý: Các trường có dấu (<span class="text-danger">*</span>) bắt buộc nhập thông tin</h5>
@@ -52,6 +66,6 @@
 </div>
 
 <div>
-    <button asp-action="Index">Trở lại danh sách</button>
+    <button class="btn_link" data-link="/DonVi/Index">Trở lại danh sách</button>
 </div>
 
