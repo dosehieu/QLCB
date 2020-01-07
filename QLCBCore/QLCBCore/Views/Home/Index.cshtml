@@ -1,8 +1,146 @@
-﻿@{
+﻿@model QLCBCore.Models.ThongKe.Home
+@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script>
+    $(document).ready(function () {
+        Highcharts.chart('chartGender', {
+            chart: {
+                type: 'pie',
+                width: 400
+            },
+            title: {
+                text: null
+            },
+            colors: [
+                '#DC7633', '#8E44AD', '#A9FF97'],
+            plotOptions: {
+                pie: {
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f}%',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: 'Số lượng',
+                colorByPoint: true,
+                data: [{
+                      name: 'Nam',
+                      y: @Model.Genders.Nam,
+                    }, {
+                      name: 'Nữ',
+                      y: @Model.Genders.Nu,
+                    }
+                ]
+            }]
+        });
 
+        Highcharts.chart('chartCluster', {
+            chart: {
+                type: 'column',
+                width: 400
+            },
+            colors: [
+                '#95CEFF', '#A9FF97', '#F09A49', '#FCCE10', '#27727B', '#E87C25',
+                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD'],
+            title: {
+                text: ''
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    'Phân loại cán bộ'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Người'
+                }
+            },
+            plotOptions: {
+                column: {
+                    dataLabels: {
+                        enabled: true,
+                        crop: false,
+                        overflow: 'none'
+                    },
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [
+                {
+                    name: 'Công chức',
+                    data: [@Model.ClusterUsers.CongChuc],
+                },
+                {
+                    name: 'Viên chức',
+                    data: [@Model.ClusterUsers.VienChuc],
+                },
+                {
+                    name: 'Hợp đồng',
+                    data: [@Model.ClusterUsers.HopDong],
+                },
+                {
+                    name: 'Hợp đồng 68',
+                    data: [@Model.ClusterUsers.HopDong68],
+                }
+            ]
+        });
+
+        Highcharts.chart('chartLevel', {
+            chart: {
+                type: 'pie',
+                width: 400,
+                options3d: {
+                    enabled: true,
+                    alpha: 60,
+                }
+            },
+            colors: [
+                '#95CEFF', '#A9FF97', '#F09A49', '#FCCE10', '#27727B', '#E87C25',
+                '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD'],
+            title: {
+                text: null
+            },
+            plotOptions: {
+                pie: {
+                    innerSize: 25,
+                    depth: 60,
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f}%',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: 'Số lượng',
+                data: [
+                    ['Tiến sỹ', @Model.LevelUsers.TienSy],
+                    ['Thạc sỹ', @Model.LevelUsers.ThacSy],
+                    ['Đại học', @Model.LevelUsers.DaiHoc],
+                    ['Cao đẳng', @Model.LevelUsers.CaoDang],
+                    ['Trung cấp', @Model.LevelUsers.TrungCap],
+                    ['Khác', @Model.LevelUsers.Khac]
+                ]
+            }]
+        });
+
+    });
+</script>
 <div class="row">
     <div class="col-lg-3 col-6">
         <!-- small box -->
@@ -64,4 +202,48 @@
         </div>
     </div>
     <!-- ./col -->
+</div>
+<div class="row">
+    <div class="col-md-4 col-sm-4">
+        <div class="col-md-12 col-sm-12">
+            <div class="row" style="background-color:#FFFFFF; margin-right: 0px !important; font-weight: 500;">
+                <div class="bieudo-title" style="padding-left: 10px; margin-top: 10px;">
+                    <p>THỐNG KÊ GIỚI TÍNH</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="row">
+                <div id="chartGender"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4">
+        <div class="col-md-12 col-sm-12">
+            <div class="row" style="background-color:#FFFFFF; margin-right: 0px !important; font-weight: 500;">
+                <div class="bieudo-title" style="padding-left: 10px; margin-top: 10px;">
+                    <p>THỐNG KÊ PHÂN LOẠI CÁN BỘ</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="row">
+                <div id="chartCluster"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4">
+        <div class="col-md-12 col-sm-12">
+            <div class="row" style="background-color:#FFFFFF; margin-right: 0px !important; font-weight: 500;">
+                <div class="bieudo-title" style="padding-left: 10px; margin-top: 10px;">
+                    <p>THỐNG KÊ TRÌNH ĐỘ</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div class="row">
+                <div id="chartLevel"></div>
+            </div>
+        </div>
+    </div>
 </div>
