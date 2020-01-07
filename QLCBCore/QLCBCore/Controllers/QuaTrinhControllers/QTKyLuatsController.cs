@@ -1,5 +1,5 @@
 
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,10 +20,25 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
         }
 
         // GET: QTKyLuats
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            var qLCBDbContext = _context.QTKyLuats.Include(q => q.CanBo).Include(q => q.dmKyLuat);
-            return View(await qLCBDbContext.ToListAsync());
+            //var qLCBDbContext = _context.QTKyLuats.Include(q => q.CanBo).Include(q => q.dmKyLuat);
+            //return View(await qLCBDbContext.ToListAsync());
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var qTKyLuat = await _context.QTKyLuats
+                .Where(m => m.ID == id)
+                .Include(q => q.CanBo)
+                .Include(q => q.dmKyLuat).ToListAsync();
+            if (qTKyLuat == null)
+            {
+                return NotFound();
+            }
+
+            return View(qTKyLuat);
         }
 
         // GET: QTKyLuats/Details/5

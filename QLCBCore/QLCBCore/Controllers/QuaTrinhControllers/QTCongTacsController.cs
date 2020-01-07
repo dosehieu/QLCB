@@ -19,10 +19,24 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
         }
 
         // GET: QTCongTacs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            var qLCBDbContext = _context.QTCongTacs.Include(q => q.CanBo);
-            return View(await qLCBDbContext.ToListAsync());
+            //var qLCBDbContext = _context.QTCongTacs.Include(q => q.CanBo);
+            //return View(await qLCBDbContext.ToListAsync());
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var qTCongTac = await _context.QTCongTacs
+                .Where(m => m.CanBoID == id)
+                .Include(q => q.CanBo).ToListAsync();
+            if (qTCongTac == null)
+            {
+                return NotFound();
+            }
+
+            return View(qTCongTac);
         }
 
         // GET: QTCongTacs/Details/5

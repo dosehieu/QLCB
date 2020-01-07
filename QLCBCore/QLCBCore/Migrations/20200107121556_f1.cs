@@ -9,6 +9,47 @@ namespace QLCBCore.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "CanBoNangLuongVM",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    HoTen = table.Column<string>(nullable: true),
+                    NgaySinh = table.Column<string>(nullable: true),
+                    GioiTinh = table.Column<string>(nullable: true),
+                    TenDonVi = table.Column<string>(nullable: true),
+                    MaNgach = table.Column<string>(nullable: true),
+                    TenNgach = table.Column<string>(nullable: true),
+                    BacLuong = table.Column<string>(nullable: true),
+                    HeSo = table.Column<string>(nullable: true),
+                    NgayKetThuc = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CanBoNangLuongVM", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CanBoSapHetHanChucVuVM",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    HoTen = table.Column<string>(nullable: true),
+                    NgaySinh = table.Column<string>(nullable: true),
+                    GioiTinh = table.Column<string>(nullable: true),
+                    TenDonVi = table.Column<string>(nullable: true),
+                    ChucVu = table.Column<string>(nullable: true),
+                    NgayBoNhiem = table.Column<string>(nullable: true),
+                    NgayHetHan = table.Column<string>(nullable: true),
+                    TrangThai = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CanBoSapHetHanChucVuVM", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "dmChucVus",
                 columns: table => new
                 {
@@ -316,6 +357,65 @@ namespace QLCBCore.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_NguoiDungs", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ReportCBKyLuat",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DonVi = table.Column<string>(nullable: true),
+                    TenTrinhDo = table.Column<string>(nullable: true),
+                    KieuCanBo = table.Column<int>(nullable: true),
+                    TenKieuCanBo = table.Column<string>(nullable: true),
+                    STTDonVi = table.Column<int>(nullable: true),
+                    ChucVuSTT = table.Column<int>(nullable: true),
+                    CanBoID = table.Column<int>(nullable: true),
+                    HoTen = table.Column<string>(nullable: true),
+                    NgaySinh = table.Column<DateTime>(nullable: true),
+                    GioiTinh = table.Column<bool>(nullable: true),
+                    TenDonVi = table.Column<string>(nullable: true),
+                    TenPhongBan = table.Column<string>(nullable: true),
+                    ChucVuID = table.Column<int>(nullable: true),
+                    TenChucVu = table.Column<string>(nullable: true),
+                    RegionID = table.Column<int>(nullable: true),
+                    Nam = table.Column<int>(nullable: true),
+                    NoiDung = table.Column<string>(nullable: true),
+                    HinhThucKyLuat = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ReportCBKyLuat", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ReportCBThiDua",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    STTChucVu = table.Column<int>(nullable: true),
+                    DonVi = table.Column<string>(nullable: true),
+                    TenTrinhDo = table.Column<string>(nullable: true),
+                    KieuCanBo = table.Column<int>(nullable: true),
+                    TenKieuCanBo = table.Column<string>(nullable: true),
+                    CanBoID = table.Column<int>(nullable: true),
+                    HoTen = table.Column<string>(nullable: true),
+                    NgaySinh = table.Column<DateTime>(nullable: true),
+                    GioiTinh = table.Column<bool>(nullable: true),
+                    TenDonVi = table.Column<string>(nullable: true),
+                    TenPhongBan = table.Column<string>(nullable: true),
+                    TenChucVu = table.Column<string>(nullable: true),
+                    RegionID = table.Column<int>(nullable: true),
+                    ChucVu = table.Column<string>(nullable: true),
+                    Nam = table.Column<int>(nullable: true),
+                    NoiDung = table.Column<string>(nullable: true),
+                    TenHinhThucKhenThuong = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ReportCBThiDua", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -793,18 +893,18 @@ namespace QLCBCore.Migrations
                 columns: new[] { "ID", "BacLuong", "CMTND", "CanNang", "ChieuCao", "ChucVuID", "CongViecDuocGiao", "CoquanTuyenDung", "DanTocID", "DanhHieuCaoNhatID", "DienThoai", "DonViID", "DonviOldID", "Email", "GhiChu", "GiaDinhCSID", "GioiTinh", "HKTT", "HangThuongBinhID", "HeSo", "HinhAnh", "HinhThucThiTuyenID", "HoTen", "HocHamID", "IsDeleted", "KhenThuong", "KieuCanBo", "KyLuat", "LichSuBanThan", "Ma", "NgachID", "NgayCapCMT", "NgayCapNhat", "NgayChinhThuc", "NgayChuyenCtac", "NgayGiuNgach", "NgayHetHanHD", "NgayHuong", "NgayNghiHuu", "NgayNhapNgu", "NgaySinh", "NgayThoiViec", "NgayThongBaoNghiHuu", "NgayTuTran", "NgayTuyen", "NgayVaoDang", "NgayVe", "NgayVeCQ", "NgayXuatNgu", "NgheNghiepID", "NhanXetDanhGia", "NhomMauID", "NoiCapCMT", "NoiCapSoBHXH", "NoiO", "NoiSinhID", "PhuCapChucVu", "PhuCapKhac", "QuanHamCaoNhatID", "QueQuanID", "RegionID", "SoBHXH", "SoBHYT", "SoHieu", "SoTruongCongTac", "SucKhoeID", "TDPhoThongID", "TenGoiKhac", "TonGiaoID", "TrangThai", "TrinhDoID" },
                 values: new object[,]
                 {
-                    { 1, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Việt Hiếu", null, false, null, 1, null, null, "NVH1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 135, DateTimeKind.Local).AddTicks(7430), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 137, DateTimeKind.Local).AddTicks(4114), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 137, DateTimeKind.Local).AddTicks(9777), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(1402), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(611), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 2, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Quang Huy", null, false, null, 1, null, null, "NQH1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(2984), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3046), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3095), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3110), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3102), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 3, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Ngô Ngọc Anh", null, false, null, 1, null, null, "NNA1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3125), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3130), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3133), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3135), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3134), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 4, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Quang Anh", null, false, null, 1, null, null, "NQA1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3138), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3141), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3144), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3147), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3145), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 5, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Quang Công", null, false, null, 1, null, null, "NQC1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3182), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3186), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3187), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3191), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3190), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 6, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Trần Quang Thắng", null, false, null, 1, null, null, "TQT1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3193), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3197), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3200), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3201), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3201), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 7, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Văn Anh", null, false, null, 1, null, null, "NVA1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3202), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3206), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3207), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3210), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3208), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 8, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Tuấn Quang", null, false, null, 1, null, null, "NTQ1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3212), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3215), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3216), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3220), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3219), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 9, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Lê Đức Anh", null, false, null, 1, null, null, "LDA1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3222), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3225), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3227), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3229), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3228), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 10, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, false, null, null, null, null, 1, "Trần Thị Thảo", null, false, null, 1, null, null, "TTT1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3230), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3233), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3234), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3236), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3235), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 11, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, false, null, null, null, null, 1, "Nguyễn Mộng Điệp", null, false, null, 1, null, null, "NMD1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3237), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3240), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3242), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3244), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3244), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
-                    { 12, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, false, null, null, null, null, 1, "Nguyễn Lê Trang", null, false, null, 1, null, null, "NLT1", null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3254), null, null, null, null, null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3257), null, null, null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3260), null, new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3261), new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3260), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 }
+                    { 1, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Việt Hiếu", null, false, null, 1, null, null, "NVH1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 244, DateTimeKind.Local).AddTicks(4815), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 245, DateTimeKind.Local).AddTicks(6518), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 245, DateTimeKind.Local).AddTicks(9799), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(676), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(245), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 2, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Quang Huy", null, false, null, 1, null, null, "NQH1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1524), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1548), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1585), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1594), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1589), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 3, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Ngô Ngọc Anh", null, false, null, 1, null, null, "NNA1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1601), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1604), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1605), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1607), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1606), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 4, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Quang Anh", null, false, null, 1, null, null, "NQA1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1843), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1845), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1848), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1849), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1848), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 5, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Quang Công", null, false, null, 1, null, null, "NQC1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1850), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1851), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1853), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1856), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1855), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 6, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Trần Quang Thắng", null, false, null, 1, null, null, "TQT1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1856), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1858), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1859), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1861), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1860), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 7, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Văn Anh", null, false, null, 1, null, null, "NVA1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1861), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1864), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1865), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1866), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1865), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 8, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Nguyễn Tuấn Quang", null, false, null, 1, null, null, "NTQ1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1867), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1868), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1869), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1870), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1870), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 9, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, true, null, null, null, null, 1, "Lê Đức Anh", null, false, null, 1, null, null, "LDA1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1872), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1874), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1875), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1877), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1875), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 10, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, false, null, null, null, null, 1, "Trần Thị Thảo", null, false, null, 1, null, null, "TTT1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1878), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1879), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1880), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1881), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1881), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 11, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, false, null, null, null, null, 1, "Nguyễn Mộng Điệp", null, false, null, 1, null, null, "NMD1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2103), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2105), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2106), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2107), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2107), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 },
+                    { 12, null, null, null, null, 1, null, null, 1, null, null, 1, null, null, null, null, false, null, null, null, null, 1, "Nguyễn Lê Trang", null, false, null, 1, null, null, "NLT1", null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2108), null, null, null, null, null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2110), null, null, null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2111), null, new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2112), new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2112), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 1 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -936,6 +1036,12 @@ namespace QLCBCore.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "CanBoNangLuongVM");
+
+            migrationBuilder.DropTable(
+                name: "CanBoSapHetHanChucVuVM");
+
+            migrationBuilder.DropTable(
                 name: "DienBienChucVus");
 
             migrationBuilder.DropTable(
@@ -961,6 +1067,12 @@ namespace QLCBCore.Migrations
 
             migrationBuilder.DropTable(
                 name: "QuanHeGiaDinhs");
+
+            migrationBuilder.DropTable(
+                name: "ReportCBKyLuat");
+
+            migrationBuilder.DropTable(
+                name: "ReportCBThiDua");
 
             migrationBuilder.DropTable(
                 name: "ReportSLCLCBTheoDoTuoi");

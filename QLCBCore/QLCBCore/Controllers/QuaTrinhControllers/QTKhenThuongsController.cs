@@ -20,10 +20,25 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
         }
 
         // GET: QTKhenThuongs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            var qLCBDbContext = _context.QTKhenThuongs.Include(q => q.CanBo).Include(q => q.dmHinhThucKhenThuong);
-            return View(await qLCBDbContext.ToListAsync());
+            //var qLCBDbContext = _context.QTKhenThuongs.Include(q => q.CanBo).Include(q => q.dmHinhThucKhenThuong);
+            //return View(await qLCBDbContext.ToListAsync());
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var qTKhenThuong = await _context.QTKhenThuongs
+                .Where(m => m.CanBoID == id)
+                .Include(q => q.CanBo)
+                .Include(q => q.dmHinhThucKhenThuong).ToListAsync();
+            if (qTKhenThuong == null)
+            {
+                return NotFound();
+            }
+
+            return View(qTKhenThuong);
         }
 
         // GET: QTKhenThuongs/Details/5

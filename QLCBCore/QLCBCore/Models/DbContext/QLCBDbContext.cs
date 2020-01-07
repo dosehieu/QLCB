@@ -315,8 +315,14 @@ namespace QLCBCore.Models
        
         public DbSet<QLCBCore.Models.BaoCao.ReportSLCLCBTheoDoTuoi> ReportSLCLCBTheoDoTuoi { get; set; }
        
+<<<<<<< HEAD
+        public DbSet<QLCBCore.Models.BaoCao.ReportCBThiDua> ReportCBThiDua { get; set; }
+       
+        public DbSet<QLCBCore.Models.BaoCao.ReportCBKyLuat> ReportCBKyLuat { get; set; }
+=======
         public DbSet<QLCBCore.ViewModels.CanBoSapHetHanChucVuVM> CanBoSapHetHanChucVuVM { get; set; }
        
         public DbSet<QLCBCore.ViewModels.CanBoNangLuongVM> CanBoNangLuongVM { get; set; }
+>>>>>>> 7756ad3e7dd943e52f145ad15c3384b9dc91abb1
     }
 }

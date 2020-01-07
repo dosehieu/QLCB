@@ -7,6 +7,7 @@
 
 <style>
 
+
     .table-responsive {
         display: table;
     }
@@ -27,7 +28,8 @@
                         <thead>
                             <tr>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.CanBo)
+                                    @*@Html.DisplayNameFor(model => model.CanBo)*@
+                                    Tên cán bộ
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.NoiDung)
@@ -36,8 +38,8 @@
                                     @Html.DisplayNameFor(model => model.NgayKhenThuong)
                                 </th>
                                 @*<th>
-                                    @Html.DisplayNameFor(model => model.IsCaoNhat)
-                                </th>*@
+                                        @Html.DisplayNameFor(model => model.IsCaoNhat)
+                                    </th>*@
                                 <th>
                                     @Html.DisplayNameFor(model => model.SoQuyetDinh)
                                 </th>
@@ -48,16 +50,17 @@
                                     @Html.DisplayNameFor(model => model.CoQuanBanHanhQD)
                                 </th>
                                 @*<th>
-                                    @Html.DisplayNameFor(model => model.IsKhenThuong)
-                                </th>*@
+                                        @Html.DisplayNameFor(model => model.IsKhenThuong)
+                                    </th>*@
                                 <th>
                                     @Html.DisplayNameFor(model => model.MucKhenThuong)
                                 </th>
                                 @*<th>
-                                    @Html.DisplayNameFor(model => model.IsDeleted)
-                                </th>*@
+                                        @Html.DisplayNameFor(model => model.IsDeleted)
+                                    </th>*@
                                 <th>
-                                    @Html.DisplayNameFor(model => model.dmHinhThucKhenThuong)
+                                    @*@Html.DisplayNameFor(model => model.dmHinhThucKhenThuong)*@
+                                    Hình thức khen thưởng
                                 </th>
 
                                 <th></th>
@@ -78,8 +81,8 @@
                                         @Html.DisplayFor(modelItem => item.NgayKhenThuong)
                                     </td>
                                     @*<td>
-                                        @Html.DisplayFor(modelItem => item.IsCaoNhat)
-                                    </td>*@
+                                            @Html.DisplayFor(modelItem => item.IsCaoNhat)
+                                        </td>*@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.SoQuyetDinh)
                                     </td>
@@ -90,16 +93,16 @@
                                         @Html.DisplayFor(modelItem => item.CoQuanBanHanhQD)
                                     </td>
                                     @*<td>
-                                        @Html.DisplayFor(modelItem => item.IsKhenThuong)
-                                    </td>*@
+                                            @Html.DisplayFor(modelItem => item.IsKhenThuong)
+                                        </td>*@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.MucKhenThuong)
                                     </td>
                                     @*<td>
-                                        @Html.DisplayFor(modelItem => item.IsDeleted)
-                                    </td>*@
+                                            @Html.DisplayFor(modelItem => item.IsDeleted)
+                                        </td>*@
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.dmHinhThucKhenThuong.ID)
+                                        @Html.DisplayFor(modelItem => item.dmHinhThucKhenThuong.TenHinhThucKhenThuong)
                                     </td>
 
                                     <td>
