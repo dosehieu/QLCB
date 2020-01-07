@@ -109,5 +109,9 @@ namespace QLCBCore.Models
         }
        
         public DbSet<QLCBCore.Models.BaoCao.ReportSLCLCBTheoDoTuoi> ReportSLCLCBTheoDoTuoi { get; set; }
+       
+        public DbSet<QLCBCore.Models.BaoCao.ReportCBThiDua> ReportCBThiDua { get; set; }
+       
+        public DbSet<QLCBCore.Models.BaoCao.ReportCBKyLuat> ReportCBKyLuat { get; set; }
     }
 }

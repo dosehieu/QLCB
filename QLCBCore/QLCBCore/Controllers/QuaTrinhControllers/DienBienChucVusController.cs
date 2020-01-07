@@ -19,11 +19,28 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
         }
 
         // GET: DienBienChucVus
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
 
-            var qLCBDbContext = _context.DienBienChucVus.Include(d => d.CanBo).Include(d => d.dmChucVu).Include(d => d.dmDonVi);
-            return View(await qLCBDbContext.ToListAsync());
+            //var qLCBDbContext = _context.DienBienChucVus.Include(d => d.CanBo).Include(d => d.dmChucVu).Include(d => d.dmDonVi);
+            //return View(await qLCBDbContext.ToListAsync());
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var dienBienChucVu = await _context.DienBienChucVus
+               .Where(m => m.CanBoID == id)
+               .Include(d => d.CanBo)
+               .Include(d => d.dmChucVu)        
+               .Include(d => d.dmDonVi).ToListAsync();
+
+            if (dienBienChucVu == null)
+            {
+                return NotFound();
+            }
+
+            return View(dienBienChucVu);
         }
 
         // GET: DienBienChucVus/Details/5

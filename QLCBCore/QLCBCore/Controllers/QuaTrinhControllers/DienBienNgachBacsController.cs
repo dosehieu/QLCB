@@ -19,10 +19,25 @@ namespace QLCBCore.Controllers.QuaTrinhControllers
         }
 
         // GET: DienBienNgachBacs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            var qLCBDbContext = _context.DienBienNgachBacs.Include(d => d.CanBo).Include(d => d.dmNgach);
-            return View(await qLCBDbContext.ToListAsync());
+            //var qLCBDbContext = _context.DienBienNgachBacs.Include(d => d.CanBo).Include(d => d.dmNgach);
+            //return View(await qLCBDbContext.ToListAsync());
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var dienBienNgachBac = await _context.DienBienNgachBacs
+                .Where(m => m.CanBoID == id)
+                .Include(d => d.CanBo)
+                .Include(d => d.dmNgach).ToListAsync();
+            if (dienBienNgachBac == null)
+            {
+                return NotFound();
+            }
+
+            return View(dienBienNgachBac);
         }
 
         // GET: DienBienNgachBacs/Details/5
