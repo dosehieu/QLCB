@@ -10,7 +10,7 @@ using QLCBCore.Models;
 namespace QLCBCore.Migrations
 {
     [DbContext(typeof(QLCBDbContext))]
-    [Migration("20200105113008_f1")]
+    [Migration("20200107121556_f1")]
     partial class f1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,98 @@ namespace QLCBCore.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("QLCBCore.Models.BaoCao.ReportCBKyLuat", b =>
+                {
+                    b.Property<int?>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CanBoID");
+
+                    b.Property<int?>("ChucVuID");
+
+                    b.Property<int?>("ChucVuSTT");
+
+                    b.Property<string>("DonVi");
+
+                    b.Property<bool?>("GioiTinh");
+
+                    b.Property<string>("HinhThucKyLuat");
+
+                    b.Property<string>("HoTen");
+
+                    b.Property<int?>("KieuCanBo");
+
+                    b.Property<int?>("Nam");
+
+                    b.Property<DateTime?>("NgaySinh");
+
+                    b.Property<string>("NoiDung");
+
+                    b.Property<int?>("RegionID");
+
+                    b.Property<int?>("STTDonVi");
+
+                    b.Property<string>("TenChucVu");
+
+                    b.Property<string>("TenDonVi");
+
+                    b.Property<string>("TenKieuCanBo");
+
+                    b.Property<string>("TenPhongBan");
+
+                    b.Property<string>("TenTrinhDo");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("ReportCBKyLuat");
+                });
+
+            modelBuilder.Entity("QLCBCore.Models.BaoCao.ReportCBThiDua", b =>
+                {
+                    b.Property<int?>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CanBoID");
+
+                    b.Property<string>("ChucVu");
+
+                    b.Property<string>("DonVi");
+
+                    b.Property<bool?>("GioiTinh");
+
+                    b.Property<string>("HoTen");
+
+                    b.Property<int?>("KieuCanBo");
+
+                    b.Property<int?>("Nam");
+
+                    b.Property<DateTime?>("NgaySinh");
+
+                    b.Property<string>("NoiDung");
+
+                    b.Property<int?>("RegionID");
+
+                    b.Property<int?>("STTChucVu");
+
+                    b.Property<string>("TenChucVu");
+
+                    b.Property<string>("TenDonVi");
+
+                    b.Property<string>("TenHinhThucKhenThuong");
+
+                    b.Property<string>("TenKieuCanBo");
+
+                    b.Property<string>("TenPhongBan");
+
+                    b.Property<string>("TenTrinhDo");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("ReportCBThiDua");
+                });
 
             modelBuilder.Entity("QLCBCore.Models.BaoCao.ReportSLCLCBTheoDoTuoi", b =>
                 {
@@ -296,11 +388,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "NVH1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 135, DateTimeKind.Local).AddTicks(7430),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 137, DateTimeKind.Local).AddTicks(4114),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 137, DateTimeKind.Local).AddTicks(9777),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(1402),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(611),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 244, DateTimeKind.Local).AddTicks(4815),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 245, DateTimeKind.Local).AddTicks(6518),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 245, DateTimeKind.Local).AddTicks(9799),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(676),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(245),
                             TrinhDoID = 1
                         },
                         new
@@ -315,11 +407,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "NQH1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(2984),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3046),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3095),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3110),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3102),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1524),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1548),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1585),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1594),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1589),
                             TrinhDoID = 1
                         },
                         new
@@ -334,11 +426,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "NNA1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3125),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3130),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3133),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3135),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3134),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1601),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1604),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1605),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1607),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1606),
                             TrinhDoID = 1
                         },
                         new
@@ -353,11 +445,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "NQA1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3138),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3141),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3144),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3147),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3145),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1843),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1845),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1848),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1849),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1848),
                             TrinhDoID = 1
                         },
                         new
@@ -372,11 +464,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "NQC1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3182),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3186),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3187),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3191),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3190),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1850),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1851),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1853),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1856),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1855),
                             TrinhDoID = 1
                         },
                         new
@@ -391,11 +483,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "TQT1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3193),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3197),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3200),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3201),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3201),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1856),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1858),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1859),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1861),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1860),
                             TrinhDoID = 1
                         },
                         new
@@ -410,11 +502,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "NVA1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3202),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3206),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3207),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3210),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3208),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1861),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1864),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1865),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1866),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1865),
                             TrinhDoID = 1
                         },
                         new
@@ -429,11 +521,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "NTQ1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3212),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3215),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3216),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3220),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3219),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1867),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1868),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1869),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1870),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1870),
                             TrinhDoID = 1
                         },
                         new
@@ -448,11 +540,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "LDA1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3222),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3225),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3227),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3229),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3228),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1872),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1874),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1875),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1877),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1875),
                             TrinhDoID = 1
                         },
                         new
@@ -467,11 +559,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "TTT1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3230),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3233),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3234),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3236),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3235),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1878),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1879),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1880),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1881),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(1881),
                             TrinhDoID = 1
                         },
                         new
@@ -486,11 +578,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "NMD1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3237),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3240),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3242),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3244),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3244),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2103),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2105),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2106),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2107),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2107),
                             TrinhDoID = 1
                         },
                         new
@@ -505,11 +597,11 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             KieuCanBo = 1,
                             Ma = "NLT1",
-                            NgayCapNhat = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3254),
-                            NgaySinh = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3257),
-                            NgayTuyen = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3260),
-                            NgayVe = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3261),
-                            NgayVeCQ = new DateTime(2020, 1, 5, 18, 30, 7, 138, DateTimeKind.Local).AddTicks(3260),
+                            NgayCapNhat = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2108),
+                            NgaySinh = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2110),
+                            NgayTuyen = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2111),
+                            NgayVe = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2112),
+                            NgayVeCQ = new DateTime(2020, 1, 7, 19, 15, 56, 246, DateTimeKind.Local).AddTicks(2112),
                             TrinhDoID = 1
                         });
                 });
@@ -1231,6 +1323,62 @@ namespace QLCBCore.Migrations
                             IsDeleted = false,
                             TenTrinhDo = "12/12"
                         });
+                });
+
+            modelBuilder.Entity("QLCBCore.ViewModels.CanBoNangLuongVM", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BacLuong");
+
+                    b.Property<string>("GioiTinh");
+
+                    b.Property<string>("HeSo");
+
+                    b.Property<string>("HoTen");
+
+                    b.Property<string>("MaNgach");
+
+                    b.Property<string>("NgayKetThuc");
+
+                    b.Property<string>("NgaySinh");
+
+                    b.Property<string>("TenDonVi");
+
+                    b.Property<string>("TenNgach");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("CanBoNangLuongVM");
+                });
+
+            modelBuilder.Entity("QLCBCore.ViewModels.CanBoSapHetHanChucVuVM", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ChucVu");
+
+                    b.Property<string>("GioiTinh");
+
+                    b.Property<string>("HoTen");
+
+                    b.Property<string>("NgayBoNhiem");
+
+                    b.Property<string>("NgayHetHan");
+
+                    b.Property<string>("NgaySinh");
+
+                    b.Property<string>("TenDonVi");
+
+                    b.Property<string>("TrangThai");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("CanBoSapHetHanChucVuVM");
                 });
 
             modelBuilder.Entity("QLCBCore.Models.CanBo", b =>
