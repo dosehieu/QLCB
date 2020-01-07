@@ -147,7 +147,7 @@ function base_datatable() {
     var table = $('.table-jquery').DataTable({
         orderCellsTop: true,
         language: {
-            url: "../Layout/plugins/dataTables/Vietnamese.json"
+            url: "/Layout/plugins/dataTables/Vietnamese.json"
         }
     });
 }
