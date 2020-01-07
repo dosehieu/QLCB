@@ -1,0 +1,70 @@
+﻿@model QLCBCore.Models.dmDonVi
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+        $('#KieuDonvi').select2();
+    });
+</script>
+<div class="row">
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="card card-primary card-outline">
+            <div class="card-header"><h3 class="card-title"><i class="fas fa-edit"></i>  CẬP NHẬT ĐƠN VỊ</h3></div>
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="MaDonVi" class="control-label"></label>
+                            <input asp-for="MaDonVi" class="form-control" />
+                            <span asp-validation-for="MaDonVi" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="TenDonVi" class="control-label"></label>
+                            <span class="text-danger"> * </span>
+                            <input asp-for="TenDonVi" class="form-control" />
+                            <span asp-validation-for="TenDonVi" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="TenVietTat" class="control-label"></label>
+                            <input asp-for="TenVietTat" class="form-control" />
+                            <span asp-validation-for="TenVietTat" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Kiểu đơn vị</label>
+                            <select asp-for="KieuDonvi" class="form-control">
+                                <option value="">Chọn</option>
+                                <option value="1">Đơn vị</option>
+                                <option value="2">Nhóm</option>
+                                <option value="3">Phòng ban</option>
+                            </select>
+                            <span asp-validation-for="KieuDonvi" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+<div>
+    <button class="btn_link" data-link="/DonVi/Index">Trở lại danh sách</button>
+</div>
+

@@ -2,12 +2,13 @@
     base_formAction();
     base_pagination();
     base_datatable();
-    base_navLink();
     base_lentop();
+    bsCustomFileInput.init();
+    base_menuActive();
 });
 
 function base_formAction() {
-    $('#btn_add').click(function () {
+    $('.btn_link').click(function () {
         var link = $(this).attr("data-link");
         window.location.href = link;
     });
@@ -30,7 +31,7 @@ function base_formAction() {
         var type = $(this).attr("data-type");
         //type =1 : Xóa
         if (type == "delete") {
-
+            debugger
             var id = $(this).attr("data-id");
             var link_delete = $(this).attr("data-link");
             $.ajax({
@@ -38,6 +39,7 @@ function base_formAction() {
                 url: link_delete + "/" + id,
                 dataType: "text",
                 success: function (data) {
+                    flag = 1;
                     const Toast = Swal.mixin({
                         toast: true,
                         position: 'top-end',
@@ -47,7 +49,11 @@ function base_formAction() {
                     Toast.fire({
                         type: 'success',
                         title: 'Xóa bản ghi thành công',
-                    })
+                    });
+                    $('#myModal').modal('toggle');
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 2000)
                 },
                 error: function (result) {
                     const Toast = Swal.mixin({
@@ -58,14 +64,16 @@ function base_formAction() {
                     });
                     Toast.fire({
                         type: 'error',
-                        title: 'Xóa bản ghi thất bại: ' + result,
-                    })
+                        title: 'Xóa thất bại do đơn vị đang được sử dụng ! ',
+                    });
+                    $('#myModal').modal('toggle');
+                    
                 }
             });
-            $('#myModal').modal('toggle');
-            setTimeout(function () {
-                window.location.reload();
-            }, 2000)
+            
+            
+            
+            
         }
     });
 }
@@ -144,12 +152,6 @@ function base_datatable() {
     });
 }
 
-function base_navLink() {
-    var title = $('.nav-link.active > p').text();
-    $('.breadcrumb-item.active').html(title);
-    $('.m-0.text-dark').html(title);
-}
-
 function base_lentop() {
     
     $(window).scroll(function () {
@@ -161,5 +163,33 @@ function base_lentop() {
     });
     
 }
+
+function base_menuActive() {
+    var pathname = window.location.pathname;
+    var div = pathname.split('/', 2);
+    var re = div[1];
+    $("[data-active=" + re + "]").addClass("active");
+    var parent = $("[data-active=" + re + "]").attr('data-parent');
+    $("[data-active=" + re + "]").closest("ul").css("display", "block");
+    $("[data-active=" + parent + "]").addClass("active");
+    $("[data-active=" + parent + "]").closest("li").addClass("menu-open");
+}
+
+function base_navLink(title) {
+    $('.breadcrumb-item.active').html(title);
+    $('.m-0.text-dark').html(title);
+}
+
+function base_navLink2(title, title2, link) {
+    $('.breadcrumb-item.active').html(title);
+    $('.m-0.text-dark').html(title);
+    $('.breadcrumb-item.display-none > a').html(title2);
+    $('.breadcrumb-item.display-none > a').attr("href", link);
+    $('.breadcrumb-item.display-none').removeClass("display-none");
+    $('.m-0.text-dark').html(title);
+}
+
+
+
     
 

@@ -23,15 +23,10 @@
         $('#KieuCanBo').select2();
         $('#TrangThai').select2();
         $('#NgaySinh').datepicker({ dateFormat: 'dd/mm/yy' });
-        //$("#NgaySinh").datepicker({
-        //    format: "dd/mm/yyyy",
-        //}).change(function () {
-        //    $(this).datepicker('hide');
-        //});
     });
 </script>
 
-<style>
+@*<style>
     .row {
         padding: 5px;
     }
@@ -50,8 +45,8 @@
     $(document).ready(function () {
         bsCustomFileInput.init();
     });
-</script>
-<hr />
+</script>*@
+
 <div class="row">
 
     <form method="POST" enctype="multipart/form-data" asp-action="Create">
@@ -648,7 +643,7 @@
 </div>
 
 <div>
-    <button asp-action="Index">Trở lại danh sách</button>
+    <button class="btn_link" data-link="/CanBo/Index">Trở lại danh sách</button>
 </div>
 
 

@@ -42,44 +42,44 @@ namespace QLCBCore
             });
 
             services.AddAuthentication("DemoSecurityScheme")
-    .AddCookie("DemoSecurityScheme", options =>
-    {
-        options.AccessDeniedPath = new PathString("/Account/Access");
-        options.Cookie = new CookieBuilder
-        {
-            //Domain = "",
-            HttpOnly = true,
-            Name = ".aspNetCoreDemo.Security.Cookie",
-            Path = "/",
-            SameSite = SameSiteMode.Lax,
-            SecurePolicy = CookieSecurePolicy.SameAsRequest
-        };
-        options.Events = new CookieAuthenticationEvents
-        {
-            OnSignedIn = context =>
+            .AddCookie("DemoSecurityScheme", options =>
             {
-                Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
-                    "OnSignedIn", context.Principal.Identity.Name);
-                return Task.CompletedTask;
-            },
-            OnSigningOut = context =>
-            {
-                Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
-                    "OnSigningOut", context.HttpContext.User.Identity.Name);
-                return Task.CompletedTask;
-            },
-            OnValidatePrincipal = context =>
-            {
-                Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
-                    "OnValidatePrincipal", context.Principal.Identity.Name);
-                return Task.CompletedTask;
-            }
-        };
-        //options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
-        options.LoginPath = new PathString("/Account/Login");
-        options.ReturnUrlParameter = "RequestPath";
-        options.SlidingExpiration = true;
-    });
+                options.AccessDeniedPath = new PathString("/Account/Access");
+                options.Cookie = new CookieBuilder
+                {
+                    //Domain = "",
+                    HttpOnly = true,
+                    Name = ".aspNetCoreDemo.Security.Cookie",
+                    Path = "/",
+                    SameSite = SameSiteMode.Lax,
+                    SecurePolicy = CookieSecurePolicy.SameAsRequest
+                };
+                options.Events = new CookieAuthenticationEvents
+                {
+                    OnSignedIn = context =>
+                    {
+                        Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
+                            "OnSignedIn", context.Principal.Identity.Name);
+                        return Task.CompletedTask;
+                    },
+                    OnSigningOut = context =>
+                    {
+                        Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
+                            "OnSigningOut", context.HttpContext.User.Identity.Name);
+                        return Task.CompletedTask;
+                    },
+                    OnValidatePrincipal = context =>
+                    {
+                        Console.WriteLine("{0} - {1}: {2}", DateTime.Now,
+                            "OnValidatePrincipal", context.Principal.Identity.Name);
+                        return Task.CompletedTask;
+                    }
+                };
+                //options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                options.LoginPath = new PathString("/Account/Login");
+                options.ReturnUrlParameter = "RequestPath";
+                options.SlidingExpiration = true;
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<QLCBDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
             services.Configure<ConnectionString>(Configuration.GetSection("ConnectionStrings"));
